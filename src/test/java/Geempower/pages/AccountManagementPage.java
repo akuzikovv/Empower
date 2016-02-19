@@ -19,17 +19,17 @@ import static ch.lambdaj.Lambda.convert;
 @DefaultUrl("http://qa.geempower.com/geempower/")
 public class AccountManagementPage extends PageObject{
 
-    @FindBy(xpath = Path.USER_ID_FIELD)
+    /*@FindBy(xpath = Path.USER_ID_FIELD)
     WebElementFacade userIdField;
 
     @FindBy(xpath = Path.ACOUNT_MANAGEMENT_LOGO)
-    WebElementFacade accountManLogo;
+    WebElementFacade accountManLogo;*/
 
 
 
     public void loginUser() {
-        userIdField.clear();
-        userIdField.sendKeys(Path.LOGIN_1);
+        $(Path.USER_ID_FIELD).clear();
+        $(Path.USER_ID_FIELD).sendKeys(Path.LOGIN_1);
         $(Path.PASSWORD_FIELD).clear();
         $(Path.PASSWORD_FIELD).sendKeys(Path.PASSWORD_1);
         $(Path.SIGN_IN_BUTTON).click();
@@ -39,7 +39,7 @@ public class AccountManagementPage extends PageObject{
 
 
     public boolean isAccountManagementLogoVisible() {
-        return accountManLogo.isDisplayed();
+        return $(Path.ACOUNT_MANAGEMENT_LOGO).isDisplayed();
     }
 
 }
