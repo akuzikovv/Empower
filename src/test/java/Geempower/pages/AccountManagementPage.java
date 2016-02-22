@@ -28,11 +28,19 @@ public class AccountManagementPage extends PageObject{
 
 
     public void loginUser() {
-        $(Path.USER_ID_FIELD).clear();
+
+        getDriver().findElement(By.xpath(Path.USER_ID_FIELD)).clear();
+        getDriver().findElement(By.xpath(Path.USER_ID_FIELD)).sendKeys(Path.LOGIN_1);
+        getDriver().findElement(By.xpath(Path.PASSWORD_FIELD)).clear();
+        getDriver().findElement(By.xpath(Path.PASSWORD_FIELD)).sendKeys(Path.PASSWORD_1);
+        getDriver().findElement(By.xpath(Path.SIGN_IN_BUTTON)).click();
+
+
+        /*$(Path.USER_ID_FIELD).clear();
         $(Path.USER_ID_FIELD).sendKeys(Path.LOGIN_1);
         $(Path.PASSWORD_FIELD).clear();
         $(Path.PASSWORD_FIELD).sendKeys(Path.PASSWORD_1);
-        $(Path.SIGN_IN_BUTTON).click();
+        $(Path.SIGN_IN_BUTTON).click();*/
     }
 
 
