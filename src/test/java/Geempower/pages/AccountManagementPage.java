@@ -16,8 +16,8 @@ import java.util.List;
 
 import static ch.lambdaj.Lambda.convert;
 
-@DefaultUrl("http://qa.geempower.com/geempower/")
-//@DefaultUrl("http://awsdev-geempower.industrial.energy.ge.com/geempower/")
+//@DefaultUrl("http://qa.geempower.com/geempower/")
+@DefaultUrl("http://awsdev-geempower.industrial.energy.ge.com/geempower/")
 
 public class AccountManagementPage extends PageObject{
 
