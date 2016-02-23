@@ -31,11 +31,11 @@ public class AccountManagementPage extends PageObject{
 
     public void loginUser() {
 
-        getDriver().findElement(By.xpath(Path.USER_ID_FIELD)).clear();
-        getDriver().findElement(By.xpath(Path.USER_ID_FIELD)).sendKeys(Path.LOGIN_1);
-        getDriver().findElement(By.xpath(Path.PASSWORD_FIELD)).clear();
-        getDriver().findElement(By.xpath(Path.PASSWORD_FIELD)).sendKeys(Path.PASSWORD_1);
-        getDriver().findElement(By.xpath(Path.SIGN_IN_BUTTON)).click();
+        getDriver().findElement(By.xpath("/html/body/section/div/div/div[2]/form/div[1]/input")).clear();
+        getDriver().findElement(By.xpath("/html/body/section/div/div/div[2]/form/div[1]/input")).sendKeys(Path.LOGIN_1);
+        getDriver().findElement(By.xpath("/html/body/section/div/div/div[2]/form/div[2]/input")).clear();
+        getDriver().findElement(By.xpath("/html/body/section/div/div/div[2]/form/div[2]/input")).sendKeys(Path.PASSWORD_1);
+        getDriver().findElement(By.xpath("/html/body/section/div/div/div[2]/form/button")).click();
 
 
         /*$(Path.USER_ID_FIELD).clear();
