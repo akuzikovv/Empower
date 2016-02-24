@@ -3,7 +3,9 @@ package Geempower.pages;
 import ch.lambdaj.function.convert.Converter;
 import Geempower.Path;
 import net.serenitybdd.core.pages.WebElementState;
+import net.thucydides.core.Thucydides;
 import net.thucydides.core.annotations.DefaultUrl;
+import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -11,6 +13,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.annotations.findby.FindBy;
 
 import net.thucydides.core.pages.PageObject;
+import org.openqa.selenium.firefox.FirefoxProfile;
 
 import java.util.List;
 
