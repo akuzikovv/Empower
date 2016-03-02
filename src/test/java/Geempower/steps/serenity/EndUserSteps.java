@@ -31,4 +31,38 @@ public class EndUserSteps extends ScenarioSteps {
     public void isAccountManagementPageOpened() {
         Assert.assertTrue(accountManagementPage.isAccountManagementLogoVisible());
     }
+
+    @Step
+    public void clickAccountNumber() {
+        accountManagementPage.clickAccountNumber();
+    }
+
+    @Step
+    public void click_on_button_in_tooltip(String nameOfButton) {
+        accountManagementPage.clickNameOfButton(nameOfButton);
+    }
+    @Step
+    public void checkThatAccountNumberIsDisplayedInTheTopOfThePage() {
+        Assert.assertTrue(accountManagementPage.isAccountNumberDisplayedInTheTopOfThePage());
+    }
+    @Step
+    public void checkThatOrderStatusWidgetIsDisplayed() {
+        Assert.assertTrue(accountManagementPage.isOrderStatusWidgetDisplayedInTheTopOfThePage());
+    }
+    @Step
+    public void checkThatTrackOrderWidgetIsDisplayed() {
+        Assert.assertTrue(accountManagementPage.isTrackOrderWidgetDisplayedInTheTopOfThePage());
+    }
+    @Step
+    public void checkThatRecentOrdersWidgetIsDisplayed() {
+        Assert.assertTrue(accountManagementPage.isRecentOrdersWidgetDisplayedInTheTopOfThePage());
+    }
+    @Step
+    public void checkThatPriceAndAvailabilityWidgetIsDisplayed() {
+        Assert.assertTrue(accountManagementPage.isPriceAndAvailabilityDisplayedInTheTopOfThePage());
+    }
+    @Step
+    public void checkThatFeaturedToolsWidgetIsDisplayed() {
+        Assert.assertTrue(accountManagementPage.isFeaturedToolsWidgetDisplayedInTheTopOfThePage());
+    }
 }
