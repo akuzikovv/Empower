@@ -17,6 +17,7 @@ public class EndUserSteps extends ScenarioSteps {
 
     AccountManagementPage accountManagementPage;
 
+
     @Step
     public void openCustomLoginPage() {
         getDriver().manage().window().maximize();
@@ -64,5 +65,9 @@ public class EndUserSteps extends ScenarioSteps {
     @Step
     public void checkThatFeaturedToolsWidgetIsDisplayed() {
         Assert.assertTrue(accountManagementPage.isFeaturedToolsWidgetDisplayedInTheTopOfThePage());
+    }
+    @Step
+    public void click_on_table_name_sort(String tableName, String sort) {
+        accountManagementPage.clck_on_table_name_sort(tableName,sort);
     }
 }

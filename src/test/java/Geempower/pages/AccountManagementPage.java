@@ -19,6 +19,7 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import java.util.List;
 
 import static ch.lambdaj.Lambda.convert;
+import static ch.lambdaj.Lambda.forEach;
 
 @DefaultUrl("http://qa.geempower.com/geempower/")
 //@DefaultUrl("http://awsdev-geempower.industrial.energy.ge.com/geempower/")
@@ -86,5 +87,18 @@ public class AccountManagementPage extends PageObject{
 
     public boolean isFeaturedToolsWidgetDisplayedInTheTopOfThePage() {
         return $(Path.FEATURED_TOOLS_WIDGET).isDisplayed();
+    }
+
+    public void clck_on_table_name_sort(String tableName, String sort) {
+        List<WebElementFacade> namesOftable = findAll(By.xpath(Path.TITLE_LIST_HEADERS_OF_THE_TABLE));
+//        String [] qwe= namesOftable.get(0).getValue().split("");
+        for (WebElementFacade webElementFacade : namesOftable){
+            webElementFacade.getText();
+            if (webElementFacade.getText().equals(tableName)){
+                webElementFacade.click();
+                return;
+            }
+        }
+
     }
 }

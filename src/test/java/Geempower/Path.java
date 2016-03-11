@@ -17,8 +17,19 @@ public interface Path {
     //    Account Managenment page
     String ACOUNT_MANAGEMENT_LOGO = ".//p[.='Account Management']";
     String ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
+    String TITLE_LIST_HEADERS_OF_THE_TABLE = ".//tr[@class ='table-row-visible-lg-block']/th[(contains(@aria-label,'activate to sort column'))and(not (contains(@class,'hide'))) ]  ";
+    String LIST_OF_ACCOUNTS = ".//tbody//td/a[contains(@href,'')][1]";
+    String LIST_OF_ACCOUNT_NAMES = "//tbody//td[contains(@class,'account-name-col table-visible-lg-block')]";
+    String LIST_OF_SITIES = "//tbody//td[contains(@class,'city-col table-visible-lg-block')]";
+    String LIST_OF_STATES = "//tbody//td[contains(@class,'table-visible-lg-block')]";
+    String LIST_OF_SALES_ORG = "//tbody//td[contains(@class,'sales-org-col table-visible-lg-block')]";
+    String LIST_OF_SALES_CHANNELS = "//tbody//td[contains(@class,'sales-channel-col table-visible-lg-block')]";
 
- //=================================================================
+
+
+
+
+    //=================================================================
 
 //    Dashboard
     String LIST_BUTTONS_AT_TOOLTIP ="//a[contains(@class,'introjs-button')]" ;

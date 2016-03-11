@@ -58,4 +58,9 @@ public class GeempowerBinder {
         steps.checkThatPriceAndAvailabilityWidgetIsDisplayed();
         steps.checkThatFeaturedToolsWidgetIsDisplayed();
     }
+
+    @When("^Click \"([^\"]*)\" \"([^\"]*)\"$")
+    public void Click(String tableName, String sort) throws Throwable {
+        steps.click_on_table_name_sort(tableName,sort);
+    }
 }
