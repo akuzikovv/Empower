@@ -24,14 +24,13 @@ import static ch.lambdaj.Lambda.forEach;
 @DefaultUrl("http://qa.geempower.com/geempower/")
 //@DefaultUrl("http://awsdev-geempower.industrial.energy.ge.com/geempower/")
 
-public class AccountManagementPage extends PageObject{
+public class AccountManagementPage extends PageObject {
 
     /*@FindBy(xpath = Path.USER_ID_FIELD)
     WebElementFacade userIdField;
 
     @FindBy(xpath = Path.ACOUNT_MANAGEMENT_LOGO)
     WebElementFacade accountManLogo;*/
-
 
 
     public void loginUser() {
@@ -55,9 +54,9 @@ public class AccountManagementPage extends PageObject{
 
     public void clickNameOfButton(String nameOfButton) {
         List<WebElementFacade> buttonsAtTheTooltip = findAll(By.xpath(Path.LIST_BUTTONS_AT_TOOLTIP));
-        for (WebElementFacade webElementFacade : buttonsAtTheTooltip){
+        for (WebElementFacade webElementFacade : buttonsAtTheTooltip) {
             webElementFacade.getText();
-            if (webElementFacade.getText().equals(nameOfButton)){
+            if (webElementFacade.getText().equals(nameOfButton)) {
                 webElementFacade.click();
                 return;
             }
@@ -91,11 +90,15 @@ public class AccountManagementPage extends PageObject{
 
     public void clck_on_table_name_sort(String tableName, String sort) {
         List<WebElementFacade> namesOftable = findAll(By.xpath(Path.TITLE_LIST_HEADERS_OF_THE_TABLE));
-//        String [] qwe= namesOftable.get(0).getValue().split("");
-        for (WebElementFacade webElementFacade : namesOftable){
+        String sorting = "";
+        for (WebElementFacade webElementFacade : namesOftable) {
             webElementFacade.getText();
-            if (webElementFacade.getText().equals(tableName)){
-                webElementFacade.click();
+            if (webElementFacade.getText().equals(tableName)) {
+                do {
+                    webElementFacade.click();
+                    waitABit(10000);
+                    sorting = webElementFacade.getAttribute("aria-sort");
+                } while (sorting.equals(sort));
                 return;
             }
         }
