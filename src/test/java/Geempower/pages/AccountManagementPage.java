@@ -15,14 +15,16 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static ch.lambdaj.Lambda.convert;
 import static ch.lambdaj.Lambda.forEach;
 
 @DefaultUrl("http://qa.geempower.com/geempower/")
-//@DefaultUrl("http://awsdev-geempower.industrial.energy.ge.com/geempower/")
+
 
 public class AccountManagementPage extends PageObject {
 
@@ -49,7 +51,7 @@ public class AccountManagementPage extends PageObject {
 
 
     public void clickAccountNumber() {
-        $(Path.ACCOUNT_NUMBER).click();
+        $(Path.NA_ACCOUNT_NUMBER).click();
     }
 
     public void clickNameOfButton(String nameOfButton) {
@@ -103,5 +105,32 @@ public class AccountManagementPage extends PageObject {
             }
         }
 
+    }
+
+    public void search_for_account(String na_account) {
+        $(Path.SEARCH_FIELD).sendKeys(na_account);
+        $(Path.SEARCH_BUTTON).click();
+    }
+
+    public void click_cart_icon() {
+//        withTimeoutOf(200,TimeUnit.MILLISECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.OVERLAY_1)));
+//        withTimeoutOf(200,TimeUnit.MILLISECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.OVERLAY_2)));
+        withTimeoutOf(100,TimeUnit.MILLISECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.OVERLAY_3)));
+        $(Path.CART_ICON).click();
+
+    }
+
+    public boolean isCartPageOpened() {
+        return $(Path.MY_CART_LOGO).isDisplayed();
+    }
+
+    public void add_product_to_cart(String product) {
+        $(Path.ADD_ITEM_BUTTON).click();
+        $(Path.PRODUCT_NUMBER_FIELD).sendKeys(product);
+        $(Path.ADD_BUTTON).click();
+    }
+
+    public boolean is_poructAddedToTheCart() {
+        return $(Path.PRODUCT_IN_THE_TABLE).isDisplayed();
     }
 }

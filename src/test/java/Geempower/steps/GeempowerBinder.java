@@ -4,6 +4,7 @@ package Geempower.steps;
 import Geempower.Path;
 import cucumber.api.PendingException;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
 import net.serenitybdd.core.Serenity;
 import net.thucydides.core.annotations.Steps;
 import cucumber.api.java.en.Given;
@@ -63,4 +64,35 @@ public class GeempowerBinder {
     public void Click(String tableName, String sort) throws Throwable {
         steps.click_on_table_name_sort(tableName,sort);
     }
+
+
+    @When("^Search for NA \"([^\"]*)\" account$")
+    public void searchForNAAccount(String na_account) {
+        steps.search_for_account(na_account);
+
+    }
+
+    @When("^Click on cart icon in the header$")
+    public void clickOnCartIconInTheHeader() {
+        steps.click_on_cart_icon();
+    }
+
+
+
+    @And("^Cart page is opened$")
+    public void cartPageIsOpened()  {
+        steps.checkThatCartIsOpened();
+    }
+
+    @When("^Add product \"([^\"]*)\"to the cart$")
+    public void addProductToTheCart(String product)  {
+        steps.add_product_to_cart(product);
+    }
+
+    @And("^Product is added to the cart$")
+    public void productIsAddedToTheCart() {
+        steps.checkThatProductIsAddedToTheCart ();
+    }
+
+
 }
