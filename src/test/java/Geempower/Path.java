@@ -17,9 +17,9 @@ public interface Path {
     //    Account Managenment page
     String ACOUNT_MANAGEMENT_LOGO = ".//p[.='Account Management']";
     String NA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
-    String LA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
-    String EMEA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
-    String ASIA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
+//    String LA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
+//    String EMEA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
+//    String ASIA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
     String SEARCH_FIELD = ".//input[@id='searchAccount']";
     String SEARCH_BUTTON = ".//button[.='Search'and@class='btn primary-btn account-search-btn']";
     String TITLE_LIST_HEADERS_OF_THE_TABLE = ".//tr[@class ='table-row-visible-lg-block']/th[(contains(@aria-label,'activate to sort column'))and(not (contains(@class,'hide'))) ]  ";
@@ -63,7 +63,35 @@ public interface Path {
     String NEXT_BUTTON = ".//button[@class='btn primary-btn step1-next-btn']";
     String PO_NUMBER_INPUT = ".//*[@id='poNumber']";
     String JOB_NAME_INPUT = ".//*[@id='jobName']";
-    String 
+    String TOASTER_SUCCESS_ADD_PRODUCT = ".//div[@class='toast toast-success']";
+    String SHIPMENT_ADDRESS_COMBOBOX = ".//*[@id='select2-shipmentAddress-container']";
+    String FISRS_STOCK_ADDRESS = ".//ul[@class='select2-results__options select2-results__options--nested']/li[1]";
+    String SHIPPING_NOTE_INPUT = ".//*[@id='shippingNote']";
+    String SHIP_PAYMENT_METHOD_COMBOBOX = ".//*[@id='select2-paymentmethod-container']";
+    String SHIP_METHOD_COMBOBOX = ".//*[@id='select2-selectedShipMethod-container']";
+    String CARRIER_COMBOBOX = ".//*[@id='select2-carrier-select-container']";
+    String CARRIER_ACCOUNT_NUMBER_INPUT = ".//*[@id='carrier-account']";
+    String SHIPPING_BILLING_INFO_WIZARD_ACTIVE = ".//ul/li[@class='shipping-billing-info active']";
+    String ORDER_SUMMERY_WIXARD_ECTIVE = ".//ul/li[@class='order-summary active']";
+    String PO_NUMBER_SUMMERY = ".//p[@class='poNumberSummary']";
+    String JON_NAME_SUMMERY = ".//p[@class='jobNameSummary']";
+    String BILL_TO = ".//p[@class='billToSummary']";
+    String SHIPPING_NOTE_SUMMERY = ".//p[@class='shippingNoteSummary']";
+    String ORDER_NOTE_SUMMERY = "//p[@class='orderNoteSummary']";
+    String SHIPMENT_ADDRESS_SUMMERY = "//p[@class='shipmentAddressSummary']";
+    String SHIP_PAYMENT_METHOD_SUMMERY = "//p[@class='paymentmethodSummary']";
+    String SHIP_OPTIONS_SUMMERY = "//p[@class='shipmentOptionSummary']";
+    String SHIP_METHOD_SUMMERY = "//p[@class='shipMethodSummary']";
+    String CARRIER_SUMMERY = "//p[@class='carrierSummary']";
+    String CARRIER_ACCOUNT_NUMDER_SUMMERY = "//p[@class='carrierAccountSummary']";
+    String REQ_DATE_SUMMERY = "//p[@class='reqDateSummary']";
+    String PLACE_ORDER_BUTTON = ".//button[Contains(@class,'place-order-btn')]";
+    String TERMS_AND_CONDITIONS_CHECKBOX = ".//input[@id='term_condtion']";
+    String SUBMIT_ORDER_BUTTON = ".//button[contains(@class,'submit-order-btn')]";
+
+
+
+
 
 
 
