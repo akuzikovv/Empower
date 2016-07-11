@@ -12,3 +12,13 @@ Feature: Geempower Order Entry
     And Cart page is opened
     When Add product "THQL1120"to the cart
     And Product is added to the cart
+    When Click Next buttton
+    When Enter PO number "1A"
+    When Choose stok address
+    When Click Next buttton
+    And Minimum Shipment Changes popus is displayed
+    When Click Continue button
+    When Click place Order button
+    Then Order
+
+

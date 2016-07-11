@@ -133,4 +133,30 @@ public class AccountManagementPage extends PageObject {
     public boolean is_poructAddedToTheCart() {
         return $(Path.PRODUCT_IN_THE_TABLE).isDisplayed();
     }
+
+    public void click_Next_Button() {
+        $(Path.NEXT_BUTTON).click();
+
+    }
+
+    public void enter_po_number( String poNUmber) {
+        $(Path.PO_NUMBER_INPUT).sendKeys(poNUmber);
+    }
+
+    public void choose_stock_address(String stokAddress) {
+        $(Path.SHIPMENT_ADDRESS_COMBOBOX).click();
+        $(Path.FISRS_STOCK_ADDRESS).click();
+    }
+
+    public boolean is_minimum_popup_displayed() {
+        return $(Path.MINIMUM_SHIPMENT_CHARGES_POPUP).isDisplayed();
+    }
+
+    public void clickContinueButton() {
+        $(Path.CONTINUE_BUTTON_MIN_SHOPMENT_POPUP).click();
+    }
+
+    public void clickPlaceOrderButton() {
+        $(Path.PLACE_ORDER_BUTTON).click();
+    }
 }

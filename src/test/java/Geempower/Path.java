@@ -88,11 +88,20 @@ public interface Path {
     String PLACE_ORDER_BUTTON = ".//button[Contains(@class,'place-order-btn')]";
     String TERMS_AND_CONDITIONS_CHECKBOX = ".//input[@id='term_condtion']";
     String SUBMIT_ORDER_BUTTON = ".//button[contains(@class,'submit-order-btn')]";
+    String ORDER_SUCCESSFUL_POPUP = ".//*[@id='order-confirmation-modal']//h4[.='Order Successful']";
+    String ORDER_SUCCESSFUL_POPUP_ORDER_NUMBER = "//span[@class='orderNumber']";
+    String ORDER_SUCCESSFUL_POPUP_CLOSE_BUTTON = ".//*[@id='order-confirmation-modal']//button[.='Close']";
+    String MINIMUM_SHIPMENT_CHARGES_POPUP = ".//*[@id='minimum-shipment-charges-modal']/div//h4";
+    String CONTINUE_BUTTON_MIN_SHOPMENT_POPUP = "//*[@id='minimum-shipment-charges-modal']//button[contains(text(),'Continue')]";
 
 
+//    =======================================================================
 
 
+//    Order Details
 
+    String ORDER_DETAILS_PAGE = ".//h3[.='Order Details']";
+    String ORDER_DETAILS_ORDER_NUMBER = ".//div[@class='panel-body']/ul[1]/li[1]";
 
 
 

@@ -2,6 +2,7 @@ package Geempower.steps;
 
 
 import Geempower.Path;
+import Geempower.pages.AccountManagementPage;
 import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -95,4 +96,37 @@ public class GeempowerBinder {
     }
 
 
+    @When("^Click Next buttton$")
+    public void clickNextButtton() {
+        steps.click_Next_buttob();
+
+    }
+
+    @When("^Enter PO number \"([^\"]*)\"$")
+    public void enterPONumber(String poNUmber)  {
+        steps.enter_po_number(poNUmber);
+    }
+
+    @When("^Choose stok address$")
+    public void chooseStokAddress(String stokAddress)  {
+        steps.choose_stock_address(stokAddress);
+
+    }
+
+    @And("^Minimum Shipment Changes popus is displayed$")
+    public void minimumShipmentChangesPopusIsDisplayed() {
+        steps.check_that_popup_is_appeared();
+
+    }
+
+    @When("^Click Continue button$")
+    public void clickContinueButton() {
+        steps.click_Continue_button();
+    }
+
+    @When("^Click place Order button$")
+    public void clickPlaceOrderButton() {
+        steps.click_place_order_button();
+
+    }
 }

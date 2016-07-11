@@ -3,6 +3,7 @@ package Geempower.steps.serenity;
 import Geempower.Path;
 import Geempower.pages.AccountManagementPage;
 import Geempower.pages.DashboardPage;
+import cucumber.api.java.cs.A;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.pages.WebElementState;
 import net.thucydides.core.annotations.Step;
@@ -95,5 +96,32 @@ public class EndUserSteps extends ScenarioSteps {
     @Step
     public void checkThatProductIsAddedToTheCart() {
         Assert.assertTrue(accountManagementPage.is_poructAddedToTheCart());
+    }
+
+    @Step
+    public void click_Next_buttob() {
+        accountManagementPage.click_Next_Button();
+    }
+
+    @Step
+    public void enter_po_number( String poNUmber) {
+        accountManagementPage.enter_po_number(poNUmber);
+    }
+    @Step
+    public void choose_stock_address(String stokAddress) {
+        accountManagementPage.choose_stock_address(stokAddress);
+    }
+
+    @Step
+    public void check_that_popup_is_appeared() {
+        Assert.assertTrue(accountManagementPage.is_minimum_popup_displayed());
+    }
+
+    public void click_Continue_button() {
+        accountManagementPage.clickContinueButton();
+    }
+
+    public void click_place_order_button() {
+        accountManagementPage.clickPlaceOrderButton();
     }
 }
