@@ -17,6 +17,7 @@ public interface Path {
     //    Account Managenment page
     String ACOUNT_MANAGEMENT_LOGO = ".//p[.='Account Management']";
     String NA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
+    String LIST_OF_ACCOUNTS_ACCOUNT_MANAGEMENT = ".//div[@class='my-pending-accounts-wrapper']//tr[@class='odd'or@class='even']/*[2]/a";
 //    String LA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
 //    String EMEA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
 //    String ASIA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
@@ -48,6 +49,10 @@ public interface Path {
     String OVERLAY_1 = "//div[@class='introjs-tooltipReferenceLayer']";
     String OVERLAY_2 = "//div[@class='introjs-overlay']";
     String OVERLAY_3 = "//div[@class='introjs-helperLayer ']";
+    String P_AND_A_WIDGET_INPUT_PRODUCT_NUMBER_FIELD = ".//*[@id='rows0.productNo']";
+    String P_AND_A_WIDGET_CHECK_PA_BUTTON = ".//*[@id='check-availability-btn']";
+    String SELECT_SHIP_ADDRESS_POPUP = "//h4[.='Select Ship Address']";
+    String SUBMIT_BUTTON_AT_SELECT_SHIP_ADDRESS_POPUP = ".//button[.='Submit']";
 
 
 //===============================================================
@@ -61,6 +66,7 @@ public interface Path {
     String PRODUCT_IN_THE_TABLE = ".//td/a[.='THQL1120'and contains(@class,'catalog-name-input')]";
     String ORDER_NOTE_FIELD_OE1 = ".//*[@id='orderNote']";
     String NEXT_BUTTON = ".//button[@class='btn primary-btn step1-next-btn']";
+    String NEXT_BUTTON_SECOND_STEP = ".//button[@class='btn primary-btn vaidateCheckoutBtn']";
     String PO_NUMBER_INPUT = ".//*[@id='poNumber']";
     String JOB_NAME_INPUT = ".//*[@id='jobName']";
     String TOASTER_SUCCESS_ADD_PRODUCT = ".//div[@class='toast toast-success']";
@@ -69,10 +75,11 @@ public interface Path {
     String SHIPPING_NOTE_INPUT = ".//*[@id='shippingNote']";
     String SHIP_PAYMENT_METHOD_COMBOBOX = ".//*[@id='select2-paymentmethod-container']";
     String SHIP_METHOD_COMBOBOX = ".//*[@id='select2-selectedShipMethod-container']";
-    String CARRIER_COMBOBOX = ".//*[@id='select2-carrier-select-container']";
+    String CARRIER_COMBOBOX = ".//*[@id='select2-carrier-select-container']/following-sibling::span";
+    String TRANSPORTES_PELAES_ITEM_CARRIER_LA = ".//li[.='Transportes Pelaez']";
     String CARRIER_ACCOUNT_NUMBER_INPUT = ".//*[@id='carrier-account']";
     String SHIPPING_BILLING_INFO_WIZARD_ACTIVE = ".//ul/li[@class='shipping-billing-info active']";
-    String ORDER_SUMMERY_WIXARD_ECTIVE = ".//ul/li[@class='order-summary active']";
+    String ORDER_SUMMERY_WIZARD_ACTIVE = ".//ul/li[@class='order-summary active']";
     String PO_NUMBER_SUMMERY = ".//p[@class='poNumberSummary']";
     String JON_NAME_SUMMERY = ".//p[@class='jobNameSummary']";
     String BILL_TO = ".//p[@class='billToSummary']";
@@ -85,15 +92,17 @@ public interface Path {
     String CARRIER_SUMMERY = "//p[@class='carrierSummary']";
     String CARRIER_ACCOUNT_NUMDER_SUMMERY = "//p[@class='carrierAccountSummary']";
     String REQ_DATE_SUMMERY = "//p[@class='reqDateSummary']";
-    String PLACE_ORDER_BUTTON = ".//button[Contains(@class,'place-order-btn')]";
-    String TERMS_AND_CONDITIONS_CHECKBOX = ".//input[@id='term_condtion']";
+    String PLACE_ORDER_BUTTON = "//button[.='Place Order']";
+    String TERMS_AND_CONDITIONS_CHECKBOX =  "//div[@id='terms-condition-modal']//div[@class='checkbox']/div";
     String SUBMIT_ORDER_BUTTON = ".//button[contains(@class,'submit-order-btn')]";
     String ORDER_SUCCESSFUL_POPUP = ".//*[@id='order-confirmation-modal']//h4[.='Order Successful']";
     String ORDER_SUCCESSFUL_POPUP_ORDER_NUMBER = "//span[@class='orderNumber']";
     String ORDER_SUCCESSFUL_POPUP_CLOSE_BUTTON = ".//*[@id='order-confirmation-modal']//button[.='Close']";
     String MINIMUM_SHIPMENT_CHARGES_POPUP = ".//*[@id='minimum-shipment-charges-modal']/div//h4";
+    String MINIMUM_SHIPMENT_CHARGES_LA_POPUP = "//*[@id='minimum-shipment-charges-mexico-modal']/div//h4";
     String CONTINUE_BUTTON_MIN_SHOPMENT_POPUP = "//*[@id='minimum-shipment-charges-modal']//button[contains(text(),'Continue')]";
-
+    String OVERLAY_MINIMAL_SHIPMENT_CHARGES = ".//*[@id='minimum-shipment-charges-modal']";
+    String PROGRESS_INDICATOR = "//img[contains(@src,'loader')]";
 
 //    =======================================================================
 
@@ -103,7 +112,14 @@ public interface Path {
     String ORDER_DETAILS_PAGE = ".//h3[.='Order Details']";
     String ORDER_DETAILS_ORDER_NUMBER = ".//div[@class='panel-body']/ul[1]/li[1]";
 
-
-
 //    =======================================================================
+//    Price & Availability
+    String PRICE_AND_AVAILABILITY_PAGE = ".//h3[.='Price and Availability']";
+    String PRODUCT_IN_THE_TABLE_AT_PRICE_AND_AVAILABILITY = ".//td/a[.='THQL1120'and contains(@class,'catalog-name-input')]";
+    String CHECKBOX_AT_PRODUCT_LINE_P_ANA_A = ".//*[@id='priceTable']/tbody//ins";
+    String ADD_TO_CART_BUTTON = ".//button[contains(text(),'Add to Cart')]";
+
+
+//    ===========================================================================
+
 }

@@ -37,8 +37,8 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     @Step
-    public void clickAccountNumber() {
-        accountManagementPage.clickAccountNumber();
+    public void clickAccountNumber(String account) {
+        accountManagementPage.clickAccountNumber(account);
     }
 
     @Step
@@ -75,8 +75,8 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     @Step
-    public void search_for_account(String na_account) {
-        accountManagementPage.search_for_account(na_account);
+    public void search_for_account(String account) {
+        accountManagementPage.search_for_account(account);
     }
 
     @Step
@@ -108,20 +108,77 @@ public class EndUserSteps extends ScenarioSteps {
         accountManagementPage.enter_po_number(poNUmber);
     }
     @Step
-    public void choose_stock_address(String stokAddress) {
-        accountManagementPage.choose_stock_address(stokAddress);
+    public void choose_stock_address() {
+        accountManagementPage.choose_stock_address();
     }
 
     @Step
     public void check_that_popup_is_appeared() {
         Assert.assertTrue(accountManagementPage.is_minimum_popup_displayed());
     }
-
+    @Step
     public void click_Continue_button() {
         accountManagementPage.clickContinueButton();
     }
-
+    @Step
     public void click_place_order_button() {
         accountManagementPage.clickPlaceOrderButton();
+    }
+    @Step
+    public void checkTermsAndConditionsCheckbox() {
+        accountManagementPage.checkTAndCCheckbox();
+    }
+
+    @Step
+    public void clickSubmitButton() {
+        accountManagementPage.clickSubmitButton();
+    }
+    @Step
+    public void checkThatOrderDetailsPageIsOpened() {
+        Assert.assertTrue(accountManagementPage.isOrderDetailsPageOpened());
+    }
+    @Step
+    public void clickNextButttonSecondStep() {
+        accountManagementPage.clickNextButttonSecondStep();
+    }
+    @Step
+    public void clickCloseButtton() {
+        accountManagementPage.clickCloseButtton();
+    }
+    @Step
+    public void enterProducctNumberToThePAndAVidget(String product) {
+        accountManagementPage.enterProductNumberPaAVidget(product);
+    }
+    @Step
+    public void checkThatSelectShipAddressPopupIsAppeared() {
+        Assert.assertTrue(accountManagementPage.isSelectShipAddresspopupAppeared());
+    }
+    @Step
+    public void clickSubmitButtonAtSelectShipAddresspopup() {
+        accountManagementPage.clickSubmitButtonAtSelectShipAddresspopup();
+    }
+    @Step
+    public void checkThatPriceAndAvailabilityPageOpened() {
+        Assert.assertTrue(accountManagementPage.isPriceAndAvailabilityPageOpened());
+    }
+
+    public void checkThatProductIsAddedToThePriceAndAvailabilityPage() {
+        Assert.assertTrue(accountManagementPage.isProductAddedToThePAndA());
+    }
+
+    public void clickAddToCartButton() {
+        accountManagementPage.clicAddToCartButton();
+    }
+
+    public void checkCheckboxForProductAtPAndA() {
+        accountManagementPage.checkCheckboxForProductAtPAndA();
+    }
+
+    public void chooseCarrier_LA() {
+        accountManagementPage.chooseCarrierLA();
+    }
+
+    public void checkThatMinimumChargesPopupLAdisplayed() {
+        Assert.assertTrue(accountManagementPage.isMinimumPopupLAdisplayed());
     }
 }
