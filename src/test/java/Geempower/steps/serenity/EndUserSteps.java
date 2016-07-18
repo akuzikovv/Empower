@@ -181,4 +181,20 @@ public class EndUserSteps extends ScenarioSteps {
     public void checkThatMinimumChargesPopupLAdisplayed() {
         Assert.assertTrue(accountManagementPage.isMinimumPopupLAdisplayed());
     }
+
+    public void clickAddMoreItemsButton() {
+        accountManagementPage.clickAddMoreItemsButton();
+    }
+
+    public void changeItemsQty(String qty) {
+        accountManagementPage.changeQtyOfProducts(qty);
+    }
+
+    public void clickPriseAndAvailabilityButtonOE1() {
+        accountManagementPage.clickPriceAndAvailabilityButtonOE1();
+    }
+
+    public void uploaadDocumentWithProducts(String arg0) {
+        accountManagementPage.uploadaDocWithProducts(arg0);
+    }
 }

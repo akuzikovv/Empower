@@ -211,4 +211,26 @@ public class GeempowerBinder {
     public void minimumShipmentChangesPopusLAIsDisplayed() {
         steps.checkThatMinimumChargesPopupLAdisplayed();
     }
+
+    @When("^Click Add More Items Button$")
+    public void clickAddMoreItemsButton()  {
+       steps.clickAddMoreItemsButton();
+    }
+
+
+    @When("^Change Qty of items to \"([^\"]*)\"$")
+    public void changeQtyOfItemsTo(String qty) {
+        steps.changeItemsQty(qty);
+    }
+
+    @And("^Update Price and Availability$")
+    public void updatePriceAndAvailability() {
+        steps.clickPriseAndAvailabilityButtonOE1();
+    }
+
+    @When("^upload \"([^\"]*)\" document with products$")
+    public void uploadDocumentWithProducts(String arg0)  {
+       steps.uploaadDocumentWithProducts(arg0);
+
+    }
 }

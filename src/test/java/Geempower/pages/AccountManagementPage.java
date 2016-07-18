@@ -3,7 +3,7 @@ package Geempower.pages;
 import ch.lambdaj.function.convert.Converter;
 import Geempower.Path;
 import gherkin.lexer.Pa;
-import javafx.collections.ListChangeListener;
+//import javafx.collections.ListChangeListener;
 import net.serenitybdd.core.pages.WebElementState;
 import net.thucydides.core.Thucydides;
 import net.thucydides.core.annotations.DefaultUrl;
@@ -231,7 +231,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public boolean isPriceAndAvailabilityPageOpened() {
-        waitABit(5000);
+//        waitABit(5000);
         return $(Path.PRICE_AND_AVAILABILITY_PAGE).isEnabled();
     }
 
@@ -256,6 +256,33 @@ public class AccountManagementPage extends PageObject {
     }
 
     public boolean isMinimumPopupLAdisplayed() {
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.MINIMUM_SHIPMENT_CHARGES_LA_POPUP)));
         return $(Path.MINIMUM_SHIPMENT_CHARGES_LA_POPUP).isDisplayed();
+
+    }
+
+    public void clickAddMoreItemsButton() {
+        $(Path.ADD_MORE_ITEMS).click();
+    }
+
+    public void changeQtyOfProducts(String qty) {
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.QTY_INPUT_OE1)));
+        $(Path.QTY_INPUT_OE1).clear();
+        $(Path.QTY_INPUT_OE1).sendKeys(qty);
+    }
+
+    public void clickPriceAndAvailabilityButtonOE1() {
+        waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.UPDATE_PRISE_AND_AVAILABILITY_BUTTON_OE1)));
+        waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.CHECKBOX_FIRSR_PRODUCT_OE1)));
+        $(Path.CHECKBOX_FIRSR_PRODUCT_OE1).click();
+
+        $(Path.UPDATE_PRISE_AND_AVAILABILITY_BUTTON_OE1).click();
+        waitABit(2000);
+//        waitFor(ExpectedConditions.attributeContains(By.xpath(Path.UPDATE_PRISE_AND_AVAILABILITY_BUTTON_OE1),"disabled",""));
+        waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.PROGRESS_INDICATOR)));
+    }
+
+    public void uploadaDocWithProducts(String arg0) {
+        upload(arg0).to($(Path.UPLOAD_EXCEL_FILE_LINK));
     }
 }

@@ -46,5 +46,24 @@ Feature: Geempower Order Entry
     When Choose Carrier LA
     When Click Next buttton second step
     And Minimum Shipment Changes popus LA is displayed
+    When Click Add More Items Button
+    When Change Qty of items to "20"
+    And Update Price and Availability
+    When Click Next buttton
+    When Click Next buttton second step
+    When Click place Order button
+    When Check Terms and conditions combobox
+    When Click submit button
+    When Click Close buttton
+    Then Order details page is opened
+
+  Scenario: Check that user from EMEA region able to place the order
+    Given open custom login page
+    When login user
+    When Search for NA "9003267" account
+    When Click "9003267" account
+    When Click "Skip" button
+    And  Dashboard page is opened
+    When upload "src/test/resources/files/Test_EMEA.xlsx" document with products
 
 

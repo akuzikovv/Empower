@@ -53,6 +53,7 @@ public interface Path {
     String P_AND_A_WIDGET_CHECK_PA_BUTTON = ".//*[@id='check-availability-btn']";
     String SELECT_SHIP_ADDRESS_POPUP = "//h4[.='Select Ship Address']";
     String SUBMIT_BUTTON_AT_SELECT_SHIP_ADDRESS_POPUP = ".//button[.='Submit']";
+    String UPLOAD_EXCEL_FILE_LINK = ".//span[.='Upload Excel File']";
 
 
 //===============================================================
@@ -103,6 +104,15 @@ public interface Path {
     String CONTINUE_BUTTON_MIN_SHOPMENT_POPUP = "//*[@id='minimum-shipment-charges-modal']//button[contains(text(),'Continue')]";
     String OVERLAY_MINIMAL_SHIPMENT_CHARGES = ".//*[@id='minimum-shipment-charges-modal']";
     String PROGRESS_INDICATOR = "//img[contains(@src,'loader')]";
+    String ADD_MORE_ITEMS = ".//*[@id='minimum-shipment-charges-mexico-modal']//button[.='Add More Items']";
+    String QTY_INPUT_OE1 = ".//*[@id='priceTable']/tbody/tr[1]//input[@class='form-control catalog-qty-input-col onchange-warning']";
+    String UPDATE_PRISE_AND_AVAILABILITY_BUTTON_OE1 = ".//*[@id='updatePricesBtn']";
+    String DISABLED_PRICE_AND_AVAILABILITY_BUTTON_OE1 = ".//*[@id='updatePricesBtn' and@disabled=''] ";
+    String CHECKBOX_FIRSR_PRODUCT_OE1 =  ".//*[@id='priceTable']/tbody/tr[1]//div[@class='checkbox']/div";
+
+
+
+
 
 //    =======================================================================
 
