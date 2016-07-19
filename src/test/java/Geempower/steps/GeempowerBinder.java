@@ -233,4 +233,9 @@ public class GeempowerBinder {
        steps.uploaadDocumentWithProducts(arg0);
 
     }
+
+    @When("^Click Check Price And Availability button$")
+    public void clickCheckPriceAndAvailabilityButton()  {
+        steps.clickCeckPandAButton();
+    }
 }

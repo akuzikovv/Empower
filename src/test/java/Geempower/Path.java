@@ -54,7 +54,8 @@ public interface Path {
     String SELECT_SHIP_ADDRESS_POPUP = "//h4[.='Select Ship Address']";
     String SUBMIT_BUTTON_AT_SELECT_SHIP_ADDRESS_POPUP = ".//button[.='Submit']";
     String UPLOAD_EXCEL_FILE_LINK = ".//span[.='Upload Excel File']";
-
+    String UPLOAD_EXCEL_FILE_INPUT = ".//input[@id='pr-av-file']";
+    String UPLOADED_FILE_PATH = ".//span[contains(text(),'Test_EMEA.xlsx')]";
 
 //===============================================================
 

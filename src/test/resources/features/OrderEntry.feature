@@ -60,10 +60,11 @@ Feature: Geempower Order Entry
   Scenario: Check that user from EMEA region able to place the order
     Given open custom login page
     When login user
-    When Search for NA "9003267" account
+    When Search for NA "9006003" account
     When Click "9003267" account
     When Click "Skip" button
     And  Dashboard page is opened
     When upload "src/test/resources/files/Test_EMEA.xlsx" document with products
+    When Click Check Price And Availability button
 
 

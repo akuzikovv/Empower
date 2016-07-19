@@ -19,6 +19,7 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.io.File;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -283,7 +284,17 @@ public class AccountManagementPage extends PageObject {
     }
 
     public void uploadaDocWithProducts(String arg0) {
-        upload(arg0).to($(Path.UPLOAD_EXCEL_FILE_LINK));
+        waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.OVERLAY_3)));
+//     $(Path.UPLOAD_EXCEL_FILE_LINK).click();
+       upload(arg0).to($(Path.UPLOAD_EXCEL_FILE_INPUT));
+
+
     }
 
+
+    public void ClickPandAButton() {
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.UPLOADED_FILE_PATH)));
+        waitABit(5000);
+        $(Path.P_AND_A_WIDGET_CHECK_PA_BUTTON).click();
+    }
 }

@@ -197,4 +197,8 @@ public class EndUserSteps extends ScenarioSteps {
     public void uploaadDocumentWithProducts(String arg0) {
         accountManagementPage.uploadaDocWithProducts(arg0);
     }
+
+    public void clickCeckPandAButton() {
+        accountManagementPage.ClickPandAButton();
+    }
 }
