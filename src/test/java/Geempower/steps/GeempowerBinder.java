@@ -238,4 +238,20 @@ public class GeempowerBinder {
     public void clickCheckPriceAndAvailabilityButton()  {
         steps.clickCeckPandAButton();
     }
+
+    @When("^Search for EMEA \"([^\"]*)\" account$")
+        public void searchForEMEAAccount(String account) {
+            steps.search_for_account(account);
+    }
+
+    @When("^Enter products \"([^\"]*)\", \"([^\"]*)\" to the P&A vidget$")
+    public void enterProductsToThePAVidget(String arg0, String arg1) {
+        steps.enterProductsToPriceAndAvailabilityCopyPast(arg0, arg1);
+
+    }
+
+    @When("^Check All products in the table$")
+    public void checkAllProductsInTheTable()  {
+        steps.CheckCheckboxInTheHeader();
+    }
 }

@@ -60,11 +60,47 @@ Feature: Geempower Order Entry
   Scenario: Check that user from EMEA region able to place the order
     Given open custom login page
     When login user
-    When Search for NA "9006003" account
-    When Click "9003267" account
+    When Search for EMEA "9006003" account
+    When Click "9006003" account
     When Click "Skip" button
     And  Dashboard page is opened
     When upload "src/test/resources/files/Test_EMEA.xlsx" document with products
     When Click Check Price And Availability button
+    And product is displayed at the Price and Availability page
+    When Check All products in the table
+    When Add product from P&A page to the cart
+    And Product is added to the cart
+    When Click on cart icon in the header
+    When Click Next buttton
+    When Enter PO number "1A"
+    When Choose stok address
+    When Click Next buttton second step
+    When Click place Order button
+    When Check Terms and conditions combobox
+    When Click submit button
+    When Click Close buttton
+    Then Order details page is opened
 
-
+  Scenario: Check that user from ASIA region able to place the order
+    Given open custom login page
+    When login user
+    When Search for EMEA "30003" account
+    When Click "30003" account
+    When Click "Skip" button
+    And  Dashboard page is opened
+    When Enter products "113701", "113707 20" to the P&A vidget
+    When Click Check Price And Availability button
+#    And product is displayed at the Price and Availability page
+    When Check All products in the table
+    When Add product from P&A page to the cart
+#    And Product is added to the cart
+    When Click on cart icon in the header
+    When Click Next buttton
+    When Enter PO number "1A"
+    When Choose stok address
+    When Click Next buttton second step
+    When Click place Order button
+    When Check Terms and conditions combobox
+    When Click submit button
+    When Click Close buttton
+    Then Order details page is opened

@@ -56,6 +56,7 @@ public interface Path {
     String UPLOAD_EXCEL_FILE_LINK = ".//span[.='Upload Excel File']";
     String UPLOAD_EXCEL_FILE_INPUT = ".//input[@id='pr-av-file']";
     String UPLOADED_FILE_PATH = ".//span[contains(text(),'Test_EMEA.xlsx')]";
+    String P_AND_A_WIDGET_INPUT_COPY_PAST = ".//*[@id='checkprice_form_copy_and_paste']";
 
 //===============================================================
 
@@ -128,7 +129,9 @@ public interface Path {
     String PRICE_AND_AVAILABILITY_PAGE = ".//h3[.='Price and Availability']";
     String PRODUCT_IN_THE_TABLE_AT_PRICE_AND_AVAILABILITY = ".//td/a[.='THQL1120'and contains(@class,'catalog-name-input')]";
     String CHECKBOX_AT_PRODUCT_LINE_P_ANA_A = ".//*[@id='priceTable']/tbody//ins";
+    String CHECKBOX_AT_HEADER_P_ANA_A = ".//*[@id='priceTable']/thead//ins";
     String ADD_TO_CART_BUTTON = ".//button[contains(text(),'Add to Cart')]";
+    String LIST_ACCOUNT_NUMBERS_AT_THE_PRICE_AND_AVAILABILITY = ".//*[@id='priceTable']/tbody/tr//a[@class='catalog-name-input modal-toggle']";
 
 
 //    ===========================================================================

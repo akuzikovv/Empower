@@ -201,4 +201,12 @@ public class EndUserSteps extends ScenarioSteps {
     public void clickCeckPandAButton() {
         accountManagementPage.ClickPandAButton();
     }
+
+    public void enterProductsToPriceAndAvailabilityCopyPast(String arg0, String arg1) {
+        accountManagementPage.enterProductsToPriceAndAvailabilityCP(arg0, arg1);
+    }
+
+    public void CheckCheckboxInTheHeader() {
+        accountManagementPage.CheckCheckcoxAtHeader();
+    }
 }

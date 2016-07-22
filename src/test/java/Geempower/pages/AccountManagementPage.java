@@ -9,6 +9,7 @@ import net.thucydides.core.Thucydides;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.junit.Before;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -143,10 +144,29 @@ public class AccountManagementPage extends PageObject {
     }
 
     public boolean is_poructAddedToTheCart() {
-
         waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.PROGRESS_INDICATOR)));
         return $(Path.PRODUCT_IN_THE_TABLE).isDisplayed();
     }
+
+
+    /*public boolean is_poructAddedToTheCart(product) {
+        boolean a = false;
+        List<WebElementFacade> products = findAll(By.xpath(Path.LIST_ACCOUNT_NUMBERS_AT_THE_PRICE_AND_AVAILABILITY));
+        for (WebElementFacade webElementFacade : products) {
+            webElementFacade.getText();
+            try {webElementFacade.getText().equals(product);}
+            catch (Exception e){
+                return false;
+            }
+
+
+        }
+
+    }*/
+
+
+
+
 
     public void click_Next_Button() {
         waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.NEXT_BUTTON)));
@@ -175,9 +195,10 @@ public class AccountManagementPage extends PageObject {
     public void clickPlaceOrderButton() {
 
         waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(Path.ORDER_SUMMERY_WIZARD_ACTIVE)));
-        waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.PLACE_ORDER_BUTTON)));
+
         //withTimeoutOf(100,TimeUnit.MILLISECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES)));
         waitFor(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(By.xpath(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES))));
+        waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.PLACE_ORDER_BUTTON)));
         waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.PROGRESS_INDICATOR)));
         $(Path.PLACE_ORDER_BUTTON).click();
     }
@@ -270,6 +291,7 @@ public class AccountManagementPage extends PageObject {
         waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.QTY_INPUT_OE1)));
         $(Path.QTY_INPUT_OE1).clear();
         $(Path.QTY_INPUT_OE1).sendKeys(qty);
+        $(Path.QTY_INPUT_OE1).sendKeys(Keys.ENTER);
     }
 
     public void clickPriceAndAvailabilityButtonOE1() {
@@ -278,8 +300,8 @@ public class AccountManagementPage extends PageObject {
         $(Path.CHECKBOX_FIRSR_PRODUCT_OE1).click();
 
         $(Path.UPDATE_PRISE_AND_AVAILABILITY_BUTTON_OE1).click();
-        waitABit(2000);
-//        waitFor(ExpectedConditions.attributeContains(By.xpath(Path.UPDATE_PRISE_AND_AVAILABILITY_BUTTON_OE1),"disabled",""));
+
+        waitFor(ExpectedConditions.attributeContains(By.xpath(Path.UPDATE_PRISE_AND_AVAILABILITY_BUTTON_OE1),"disabled",""));
         waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.PROGRESS_INDICATOR)));
     }
 
@@ -293,8 +315,19 @@ public class AccountManagementPage extends PageObject {
 
 
     public void ClickPandAButton() {
-        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.UPLOADED_FILE_PATH)));
+//        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.UPLOADED_FILE_PATH)));
         waitABit(5000);
         $(Path.P_AND_A_WIDGET_CHECK_PA_BUTTON).click();
+    }
+
+    public void enterProductsToPriceAndAvailabilityCP(String arg0, String arg1) {
+        $(Path.P_AND_A_WIDGET_INPUT_COPY_PAST).sendKeys(arg0);
+        $(Path.P_AND_A_WIDGET_INPUT_COPY_PAST).sendKeys(Keys.ENTER);
+        $(Path.P_AND_A_WIDGET_INPUT_COPY_PAST).sendKeys(arg1);
+
+    }
+
+    public void CheckCheckcoxAtHeader() {
+        $(Path.CHECKBOX_AT_HEADER_P_ANA_A).click();
     }
 }
