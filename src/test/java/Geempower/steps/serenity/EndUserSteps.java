@@ -161,52 +161,57 @@ public class EndUserSteps extends ScenarioSteps {
     public void checkThatPriceAndAvailabilityPageOpened() {
         Assert.assertTrue(accountManagementPage.isPriceAndAvailabilityPageOpened());
     }
-
+    @Step
     public void checkThatProductIsAddedToThePriceAndAvailabilityPage() {
         Assert.assertTrue(accountManagementPage.isProductAddedToThePAndA());
     }
-
+    @Step
     public void clickAddToCartButton() {
         accountManagementPage.clicAddToCartButton();
     }
-
+    @Step
     public void checkCheckboxForProductAtPAndA() {
         accountManagementPage.checkCheckboxForProductAtPAndA();
     }
-
+    @Step
     public void chooseCarrier_LA() {
         accountManagementPage.chooseCarrierLA();
     }
-
+    @Step
     public void checkThatMinimumChargesPopupLAdisplayed() {
         Assert.assertTrue(accountManagementPage.isMinimumPopupLAdisplayed());
     }
-
+    @Step
     public void clickAddMoreItemsButton() {
         accountManagementPage.clickAddMoreItemsButton();
     }
-
+    @Step
     public void changeItemsQty(String qty) {
         accountManagementPage.changeQtyOfProducts(qty);
     }
-
+    @Step
     public void clickPriseAndAvailabilityButtonOE1() {
         accountManagementPage.clickPriceAndAvailabilityButtonOE1();
     }
-
+    @Step
     public void uploaadDocumentWithProducts(String arg0) {
         accountManagementPage.uploadaDocWithProducts(arg0);
     }
-
+    @Step
     public void clickCeckPandAButton() {
         accountManagementPage.ClickPandAButton();
     }
-
+    @Step
     public void enterProductsToPriceAndAvailabilityCopyPast(String arg0, String arg1) {
         accountManagementPage.enterProductsToPriceAndAvailabilityCP(arg0, arg1);
     }
-
+    @Step
     public void CheckCheckboxInTheHeader() {
         accountManagementPage.CheckCheckcoxAtHeader();
+    }
+
+    public void ChechIfAllProductsAdded(String arg0, String arg1) throws Throwable {
+        Assert.assertTrue(accountManagementPage.isProductsAddedToTheCart(arg0));
+        Assert.assertTrue(accountManagementPage.isProductsAddedToTheCart(arg0.replace(arg0,arg1)));
     }
 }

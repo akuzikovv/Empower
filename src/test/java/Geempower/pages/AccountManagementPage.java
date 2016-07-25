@@ -149,20 +149,27 @@ public class AccountManagementPage extends PageObject {
     }
 
 
-    /*public boolean is_poructAddedToTheCart(product) {
-        boolean a = false;
-        List<WebElementFacade> products = findAll(By.xpath(Path.LIST_ACCOUNT_NUMBERS_AT_THE_PRICE_AND_AVAILABILITY));
-        for (WebElementFacade webElementFacade : products) {
-            webElementFacade.getText();
-            try {webElementFacade.getText().equals(product);}
-            catch (Exception e){
-                return false;
+    public boolean isProductsAddedToTheCart(String arg0) {
+
+        List<WebElementFacade> webElementFacadeList = findAll(Path.LIST_ACCOUNT_NUMBERS_AT_THE_CART);
+        for (WebElementFacade webElementFacade : webElementFacadeList) {
+            if (webElementFacade.getText().equalsIgnoreCase(arg0)) {
+                return true;
             }
-
-
         }
+        return false;
+    }
 
-    }*/
+    public boolean isProductsDisplayedAtThePriceAndAvailability(String arg0) {
+
+        List<WebElementFacade> webElementFacadeList = findAll(Path.LIST_ACCOUNT_NUMBERS_AT_THE_PRICE_AND_AVAILABILITY);
+        for (WebElementFacade webElementFacade : webElementFacadeList) {
+            if (webElementFacade.getText().equalsIgnoreCase(arg0)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 

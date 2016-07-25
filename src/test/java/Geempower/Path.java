@@ -111,7 +111,7 @@ public interface Path {
     String UPDATE_PRISE_AND_AVAILABILITY_BUTTON_OE1 = ".//*[@id='updatePricesBtn']";
     String DISABLED_PRICE_AND_AVAILABILITY_BUTTON_OE1 = ".//*[@id='updatePricesBtn' and@disabled=''] ";
     String CHECKBOX_FIRSR_PRODUCT_OE1 =  ".//*[@id='priceTable']/tbody/tr[1]//div[@class='checkbox']/div";
-
+    String LIST_ACCOUNT_NUMBERS_AT_THE_CART = ".//*[contains(@class,'cart-table')]/tbody/tr/td[2]/a";
 
 
 

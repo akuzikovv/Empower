@@ -38,8 +38,8 @@ Feature: Geempower Order Entry
     And product is displayed at the Price and Availability page
     When Check product in the table
     When Add product from P&A page to the cart
-    And Product is added to the cart
     When Click on cart icon in the header
+    And Product is added to the cart
     When Click Next buttton
     When Enter PO number "1A"
     When Choose stok address
@@ -71,6 +71,7 @@ Feature: Geempower Order Entry
     When Add product from P&A page to the cart
     And Product is added to the cart
     When Click on cart icon in the header
+    When All products added to the cart "666341", "666606"
     When Click Next buttton
     When Enter PO number "1A"
     When Choose stok address
@@ -90,11 +91,10 @@ Feature: Geempower Order Entry
     And  Dashboard page is opened
     When Enter products "113701", "113707 20" to the P&A vidget
     When Click Check Price And Availability button
-#    And product is displayed at the Price and Availability page
     When Check All products in the table
     When Add product from P&A page to the cart
-#    And Product is added to the cart
     When Click on cart icon in the header
+    When All products added to the cart "113701", "113707"
     When Click Next buttton
     When Enter PO number "1A"
     When Choose stok address

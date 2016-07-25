@@ -254,4 +254,9 @@ public class GeempowerBinder {
     public void checkAllProductsInTheTable()  {
         steps.CheckCheckboxInTheHeader();
     }
+
+    @When("^All products added to the cart \"([^\"]*)\", \"([^\"]*)\"$")
+    public void allProductsAddedToTheCart(String arg0, String arg1) throws Throwable {
+        steps.ChechIfAllProductsAdded(arg0, arg1);
+    }
 }
