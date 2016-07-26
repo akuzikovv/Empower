@@ -140,6 +140,7 @@ public class AccountManagementPage extends PageObject {
     public void add_product_to_cart(String product) {
         $(Path.ADD_ITEM_BUTTON).click();
         $(Path.PRODUCT_NUMBER_FIELD).sendKeys(product);
+        $(Path.PRODUCT_NUMBER_FIELD).sendKeys(Keys.TAB);
         $(Path.ADD_BUTTON).click();
     }
 
