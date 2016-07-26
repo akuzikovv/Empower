@@ -9,6 +9,7 @@ import net.serenitybdd.core.pages.WebElementState;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
+import org.openqa.selenium.Dimension;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
@@ -24,8 +25,9 @@ public class EndUserSteps extends ScenarioSteps {
     @Step
     public void openCustomLoginPage() {
 //        getDriver().manage().window().maximize();
+
         accountManagementPage.open();
-        getDriver().manage().window().maximize();
+        getDriver().manage().window().setSize(new Dimension(1024, 768));
     }
     @Step
     public void loginUser() {
