@@ -27,7 +27,7 @@ public class EndUserSteps extends ScenarioSteps {
 //        getDriver().manage().window().maximize();
 
         accountManagementPage.open();
-        getDriver().manage().window().setSize(new Dimension(1024, 768));
+//        getDriver().manage().window().setSize(new Dimension(1024, 768));
     }
     @Step
     public void loginUser() {
