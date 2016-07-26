@@ -172,9 +172,6 @@ public class AccountManagementPage extends PageObject {
     }
 
 
-
-
-
     public void click_Next_Button() {
         waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.NEXT_BUTTON)));
         $(Path.NEXT_BUTTON).click();
@@ -202,11 +199,11 @@ public class AccountManagementPage extends PageObject {
     public void clickPlaceOrderButton() {
 
         waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(Path.ORDER_SUMMERY_WIZARD_ACTIVE)));
-
-        //withTimeoutOf(100,TimeUnit.MILLISECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES)));
-        waitFor(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(By.xpath(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES))));
+        withTimeoutOf(100, TimeUnit.MILLISECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES)));
+//        waitFor(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(By.xpath(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES))));
         waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.PLACE_ORDER_BUTTON)));
         waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.PROGRESS_INDICATOR)));
+        waitABit(600);
         $(Path.PLACE_ORDER_BUTTON).click();
     }
 
@@ -231,7 +228,8 @@ public class AccountManagementPage extends PageObject {
 
     public void clickNextButttonSecondStep() {
 
-       waitABit(2000); $(Path.NEXT_BUTTON_SECOND_STEP).click();
+        waitABit(2000);
+        $(Path.NEXT_BUTTON_SECOND_STEP).click();
     }
 
     public void clickCloseButtton() {
@@ -308,14 +306,14 @@ public class AccountManagementPage extends PageObject {
 
         $(Path.UPDATE_PRISE_AND_AVAILABILITY_BUTTON_OE1).click();
 
-        waitFor(ExpectedConditions.attributeContains(By.xpath(Path.UPDATE_PRISE_AND_AVAILABILITY_BUTTON_OE1),"disabled",""));
+        waitFor(ExpectedConditions.attributeContains(By.xpath(Path.UPDATE_PRISE_AND_AVAILABILITY_BUTTON_OE1), "disabled", ""));
         waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.PROGRESS_INDICATOR)));
     }
 
     public void uploadaDocWithProducts(String arg0) {
         waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.OVERLAY_3)));
 //     $(Path.UPLOAD_EXCEL_FILE_LINK).click();
-       upload(arg0).to($(Path.UPLOAD_EXCEL_FILE_INPUT));
+        upload(arg0).to($(Path.UPLOAD_EXCEL_FILE_INPUT));
 
 
     }

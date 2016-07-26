@@ -69,7 +69,6 @@ Feature: Geempower Order Entry
     And product is displayed at the Price and Availability page
     When Check All products in the table
     When Add product from P&A page to the cart
-    And Product is added to the cart
     When Click on cart icon in the header
     When All products added to the cart "666341", "666606"
     When Click Next buttton
