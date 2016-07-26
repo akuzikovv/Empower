@@ -223,6 +223,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public boolean isOrderDetailsPageOpened() {
+        waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(Path.ORDER_DETAILS_PAGE)));
         return $(Path.ORDER_DETAILS_PAGE).isDisplayed();
     }
 
