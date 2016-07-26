@@ -23,8 +23,9 @@ public class EndUserSteps extends ScenarioSteps {
 
     @Step
     public void openCustomLoginPage() {
-        getDriver().manage().window().maximize();
+//        getDriver().manage().window().maximize();
         accountManagementPage.open();
+        getDriver().manage().window().maximize();
     }
     @Step
     public void loginUser() {
