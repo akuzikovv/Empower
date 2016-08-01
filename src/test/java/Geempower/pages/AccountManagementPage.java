@@ -2,6 +2,7 @@ package Geempower.pages;
 
 import ch.lambdaj.function.convert.Converter;
 import Geempower.Path;
+
 import gherkin.lexer.Pa;
 //import javafx.collections.ListChangeListener;
 import net.serenitybdd.core.pages.WebElementState;
@@ -20,6 +21,9 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -201,10 +205,11 @@ public class AccountManagementPage extends PageObject {
 
         waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(Path.ORDER_SUMMERY_WIZARD_ACTIVE)));
 //        withTimeoutOf(100, TimeUnit.MILLISECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES)));
-        waitFor(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(By.xpath(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES))));
+//        waitFor(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(By.xpath(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES))));
+        waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES)));
         waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.PLACE_ORDER_BUTTON)));
         waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.PROGRESS_INDICATOR)));
-        waitABit(600);
+//        waitABit(1000);
         $(Path.PLACE_ORDER_BUTTON).click();
     }
 
@@ -315,7 +320,27 @@ public class AccountManagementPage extends PageObject {
     public void uploadaDocWithProducts(String arg0) {
         waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.OVERLAY_3)));
 //     $(Path.UPLOAD_EXCEL_FILE_LINK).click();
-        upload(arg0).to($(Path.UPLOAD_EXCEL_FILE_INPUT));
+        File file = new File(arg0);
+        getDriver().findElement(By.className("upload-file-link")).click();
+        Robot robot = null;
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
+        StringSelection stringSelection = new StringSelection(file.getAbsolutePath());
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+        robot.delay(500);
+        robot.keyPress(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        robot.delay(500);
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+        robot.delay(500);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
 
 
     }
@@ -334,7 +359,17 @@ public class AccountManagementPage extends PageObject {
 
     }
 
-    public void CheckCheckcoxAtHeader() {
+    public void CheckCheckboxAtHeader() {
         $(Path.CHECKBOX_AT_HEADER_P_ANA_A).click();
+    }
+
+    public void clickButtonAtTheNavbar(String arg0) {
+        List<WebElementFacade> webelementFacadeList = findAll(Path.LIST_OF_BUTTONS_AT_NAVBAR_HEADER);
+        for (WebElementFacade webElementFacade : webelementFacadeList){
+            webElementFacade.getText();
+            if(webElementFacade.getText().equals(arg0)){
+                webElementFacade.click();
+            }
+        }
     }
 }

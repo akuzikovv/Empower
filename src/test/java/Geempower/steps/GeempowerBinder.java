@@ -259,4 +259,9 @@ public class GeempowerBinder {
     public void allProductsAddedToTheCart(String arg0, String arg1) throws Throwable {
         steps.ChechIfAllProductsAdded(arg0, arg1);
     }
+
+    @When("^Click on \"([^\"]*)\" link in the header$")
+    public void clickOnLinkInTheHeader(String arg0)  {
+        steps.ClickSavedListsInTheHeader(arg0);
+    }
 }

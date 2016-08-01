@@ -55,8 +55,10 @@ public interface Path {
     String SUBMIT_BUTTON_AT_SELECT_SHIP_ADDRESS_POPUP = ".//button[.='Submit']";
     String UPLOAD_EXCEL_FILE_LINK = ".//span[.='Upload Excel File']";
     String UPLOAD_EXCEL_FILE_INPUT = ".//input[@id='pr-av-file']";
+//    String UPLOAD_EXCEL_FILE_INPUT = "//label[@class='upload-file-link']/span[1]";
     String UPLOADED_FILE_PATH = ".//span[contains(text(),'Test_EMEA.xlsx')]";
     String P_AND_A_WIDGET_INPUT_COPY_PAST = ".//*[@id='checkprice_form_copy_and_paste']";
+    String LIST_OF_BUTTONS_AT_NAVBAR_HEADER = ".//ul[@class=\"nav navbar-nav\"]//a";
 
 //===============================================================
 
@@ -104,7 +106,7 @@ public interface Path {
     String MINIMUM_SHIPMENT_CHARGES_POPUP = ".//*[@id='minimum-shipment-charges-modal']/div//h4";
     String MINIMUM_SHIPMENT_CHARGES_LA_POPUP = "//*[@id='minimum-shipment-charges-mexico-modal']/div//h4";
     String CONTINUE_BUTTON_MIN_SHOPMENT_POPUP = "//*[@id='minimum-shipment-charges-modal']//button[contains(text(),'Continue')]";
-    String OVERLAY_MINIMAL_SHIPMENT_CHARGES = ".//*[@id='minimum-shipment-charges-modal']";
+    String OVERLAY_MINIMAL_SHIPMENT_CHARGES = ".//*[@class='modal fade minimum-shipment-charges-modal-js'and @aria-hidden=\"true\"]";
     String PROGRESS_INDICATOR = "//img[contains(@src,'loader')]";
     String ADD_MORE_ITEMS = ".//*[@id='minimum-shipment-charges-mexico-modal']//button[.='Add More Items']";
     String QTY_INPUT_OE1 = ".//*[@id='priceTable']/tbody/tr[1]//input[@class='form-control catalog-qty-input-col onchange-warning']";
@@ -135,5 +137,19 @@ public interface Path {
 
 
 //    ===========================================================================
+//    Saved Lists
+
+    String ADD_NEW_LIST_BUTTON = "//button[.='Add New List ']";
+    String INPUT_LIST_NAME = ".//*[@class='form-control new-list-input']";
+    String ADD_BUTTON_AT_LISTS_PAGE = ".//button[.='Add']";
+    String LIST_LISTS_IN_THE_TABLE = ".//tbody/tr/td[1]";
+    String ADD_NEW_LIST_BUTTON = "";
+    String ADD_NEW_LIST_BUTTON = "";
+    String ADD_NEW_LIST_BUTTON = "";
+    String ADD_NEW_LIST_BUTTON = "";
+
+
+//    =============================================================================
+
 
 }

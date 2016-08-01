@@ -209,11 +209,15 @@ public class EndUserSteps extends ScenarioSteps {
     }
     @Step
     public void CheckCheckboxInTheHeader() {
-        accountManagementPage.CheckCheckcoxAtHeader();
+        accountManagementPage.CheckCheckboxAtHeader();
     }
     @Step
     public void ChechIfAllProductsAdded(String arg0, String arg1) throws Throwable {
         Assert.assertTrue(accountManagementPage.isProductsAddedToTheCart(arg0));
         Assert.assertTrue(accountManagementPage.isProductsAddedToTheCart(arg0.replace(arg0,arg1)));
+    }
+
+    public void ClickSavedListsInTheHeader(String arg0) {
+        accountManagementPage.clickButtonAtTheNavbar(arg0);
     }
 }
