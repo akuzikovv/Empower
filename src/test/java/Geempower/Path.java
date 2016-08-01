@@ -143,10 +143,7 @@ public interface Path {
     String INPUT_LIST_NAME = ".//*[@class='form-control new-list-input']";
     String ADD_BUTTON_AT_LISTS_PAGE = ".//button[.='Add']";
     String LIST_LISTS_IN_THE_TABLE = ".//tbody/tr/td[1]";
-    String ADD_NEW_LIST_BUTTON = "";
-    String ADD_NEW_LIST_BUTTON = "";
-    String ADD_NEW_LIST_BUTTON = "";
-    String ADD_NEW_LIST_BUTTON = "";
+
 
 
 //    =============================================================================
