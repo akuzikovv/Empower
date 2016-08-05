@@ -114,7 +114,7 @@ public interface Path {
     String DISABLED_PRICE_AND_AVAILABILITY_BUTTON_OE1 = ".//*[@id='updatePricesBtn' and@disabled=''] ";
     String CHECKBOX_FIRSR_PRODUCT_OE1 =  ".//*[@id='priceTable']/tbody/tr[1]//div[@class='checkbox']/div";
     String LIST_ACCOUNT_NUMBERS_AT_THE_CART = ".//*[contains(@class,'cart-table')]/tbody/tr/td[2]/a";
-
+    String CONTINUE_BUTTON_AT_MIN_SHIP_POPUP_EMEA = ".//*[@id='minimum-shipment-charges-emea-modal']//button";
 
 
 
@@ -139,11 +139,18 @@ public interface Path {
 //    ===========================================================================
 //    Saved Lists
 
-    String ADD_NEW_LIST_BUTTON = "//button[.='Add New List ']";
+    String ADD_NEW_LIST_BUTTON = "//button[contains(text(),'Add New List')]";
     String INPUT_LIST_NAME = ".//*[@class='form-control new-list-input']";
     String ADD_BUTTON_AT_LISTS_PAGE = ".//button[.='Add']";
-    String LIST_LISTS_IN_THE_TABLE = ".//tbody/tr/td[1]";
-
+    String LIST_LISTS_IN_THE_TABLE = ".//table[@id='savedListTable']//tbody/tr/td[1]/a";
+    String ADD_PRODUCT_BUTTON_TO_LIST = ".//*[@id='addProduct']";
+    String PRODUCT_IN_THE_TABLE_AT_LIST = ".//td/a[.='THQL1120'and contains(@class,'catalog-name-input')]";
+    String BACK_TO_ALL_LISTS_BUTTON = "//a[@class='back-link']";
+    String ACTION_LIST_BUTTON = "(//td/a[.='1TestAuto']/../../td[last()]//a)[1]";
+    String ALL_LISTS_TEXT = ".//*[.='All Lists']";
+    String DELETE_BUTTON_AT_SAVED_LISTS = "(//td/a[.='1TestAuto']/../../td[last()]//a)[2]";
+    String NEW_LIST_MODAL_POPUP = "//*[@class='modal fade in']";
+    String LIST_NAME_IN_THE_TABLE = "//tr//a[.='$']";
 
 
 //    =============================================================================

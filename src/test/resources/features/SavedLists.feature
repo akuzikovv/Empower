@@ -9,11 +9,12 @@ Feature: Geempower Saved Lists
     When Click "Skip" button
     And  Dashboard page is opened
     When Click on "SAVED LISTS" link in the header
-#    And "All Lists" page is opened
-#    When Create new list
-#    And new list is created
-#    When open list
-#    When  add product to the list
+    And All Lists page is opened
+    When Create new list "1TestAuto"
+    And new list is created "1TestAuto"
+#    When open list "1TestAuto"
+#    When  add product "THQL1120" to the list
 #    And product is added to the list
+#    When number of items is changes to "1"
 #    When delete list
 #    Then list is deleted

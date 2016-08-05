@@ -217,7 +217,30 @@ public class EndUserSteps extends ScenarioSteps {
         Assert.assertTrue(accountManagementPage.isProductsAddedToTheCart(arg0.replace(arg0,arg1)));
     }
 
+    public void checkIfAllProductsAddedToPriceAndAvailability(String arg0, String arg1) {
+        Assert.assertTrue(accountManagementPage.isProductsDisplayedAtThePriceAndAvailability(arg0));
+        Assert.assertTrue(accountManagementPage.isProductsDisplayedAtThePriceAndAvailability(arg0.replace(arg0,arg1)));
+
+    }
+
     public void ClickSavedListsInTheHeader(String arg0) {
         accountManagementPage.clickButtonAtTheNavbar(arg0);
+    }
+
+    public void chechThatAllListsPageIsOpened() {
+        Assert.assertTrue(accountManagementPage.isAllListsPageOpened());
+    }
+
+    public void createNewList(String arg0) {
+        accountManagementPage.createNewList(arg0);
+    }
+
+    public void checkThatNewListIsCreated(String arg0) {
+        Assert.assertTrue(accountManagementPage.isListAddedToTheTable(arg0));
+    }
+
+
+    public void clickContinueButtonAtpopup() {
+        accountManagementPage.clickContinueButtonMinimalChargesPopup();
     }
 }

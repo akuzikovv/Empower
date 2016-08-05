@@ -5,6 +5,7 @@ import Geempower.Path;
 
 import gherkin.lexer.Pa;
 //import javafx.collections.ListChangeListener;
+import net.serenitybdd.core.exceptions.SerenityManagedException;
 import net.serenitybdd.core.pages.WebElementState;
 import net.thucydides.core.Thucydides;
 import net.thucydides.core.annotations.DefaultUrl;
@@ -125,6 +126,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public void search_for_account(String account) {
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.SEARCH_BUTTON)));
         $(Path.SEARCH_FIELD).sendKeys(account);
         $(Path.SEARCH_BUTTON).click();
     }
@@ -206,11 +208,20 @@ public class AccountManagementPage extends PageObject {
         waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(Path.ORDER_SUMMERY_WIZARD_ACTIVE)));
 //        withTimeoutOf(100, TimeUnit.MILLISECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES)));
 //        waitFor(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(By.xpath(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES))));
-        waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES)));
+       try {
+           waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES)));
+       }catch (Exception e){
+
+       }
+        waitForAbsenceOf(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES);
         waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.PLACE_ORDER_BUTTON)));
         waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.PROGRESS_INDICATOR)));
 //        waitABit(1000);
-        $(Path.PLACE_ORDER_BUTTON).click();
+       try {
+           $(Path.PLACE_ORDER_BUTTON).click();
+       }catch (SerenityManagedException e){
+           $(Path.PLACE_ORDER_BUTTON).click();
+       }
     }
 
     public void checkTAndCCheckbox() {
@@ -240,8 +251,14 @@ public class AccountManagementPage extends PageObject {
     }
 
     public void clickCloseButtton() {
-        waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.PROGRESS_INDICATOR)));
-        $(Path.ORDER_SUCCESSFUL_POPUP_CLOSE_BUTTON).click();
+        try {
+            waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.PROGRESS_INDICATOR)));
+        }catch (Exception e){
+
+        }finally {
+            $(Path.ORDER_SUCCESSFUL_POPUP_CLOSE_BUTTON).click();
+        }
+
     }
 
     public void enterProductNumberPaAVidget(String product) {
@@ -364,6 +381,8 @@ public class AccountManagementPage extends PageObject {
     }
 
     public void clickButtonAtTheNavbar(String arg0) {
+//        withTimeoutOf(100, TimeUnit.MILLISECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.OVERLAY_3)));
+        waitABit(500);
         List<WebElementFacade> webelementFacadeList = findAll(Path.LIST_OF_BUTTONS_AT_NAVBAR_HEADER);
         for (WebElementFacade webElementFacade : webelementFacadeList){
             webElementFacade.getText();
@@ -371,5 +390,38 @@ public class AccountManagementPage extends PageObject {
                 webElementFacade.click();
             }
         }
+    }
+
+    public boolean isAllListsPageOpened() {
+//        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.ALL_LISTS_TEXT)));
+       return  $(Path.ALL_LISTS_TEXT).isDisplayed();
+    }
+
+    public void createNewList(String arg0) {
+        $(Path.ADD_NEW_LIST_BUTTON).click();
+        $(Path.INPUT_LIST_NAME).clear();
+        $(Path.INPUT_LIST_NAME).sendKeys(arg0);
+        waitABit(1000);
+        $(Path.ADD_BUTTON_AT_LISTS_PAGE).click();
+    }
+
+    /*public boolean isListAddedToTheTable(String arg0) {
+        getDriver().navigate().refresh();
+        List<WebElementFacade> webElementFacadeList = findAll(Path.LIST_LISTS_IN_THE_TABLE);
+        for (WebElementFacade webElementFacade : webElementFacadeList) {
+            if (webElementFacade.getText().equalsIgnoreCase(arg0)) {
+                return true;
+            }
+        }
+        return false;
+    }*/
+    public boolean isListAddedToTheTable(String arg0){
+//        waitABit(2000);
+        return $(Path.LIST_NAME_IN_THE_TABLE.replace("$",arg0)).isDisplayed();
+    }
+
+    public void clickContinueButtonMinimalChargesPopup() {
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.CONTINUE_BUTTON_AT_MIN_SHIP_POPUP_EMEA)));
+        $(Path.CONTINUE_BUTTON_AT_MIN_SHIP_POPUP_EMEA).click();
     }
 }

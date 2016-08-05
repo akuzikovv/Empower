@@ -260,8 +260,37 @@ public class GeempowerBinder {
         steps.ChechIfAllProductsAdded(arg0, arg1);
     }
 
+    @And("^products added to the P and A page \"([^\"]*)\", \"([^\"]*)\"$")
+    public void productsAddedToThePAndAPage(String arg0, String arg1) throws Throwable {
+        steps.checkIfAllProductsAddedToPriceAndAvailability(arg0, arg1);
+    }
+
+
+
     @When("^Click on \"([^\"]*)\" link in the header$")
     public void clickOnLinkInTheHeader(String arg0)  {
         steps.ClickSavedListsInTheHeader(arg0);
+    }
+
+    @And("All Lists page is opened$")
+    public void pageIsOpened()  {
+        steps.chechThatAllListsPageIsOpened();
+    }
+
+    @When("^Create new list \"([^\"]*)\"$")
+    public void createNewList(String arg0)  {
+        steps.createNewList(arg0);
+
+    }
+
+    @And("^new list is created \"([^\"]*)\"$")
+    public void newListIsCreated(String arg0)  {
+        steps.checkThatNewListIsCreated(arg0);
+    }
+
+
+    @When("^Click Continue button at the Minimum Shipment Charges popup$")
+    public void clickContinueButtonAtTheMinimumShipmentChargesPopup() throws Throwable {
+        steps.clickContinueButtonAtpopup();
     }
 }

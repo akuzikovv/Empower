@@ -66,7 +66,7 @@ Feature: Geempower Order Entry
     And  Dashboard page is opened
     When upload "src/test/resources/files/Test_EMEA.xlsx" document with products
     When Click Check Price And Availability button
-    And product is displayed at the Price and Availability page
+    And products added to the P and A page "666341", "666606"
     When Check All products in the table
     When Add product from P&A page to the cart
     When Click on cart icon in the header
@@ -75,6 +75,7 @@ Feature: Geempower Order Entry
     When Enter PO number "1A"
     When Choose stok address
     When Click Next buttton second step
+    When Click Continue button at the Minimum Shipment Charges popup
     When Click place Order button
     When Check Terms and conditions combobox
     When Click submit button
