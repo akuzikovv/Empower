@@ -51,6 +51,7 @@ public class AccountManagementPage extends PageObject {
         $(Path.PASSWORD_FIELD).clear();
         $(Path.PASSWORD_FIELD).sendKeys(Path.PASSWORD_1);
         $(Path.SIGN_IN_BUTTON).click();
+        getDriver().get("http://qa.geempower.com/geempower/");
     }
 
 
@@ -423,5 +424,9 @@ public class AccountManagementPage extends PageObject {
     public void clickContinueButtonMinimalChargesPopup() {
         waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.CONTINUE_BUTTON_AT_MIN_SHIP_POPUP_EMEA)));
         $(Path.CONTINUE_BUTTON_AT_MIN_SHIP_POPUP_EMEA).click();
+    }
+
+    public void clickCheckoutButton() {
+        $(Path.CHECKOUT_BUTTON).click();
     }
 }

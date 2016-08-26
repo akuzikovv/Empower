@@ -293,4 +293,9 @@ public class GeempowerBinder {
     public void clickContinueButtonAtTheMinimumShipmentChargesPopup() throws Throwable {
         steps.clickContinueButtonAtpopup();
     }
+
+    @When("^Click Checkout button in the dropdoun$")
+    public void clickCheckoutButtonInTheDropdoun() {
+        steps.clickCheckoutButton();
+    }
 }

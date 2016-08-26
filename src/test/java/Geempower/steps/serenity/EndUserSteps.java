@@ -243,4 +243,8 @@ public class EndUserSteps extends ScenarioSteps {
     public void clickContinueButtonAtpopup() {
         accountManagementPage.clickContinueButtonMinimalChargesPopup();
     }
+
+    public void clickCheckoutButton() {
+        accountManagementPage.clickCheckoutButton();
+    }
 }

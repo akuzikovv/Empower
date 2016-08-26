@@ -45,7 +45,7 @@ public interface Path {
     String RECENT_ORDERS_WIDGET = ".//div[contains(@class,'recent-order-panel')]";
     String PRICE_$_AVAILABILITY_WIDGET = ".//div[contains(@class,'catalog-search-panel')]";
     String FEATURED_TOOLS_WIDGET = ".//div[contains(@class,'product-updates-panel')]";
-    String CART_ICON = ".//a[@class='cart-link']";
+    String CART_ICON = ".//a[@class='cart-link dropdown-toggle']";
     String OVERLAY_1 = "//div[@class='introjs-tooltipReferenceLayer']";
     String OVERLAY_2 = "//div[@class='introjs-overlay']";
     String OVERLAY_3 = "//div[@class='introjs-helperLayer ']";
@@ -59,6 +59,7 @@ public interface Path {
     String UPLOADED_FILE_PATH = ".//span[contains(text(),'Test_EMEA.xlsx')]";
     String P_AND_A_WIDGET_INPUT_COPY_PAST = ".//*[@id='checkprice_form_copy_and_paste']";
     String LIST_OF_BUTTONS_AT_NAVBAR_HEADER = ".//ul[@class=\"nav navbar-nav\"]//a";
+    String CHECKOUT_BUTTON = ".//button[.='Checkout']";
 
 //===============================================================
 
@@ -70,7 +71,7 @@ public interface Path {
     String ADD_ITEM_BUTTON = ".//button[contains(text(),'Add Item')]";
     String PRODUCT_IN_THE_TABLE = ".//td/a[.='THQL1120'and contains(@class,'catalog-name-input')]";
     String ORDER_NOTE_FIELD_OE1 = ".//*[@id='orderNote']";
-    String NEXT_BUTTON = ".//button[@class='btn primary-btn step1-next-btn']";
+    String NEXT_BUTTON = ".//button[contains(@class,'btn primary-btn step1-next-btn')] ";
     String NEXT_BUTTON_SECOND_STEP = ".//button[@class='btn primary-btn vaidateCheckoutBtn']";
     String PO_NUMBER_INPUT = ".//*[@id='poNumber']";
     String JOB_NAME_INPUT = ".//*[@id='jobName']";
@@ -147,10 +148,11 @@ public interface Path {
     String PRODUCT_IN_THE_TABLE_AT_LIST = ".//td/a[.='THQL1120'and contains(@class,'catalog-name-input')]";
     String BACK_TO_ALL_LISTS_BUTTON = "//a[@class='back-link']";
     String ACTION_LIST_BUTTON = "(//td/a[.='1TestAuto']/../../td[last()]//a)[1]";
-    String ALL_LISTS_TEXT = ".//*[.='All Lists']";
+    String ALL_LISTS_TEXT = ".//*[.='All Items']";
     String DELETE_BUTTON_AT_SAVED_LISTS = "(//td/a[.='1TestAuto']/../../td[last()]//a)[2]";
     String NEW_LIST_MODAL_POPUP = "//*[@class='modal fade in']";
     String LIST_NAME_IN_THE_TABLE = "//tr//a[.='$']";
+
 
 
 //    =============================================================================

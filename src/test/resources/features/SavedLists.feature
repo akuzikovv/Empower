@@ -8,7 +8,7 @@ Feature: Geempower Saved Lists
     When Click "1318501" account
     When Click "Skip" button
     And  Dashboard page is opened
-    When Click on "SAVED LISTS" link in the header
+    When Click on "SAVED ITEMS" link in the header
     And All Lists page is opened
     When Create new list "1TestAuto"
     And new list is created "1TestAuto"

@@ -9,6 +9,7 @@ Feature: Geempower Order Entry
     When Click "Skip" button
     And  Dashboard page is opened
     When Click on cart icon in the header
+    When Click Checkout button in the dropdoun
     And Cart page is opened
     When Add product "THQL1120"to the cart
     And Product is added to the cart
@@ -39,10 +40,11 @@ Feature: Geempower Order Entry
     When Check product in the table
     When Add product from P&A page to the cart
     When Click on cart icon in the header
+    When Click Checkout button in the dropdoun
     And Product is added to the cart
+    When Choose stok address
     When Click Next buttton
     When Enter PO number "1A"
-    When Choose stok address
     When Choose Carrier LA
     When Click Next buttton second step
     And Minimum Shipment Changes popus LA is displayed
@@ -70,6 +72,7 @@ Feature: Geempower Order Entry
     When Check All products in the table
     When Add product from P&A page to the cart
     When Click on cart icon in the header
+    When Click Checkout button in the dropdoun
     When All products added to the cart "666341", "666606"
     When Click Next buttton
     When Enter PO number "1A"
@@ -94,6 +97,7 @@ Feature: Geempower Order Entry
     When Check All products in the table
     When Add product from P&A page to the cart
     When Click on cart icon in the header
+    When Click Checkout button in the dropdoun
     When All products added to the cart "113701", "113707"
     When Click Next buttton
     When Enter PO number "1A"
