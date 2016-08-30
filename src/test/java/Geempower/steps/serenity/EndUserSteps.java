@@ -20,6 +20,7 @@ public class EndUserSteps extends ScenarioSteps {
 
     AccountManagementPage accountManagementPage;
     DashboardPage dashboardPage;
+    private Long arg0;
 
 
     @Step
@@ -216,35 +217,63 @@ public class EndUserSteps extends ScenarioSteps {
         Assert.assertTrue(accountManagementPage.isProductsAddedToTheCart(arg0));
         Assert.assertTrue(accountManagementPage.isProductsAddedToTheCart(arg0.replace(arg0,arg1)));
     }
-
+    @Step
     public void checkIfAllProductsAddedToPriceAndAvailability(String arg0, String arg1) {
         Assert.assertTrue(accountManagementPage.isProductsDisplayedAtThePriceAndAvailability(arg0));
         Assert.assertTrue(accountManagementPage.isProductsDisplayedAtThePriceAndAvailability(arg0.replace(arg0,arg1)));
 
     }
-
+    @Step
     public void ClickSavedListsInTheHeader(String arg0) {
         accountManagementPage.clickButtonAtTheNavbar(arg0);
     }
-
+    @Step
     public void chechThatAllListsPageIsOpened() {
         Assert.assertTrue(accountManagementPage.isAllListsPageOpened());
     }
-
+    @Step
     public void createNewList(String arg0) {
         accountManagementPage.createNewList(arg0);
     }
-
+    @Step
     public void checkThatNewListIsCreated(String arg0) {
         Assert.assertTrue(accountManagementPage.isListAddedToTheTable(arg0));
     }
 
-
+    @Step
     public void clickContinueButtonAtpopup() {
         accountManagementPage.clickContinueButtonMinimalChargesPopup();
     }
-
+    @Step
     public void clickCheckoutButton() {
         accountManagementPage.clickCheckoutButton();
+    }
+    @Step
+    public void clickOnLIst(String arg0) {
+        accountManagementPage.clickOnSavedList(arg0);
+    }
+
+    public void addProductToList(String arg0) {
+        accountManagementPage.addProdactToTheList(arg0);
+    }
+
+    public void checkThaTProductIsAddedToList(String arg0) {
+        Assert.assertTrue(accountManagementPage.isProductAddedToTheList(arg0));
+    }
+
+    public void goToTheAllItemsPage() {
+        accountManagementPage.clickBackButton();
+    }
+
+    public void checkThatNumberIsItemsIsChanged(long arg0) {
+        Assert.assertEquals(accountManagementPage.getNumberOfProductsInTheList(), arg0);
+    }
+
+    public void deleteCreatedList() {
+        accountManagementPage.deleteList();
+    }
+
+    public void checkThatListIsRemoved(String arg0) {
+        Assert.assertTrue(accountManagementPage.isListRemoved(arg0));
     }
 }

@@ -12,9 +12,10 @@ Feature: Geempower Saved Lists
     And All Lists page is opened
     When Create new list "1TestAuto"
     And new list is created "1TestAuto"
-#    When open list "1TestAuto"
-#    When  add product "THQL1120" to the list
-#    And product is added to the list
-#    When number of items is changes to "1"
-#    When delete list
-#    Then list is deleted
+    When open list "1TestAuto"
+    When  add product "THQL1120" to the list
+    And product "thql1120" is added to the list
+    When go to the All Items page
+    When number of items is changes to "1"
+    When delete list
+    Then "1TestAuto" list is deleted

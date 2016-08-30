@@ -33,7 +33,7 @@ import static ch.lambdaj.Lambda.convert;
 import static ch.lambdaj.Lambda.forEach;
 
 @DefaultUrl("http://qa.geempower.com/geempower/")
-
+//@DefaultUrl("http://qa.geempower.com/demo/")
 
 public class AccountManagementPage extends PageObject {
 
@@ -52,6 +52,7 @@ public class AccountManagementPage extends PageObject {
         $(Path.PASSWORD_FIELD).sendKeys(Path.PASSWORD_1);
         $(Path.SIGN_IN_BUTTON).click();
         getDriver().get("http://qa.geempower.com/geempower/");
+//        getDriver().get("http://qa.geempower.com/demo/");
     }
 
 
@@ -389,6 +390,7 @@ public class AccountManagementPage extends PageObject {
             webElementFacade.getText();
             if(webElementFacade.getText().equals(arg0)){
                 webElementFacade.click();
+                return;
             }
         }
     }
@@ -428,5 +430,62 @@ public class AccountManagementPage extends PageObject {
 
     public void clickCheckoutButton() {
         $(Path.CHECKOUT_BUTTON).click();
+    }
+
+    public void clickOnSavedList(String arg0) {
+        List<WebElementFacade> webelementFacadeList = findAll(Path.LIST_LISTS_IN_THE_TABLE);
+        for (WebElementFacade webElementFacade : webelementFacadeList){
+            webElementFacade.getText();
+            if (webElementFacade.getText().equals(arg0)){
+                webElementFacade.click();
+                return;
+            }
+        }
+    }
+
+    public void addProdactToTheList(String arg0) {
+        $(Path.ADD_ITEM_BUTTON).click();
+        $(Path.INPUT_PRODUCT_NUMBER).sendKeys(arg0);
+        $(Path.ADD_PRODUCT_BUTTON_TO_LIST).click();
+
+    }
+
+    public boolean isProductAddedToTheList(String arg0) {
+        List<WebElementFacade> webElementFacadeList = findAll(Path.LIST_OF_PRODUCTS_IN_THE_LIST);
+        for (WebElementFacade webElementFacade : webElementFacadeList) {
+            if (webElementFacade.getText().equalsIgnoreCase(arg0)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void clickBackButton() {
+        $(Path.BACK_TO_ALL_LISTS_BUTTON).click();
+    }
+
+    public long getNumberOfProductsInTheList() {
+        String numberOfProducts =  $(Path.NUMBER_OF_ITEMS_IN_THE_LIST).getText();
+        long number = Long.parseLong(numberOfProducts);
+        return number;
+
+    }
+
+    public void deleteList() {
+        $(Path.ACTION_LIST_BUTTON).click();
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.DELETE_BUTTON_AT_SAVED_LISTS)));
+        $(Path.DELETE_BUTTON_AT_SAVED_LISTS).click();
+        $(Path.DELETE_BUTTON_AT_DELETE_LIST_POPUP).click();
+    }
+
+    public boolean isListRemoved(String arg0) {
+        waitForAbsenceOf(Path.LIST_NAME_IN_THE_TABLE.replace("$", arg0));
+        try {
+            $(Path.LIST_NAME_IN_THE_TABLE.replace("$",arg0));
+            return false;
+        } catch (NoSuchElementException e) {
+            return true;
+        }
+
     }
 }

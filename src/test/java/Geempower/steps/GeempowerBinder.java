@@ -298,4 +298,42 @@ public class GeempowerBinder {
     public void clickCheckoutButtonInTheDropdoun() {
         steps.clickCheckoutButton();
     }
+
+    @When("^open list \"([^\"]*)\"$")
+    public void openList(String arg0) {
+        steps.clickOnLIst(arg0);
+    }
+
+    @When("^add product \"([^\"]*)\" to the list$")
+    public void addProductToTheList(String arg0) {
+        steps.addProductToList(arg0);
+    }
+
+    @And("^product \"([^\"]*)\" is added to the list$")
+    public void productIsAddedToTheList(String arg0)  {
+        steps.checkThaTProductIsAddedToList(arg0);
+    }
+
+
+    @When("^go to the All Items page$")
+    public void goToTheAllItemsPage() {
+        steps.goToTheAllItemsPage();
+    }
+
+    @When("^number of items is changes to \"([^\"]*)\"$")
+    public void numberOfItemsIsChangesTo(long arg0) {
+        steps.checkThatNumberIsItemsIsChanged(arg0);
+    }
+
+    @When("^delete list$")
+    public void deleteList() {
+        steps.deleteCreatedList();
+    }
+
+    @Then("^\"([^\"]*)\" list is deleted$")
+    public void listIsDeleted(String arg0) {
+        steps.checkThatListIsRemoved(arg0);
+    }
+
+
 }

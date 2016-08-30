@@ -152,7 +152,10 @@ public interface Path {
     String DELETE_BUTTON_AT_SAVED_LISTS = "(//td/a[.='1TestAuto']/../../td[last()]//a)[2]";
     String NEW_LIST_MODAL_POPUP = "//*[@class='modal fade in']";
     String LIST_NAME_IN_THE_TABLE = "//tr//a[.='$']";
-
+    String INPUT_PRODUCT_NUMBER = ".//ul[@id='addProductList']//input[@name='rows[0].productNo']";
+    String LIST_OF_PRODUCTS_IN_THE_LIST = ".//td/a[contains(@class,'catalog-name-input')]";
+    String NUMBER_OF_ITEMS_IN_THE_LIST = "(//td/a[.='1TestAuto']/../../td[4])[1]";
+    String DELETE_BUTTON_AT_DELETE_LIST_POPUP = "//div[contains(@style,'display')]//button[.='Delete']";
 
 
 //    =============================================================================
