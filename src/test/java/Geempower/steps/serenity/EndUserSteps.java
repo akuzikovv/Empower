@@ -252,28 +252,44 @@ public class EndUserSteps extends ScenarioSteps {
     public void clickOnLIst(String arg0) {
         accountManagementPage.clickOnSavedList(arg0);
     }
-
+    @Step
     public void addProductToList(String arg0) {
         accountManagementPage.addProdactToTheList(arg0);
     }
-
+    @Step
     public void checkThaTProductIsAddedToList(String arg0) {
         Assert.assertTrue(accountManagementPage.isProductAddedToTheList(arg0));
     }
-
+    @Step
     public void goToTheAllItemsPage() {
         accountManagementPage.clickBackButton();
     }
-
+    @Step
     public void checkThatNumberIsItemsIsChanged(long arg0) {
         Assert.assertEquals(accountManagementPage.getNumberOfProductsInTheList(), arg0);
     }
-
-    public void deleteCreatedList() {
-        accountManagementPage.deleteList();
+    @Step
+    public void deleteCreatedList(String arg0) {
+        accountManagementPage.deleteList(arg0);
     }
-
+    @Step
     public void checkThatListIsRemoved(String arg0) {
         Assert.assertTrue(accountManagementPage.isListRemoved(arg0));
+    }
+    @Step
+    public void addProductToTHeNewList(String arg0) {
+        accountManagementPage.addProdToTheNewListFromPriceAndAvailabilityPage(arg0);
+    }
+    @Step
+    public void chceckThatNewListIsDisplayed(String arg0) {
+        Assert.assertTrue(accountManagementPage.isProductsDisplayedAtTheRecentListWidget(arg0));
+    }
+    @Step
+    public void clickOnListAtDashdoard(String arg0) {
+        accountManagementPage.clickOnAppropriateListAtDashboard(arg0);
+    }
+
+    public void checkThatListIsDeletedFromDashboardWidget() {
+        Assert.assertTrue(accountManagementPage.isListRemovedFromDashboard());
     }
 }

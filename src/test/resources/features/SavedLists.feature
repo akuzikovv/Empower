@@ -1,7 +1,7 @@
 Feature: Geempower Saved Lists
 
 
-  Scenario: Check that user able to create new list add product to the list, and delete list
+  Scenario: Check that user able to create new list at the "All Items" page, add product to the list, and delete list
     Given open custom login page
     When login user
     When Search for NA "1318501" account
@@ -17,5 +17,26 @@ Feature: Geempower Saved Lists
     And product "thql1120" is added to the list
     When go to the All Items page
     When number of items is changes to "1"
-    When delete list
+    When delete list "1TestAuto"
     Then "1TestAuto" list is deleted
+
+  Scenario: Check that user able to add product to the new list from P&A page, and delete list
+    Given open custom login page
+    When login user
+    When Search for NA "1318501" account
+    When Click "1318501" account
+    When Click "Skip" button
+    And  Dashboard page is opened
+    When At the Dashboard enter Product "THQL1120" and check Price and Availability
+    And product is displayed at the Price and Availability page
+    When Check product in the table
+    When Add product to the "2TestAuto" new list
+    When Click on "Home" link in the header
+    And "2TestAuto" new list displayed at the Recent Lists widget
+    When Click on "2TestAuto" list at the Recent Lists widget
+    And product "thql1120" is added to the list
+    When go to the All Items page
+    When delete list "2TestAuto"
+    Then "2TestAuto" list is deleted
+    When Click on "Home" link in the header
+    Then list is deleted from the recent Lists widget

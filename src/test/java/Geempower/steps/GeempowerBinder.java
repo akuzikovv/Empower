@@ -325,9 +325,9 @@ public class GeempowerBinder {
         steps.checkThatNumberIsItemsIsChanged(arg0);
     }
 
-    @When("^delete list$")
-    public void deleteList() {
-        steps.deleteCreatedList();
+    @When("^delete list \"([^\"]*)\"$")
+    public void deleteList(String arg0) {
+        steps.deleteCreatedList(arg0);
     }
 
     @Then("^\"([^\"]*)\" list is deleted$")
@@ -336,4 +336,25 @@ public class GeempowerBinder {
     }
 
 
+    @When("^Add product to the \"([^\"]*)\" new list$")
+    public void addProductToTheNewList(String arg0) {
+        steps.addProductToTHeNewList(arg0);
+    }
+
+    @And("^\"([^\"]*)\" new list displayed at the Recent Lists widget$")
+    public void newListDisplayedAtTheRecentListsWidget(String arg0) {
+        steps.chceckThatNewListIsDisplayed(arg0);
+    }
+
+    @When("^Click on \"([^\"]*)\" list at the Recent Lists widget$")
+    public void clickOnListAtTheRecentListsWidget(String arg0) {
+       steps.clickOnListAtDashdoard(arg0);
+    }
+
+
+    @Then("^list is deleted from the recent Lists widget$")
+    public void listIsDeletedFromTheRecentListsWidget() {
+        steps.checkThatListIsDeletedFromDashboardWidget();
+
+    }
 }

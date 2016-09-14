@@ -60,6 +60,8 @@ public interface Path {
     String P_AND_A_WIDGET_INPUT_COPY_PAST = ".//*[@id='checkprice_form_copy_and_paste']";
     String LIST_OF_BUTTONS_AT_NAVBAR_HEADER = ".//ul[@class=\"nav navbar-nav\"]//a";
     String CHECKOUT_BUTTON = ".//button[.='Checkout']";
+    String LIST_OF_LISTS_AT_DASHBOARD = ".//*[@id='recentListsPanel']/li//a";
+    String FIRST_LIST_AT_RECENT_LISTS_DASHBOARD = ".//*[@id='recentListsPanel']/li[1]//a[.='2TestAuto']";
 
 //===============================================================
 
@@ -135,6 +137,10 @@ public interface Path {
     String CHECKBOX_AT_HEADER_P_ANA_A = ".//*[@id='priceTable']/thead//ins";
     String ADD_TO_CART_BUTTON = ".//button[contains(text(),'Add to Cart')]";
     String LIST_ACCOUNT_NUMBERS_AT_THE_PRICE_AND_AVAILABILITY = ".//*[@id='priceTable']/tbody/tr//a[@class='catalog-name-input modal-toggle']";
+    String SAVE_TO_LIST_BUTTON = ".//button[.='Save to List']";
+    String INPUT_TIPE_LIST_NAME_AT_PRICE_AND_AVAILABILITY = "//input[@class='form-control new-list-input']";
+    String SAVE_BUTTON_AT_THE_SAVE_TO_LIST_POPUP = ".//button[.='Save']";
+
 
 
 //    ===========================================================================
@@ -147,15 +153,16 @@ public interface Path {
     String ADD_PRODUCT_BUTTON_TO_LIST = ".//*[@id='addProduct']";
     String PRODUCT_IN_THE_TABLE_AT_LIST = ".//td/a[.='THQL1120'and contains(@class,'catalog-name-input')]";
     String BACK_TO_ALL_LISTS_BUTTON = "//a[@class='back-link']";
-    String ACTION_LIST_BUTTON = "(//td/a[.='1TestAuto']/../../td[last()]//a)[1]";
+    String ACTION_LIST_BUTTON = "(//td/a[.='$']/../../td[last()]//a)[1]";
     String ALL_LISTS_TEXT = ".//*[.='All Items']";
-    String DELETE_BUTTON_AT_SAVED_LISTS = "(//td/a[.='1TestAuto']/../../td[last()]//a)[2]";
+    String DELETE_BUTTON_AT_SAVED_LISTS = "(//td/a[.='$']/../../td[last()]//a)[2]";
     String NEW_LIST_MODAL_POPUP = "//*[@class='modal fade in']";
     String LIST_NAME_IN_THE_TABLE = "//tr//a[.='$']";
     String INPUT_PRODUCT_NUMBER = ".//ul[@id='addProductList']//input[@name='rows[0].productNo']";
     String LIST_OF_PRODUCTS_IN_THE_LIST = ".//td/a[contains(@class,'catalog-name-input')]";
     String NUMBER_OF_ITEMS_IN_THE_LIST = "(//td/a[.='1TestAuto']/../../td[4])[1]";
     String DELETE_BUTTON_AT_DELETE_LIST_POPUP = "//div[contains(@style,'display')]//button[.='Delete']";
+    String NEW_LIST_AT_RECENT_LISTS = ".//*[@id='recentListsPanel']/li[1]//a[.='$']";
 
 
 //    =============================================================================

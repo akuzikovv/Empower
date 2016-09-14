@@ -388,7 +388,7 @@ public class AccountManagementPage extends PageObject {
         List<WebElementFacade> webelementFacadeList = findAll(Path.LIST_OF_BUTTONS_AT_NAVBAR_HEADER);
         for (WebElementFacade webElementFacade : webelementFacadeList){
             webElementFacade.getText();
-            if(webElementFacade.getText().equals(arg0)){
+            if(webElementFacade.getText().equalsIgnoreCase(arg0)){
                 webElementFacade.click();
                 return;
             }
@@ -471,10 +471,10 @@ public class AccountManagementPage extends PageObject {
 
     }
 
-    public void deleteList() {
-        $(Path.ACTION_LIST_BUTTON).click();
-        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.DELETE_BUTTON_AT_SAVED_LISTS)));
-        $(Path.DELETE_BUTTON_AT_SAVED_LISTS).click();
+    public void deleteList(String arg0) {
+        $(Path.ACTION_LIST_BUTTON.replace("$",arg0)).click();
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.DELETE_BUTTON_AT_SAVED_LISTS.replace("$", arg0))));
+        $(Path.DELETE_BUTTON_AT_SAVED_LISTS.replace("$", arg0)).click();
         $(Path.DELETE_BUTTON_AT_DELETE_LIST_POPUP).click();
     }
 
@@ -487,5 +487,37 @@ public class AccountManagementPage extends PageObject {
             return true;
         }
 
+    }
+
+    public void addProdToTheNewListFromPriceAndAvailabilityPage(String arg0) {
+        $(Path.SAVE_TO_LIST_BUTTON).click();
+        $(Path.INPUT_TIPE_LIST_NAME_AT_PRICE_AND_AVAILABILITY).sendKeys(arg0);
+        $(Path.SAVE_BUTTON_AT_THE_SAVE_TO_LIST_POPUP).click();
+
+    }
+
+    public boolean isProductsDisplayedAtTheRecentListWidget(String arg0) {
+        return $(Path.NEW_LIST_AT_RECENT_LISTS.replace("$", arg0)).isDisplayed();
+    }
+
+    public void clickOnAppropriateListAtDashboard(String arg0) {
+        List<WebElementFacade> webelementFacsdeList = findAll(By.xpath(Path.LIST_OF_LISTS_AT_DASHBOARD));
+        for (WebElementFacade webelementFacade : webelementFacsdeList){
+            webelementFacade.getText();
+            if(webelementFacade.getText().equalsIgnoreCase(arg0)){
+                webelementFacade.click();
+                return;
+            }
+        }
+    }
+
+    public boolean isListRemovedFromDashboard() {
+        waitForAbsenceOf(Path.FIRST_LIST_AT_RECENT_LISTS_DASHBOARD);
+        try {
+            $(Path.FIRST_LIST_AT_RECENT_LISTS_DASHBOARD);
+            return false;
+        } catch (NoSuchElementException e) {
+            return true;
+        }
     }
 }
