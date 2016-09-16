@@ -8,7 +8,7 @@ public interface Path {
     String PASSWORD_FIELD = ".//*[@id='password']";
     String SIGN_IN_BUTTON = "//button[contains(@class,'sign-in-btn')]";
     String LOGIN_1 = "502535068";
-    String PASSWORD_1 = "r0st1slavi";
+    String PASSWORD_1 = "ir0st1slavi";
 //    String LOGIN_1 = "tonygeorge";
 //    String PASSWORD_1 = "test123test";
 
@@ -58,7 +58,7 @@ public interface Path {
 //    String UPLOAD_EXCEL_FILE_INPUT = "//label[@class='upload-file-link']/span[1]";
     String UPLOADED_FILE_PATH = ".//span[contains(text(),'Test_EMEA.xlsx')]";
     String P_AND_A_WIDGET_INPUT_COPY_PAST = ".//*[@id='checkprice_form_copy_and_paste']";
-    String LIST_OF_BUTTONS_AT_NAVBAR_HEADER = ".//ul[@class=\"nav navbar-nav\"]//a";
+    String LIST_OF_BUTTONS_AT_NAVBAR_HEADER = ".//ul[@class='nav navbar-nav']//a";
     String CHECKOUT_BUTTON = ".//button[.='Checkout']";
     String LIST_OF_LISTS_AT_DASHBOARD = ".//*[@id='recentListsPanel']/li//a";
     String FIRST_LIST_AT_RECENT_LISTS_DASHBOARD = ".//*[@id='recentListsPanel']/li[1]//a[.='2TestAuto']";
@@ -118,7 +118,9 @@ public interface Path {
     String CHECKBOX_FIRSR_PRODUCT_OE1 =  ".//*[@id='priceTable']/tbody/tr[1]//div[@class='checkbox']/div";
     String LIST_ACCOUNT_NUMBERS_AT_THE_CART = ".//*[contains(@class,'cart-table')]/tbody/tr/td[2]/a";
     String CONTINUE_BUTTON_AT_MIN_SHIP_POPUP_EMEA = ".//*[@id='minimum-shipment-charges-emea-modal']//button";
-
+    String LIST_OF_BUTTONS_AT_CART_NAVBAR_HEADER = ".//ul[@class='navigation-action-panel']//button";
+    String SAVE_BUTTON_AT_THE_SAVE_TO_CURT_POPUP = ".//*[@class='btn primary-btn save-list-btn']";
+    String GE_LOGO_IN_THE_HEADER = "//img[@alt='Logo']";
 
 
 //    =======================================================================
@@ -157,12 +159,13 @@ public interface Path {
     String ALL_LISTS_TEXT = ".//*[.='All Items']";
     String DELETE_BUTTON_AT_SAVED_LISTS = "(//td/a[.='$']/../../td[last()]//a)[2]";
     String NEW_LIST_MODAL_POPUP = "//*[@class='modal fade in']";
-    String LIST_NAME_IN_THE_TABLE = "//tr//a[.='$']";
+    String LIST_NAME_IN_THE_TABLE = "//table[@ID='savedListTable']//tr//a[.='$']";
     String INPUT_PRODUCT_NUMBER = ".//ul[@id='addProductList']//input[@name='rows[0].productNo']";
     String LIST_OF_PRODUCTS_IN_THE_LIST = ".//td/a[contains(@class,'catalog-name-input')]";
     String NUMBER_OF_ITEMS_IN_THE_LIST = "(//td/a[.='1TestAuto']/../../td[4])[1]";
     String DELETE_BUTTON_AT_DELETE_LIST_POPUP = "//div[contains(@style,'display')]//button[.='Delete']";
     String NEW_LIST_AT_RECENT_LISTS = ".//*[@id='recentListsPanel']/li[1]//a[.='$']";
+    String CART_NAME_IN_THE_TABLE = "//table[@ID='savedCartTable']//tr//a[.='$']";
 
 
 //    =============================================================================

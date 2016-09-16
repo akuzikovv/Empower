@@ -20,6 +20,7 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.awt.*;
@@ -32,8 +33,8 @@ import java.util.concurrent.TimeUnit;
 import static ch.lambdaj.Lambda.convert;
 import static ch.lambdaj.Lambda.forEach;
 
-@DefaultUrl("http://qa.geempower.com/geempower/")
-//@DefaultUrl("http://qa.geempower.com/demo/")
+@DefaultUrl("http://qa.geempower.com/qa/")
+//@DefaultUrl("http://qa.geempower.com/geempower/")
 
 public class AccountManagementPage extends PageObject {
 
@@ -51,8 +52,8 @@ public class AccountManagementPage extends PageObject {
         $(Path.PASSWORD_FIELD).clear();
         $(Path.PASSWORD_FIELD).sendKeys(Path.PASSWORD_1);
         $(Path.SIGN_IN_BUTTON).click();
-        getDriver().get("http://qa.geempower.com/geempower/");
-//        getDriver().get("http://qa.geempower.com/demo/");
+//        getDriver().get("http://qa.geempower.com/geempower/");
+        getDriver().get("http://qa.geempower.com/qa/");
     }
 
 
@@ -519,5 +520,32 @@ public class AccountManagementPage extends PageObject {
         } catch (NoSuchElementException e) {
             return true;
         }
+    }
+
+    public void clickButtonAtCartHeader(String arg0) {
+        List<WebElementFacade> webelementFacadeList = findAll(By.xpath(Path.LIST_OF_BUTTONS_AT_CART_NAVBAR_HEADER));
+        for (WebElementFacade webelementFacade : webelementFacadeList){
+            webelementFacade.getText();
+            if (webelementFacade.getText().equalsIgnoreCase(arg0)){
+                webelementFacade.click();
+                return;
+            }
+        }
+    }
+
+
+    public void saveNewCartToTheList(String arg0) {
+        $(Path.INPUT_LIST_NAME).clear();
+        $(Path.INPUT_LIST_NAME).sendKeys(arg0);
+        $(Path.SAVE_BUTTON_AT_THE_SAVE_TO_CURT_POPUP).click();
+
+    }
+
+    public void clickGELogoInTheHeader() {
+        $(Path.GE_LOGO_IN_THE_HEADER).click();
+    }
+
+    public boolean isCartSAved(String arg0) {
+        return  $(Path.CART_NAME_IN_THE_TABLE.replace("$",arg0)).isDisplayed();
     }
 }

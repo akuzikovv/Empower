@@ -357,4 +357,25 @@ public class GeempowerBinder {
         steps.checkThatListIsDeletedFromDashboardWidget();
 
     }
+
+    @When("^Click \"([^\"]*)\" button at the cart$")
+    public void clickButtonAtTheAcrt(String arg0)  {
+        steps.clickButtonInTheCartHeader(arg0);
+    }
+
+    @When("^Save \"([^\"]*)\" cart to the list of saved carts$")
+    public void saveCartToTheListOfSavedCarts(String arg0)  {
+        steps.saveNewCart(arg0);
+    }
+
+    @When("^Go to the Dashboard clicking on the GE logo$")
+    public void goToTheDashboardClickingOnTheGELogo()  {
+        steps.clickGELogo();
+    }
+
+    @And("^new cart is created \"([^\"]*)\"$")
+    public void newCartIsCreated(String arg0)  {
+        steps.isNewCartCreated(arg0);
+
+    }
 }

@@ -292,4 +292,20 @@ public class EndUserSteps extends ScenarioSteps {
     public void checkThatListIsDeletedFromDashboardWidget() {
         Assert.assertTrue(accountManagementPage.isListRemovedFromDashboard());
     }
+
+    public void clickButtonInTheCartHeader(String arg0) {
+        accountManagementPage.clickButtonAtCartHeader(arg0);
+    }
+
+    public void saveNewCart(String arg0) {
+        accountManagementPage.saveNewCartToTheList(arg0);
+    }
+
+    public void clickGELogo() {
+        accountManagementPage.clickGELogoInTheHeader();
+    }
+
+    public void isNewCartCreated(String arg0) {
+        Assert.assertTrue(accountManagementPage.isCartSAved(arg0));
+    }
 }
