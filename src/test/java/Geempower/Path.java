@@ -17,7 +17,7 @@ public interface Path {
     //    Account Managenment page
     String ACOUNT_MANAGEMENT_LOGO = ".//p[.='Account Management']";
     String NA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
-    String LIST_OF_ACCOUNTS_ACCOUNT_MANAGEMENT = ".//div[@class='my-pending-accounts-wrapper']//tr[@class='odd'or@class='even']/*[2]/a";
+    String LIST_OF_ACCOUNTS_ACCOUNT_MANAGEMENT = ".//div[@id='recently-viewed']//tr[@class='odd'or@class='even']/*[2]/a";
 //    String LA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
 //    String EMEA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
 //    String ASIA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
@@ -166,7 +166,7 @@ public interface Path {
     String DELETE_BUTTON_AT_DELETE_LIST_POPUP = "//div[contains(@style,'display')]//button[.='Delete']";
     String NEW_LIST_AT_RECENT_LISTS = ".//*[@id='recentListsPanel']/li[1]//a[.='$']";
     String CART_NAME_IN_THE_TABLE = "//table[@ID='savedCartTable']//tr//a[.='$']";
-
+    String LIST_CARTS_IN_THE_TABLE = ".//table[@id='savedCartTable']//tbody/tr/td[1]/a";
 
 //    =============================================================================
 

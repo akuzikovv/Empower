@@ -378,4 +378,9 @@ public class GeempowerBinder {
         steps.isNewCartCreated(arg0);
 
     }
+
+    @When("^click on \"([^\"]*)\" saved cart in the table$")
+    public void clickOnSavedCartInTheTable(String arg0) {
+       steps.clickOnSavedCartInTheTable(arg0);
+    }
 }

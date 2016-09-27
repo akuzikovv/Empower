@@ -59,5 +59,6 @@ Feature: Geempower Saved Lists
     When Click on "SAVED ITEMS" link in the header
     And All Lists page is opened
     And new cart is created "NewCartName"
+    When click on "NewCartName" saved cart in the table
 
 

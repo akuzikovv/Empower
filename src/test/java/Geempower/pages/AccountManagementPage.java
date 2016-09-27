@@ -33,8 +33,8 @@ import java.util.concurrent.TimeUnit;
 import static ch.lambdaj.Lambda.convert;
 import static ch.lambdaj.Lambda.forEach;
 
-@DefaultUrl("http://qa.geempower.com/qa/")
-//@DefaultUrl("http://qa.geempower.com/geempower/")
+//@DefaultUrl("http://qa.geempower.com/qa/")
+@DefaultUrl("http://qa.geempower.com/geempower/")
 
 public class AccountManagementPage extends PageObject {
 
@@ -52,8 +52,9 @@ public class AccountManagementPage extends PageObject {
         $(Path.PASSWORD_FIELD).clear();
         $(Path.PASSWORD_FIELD).sendKeys(Path.PASSWORD_1);
         $(Path.SIGN_IN_BUTTON).click();
-//        getDriver().get("http://qa.geempower.com/geempower/");
-        getDriver().get("http://qa.geempower.com/qa/");
+        waitABit(3000);
+        getDriver().get("http://qa.geempower.com/geempower/");
+//        getDriver().get("http://qa.geempower.com/qa/");
     }
 
 
@@ -76,6 +77,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public void clickNameOfButton(String nameOfButton) {
+        waitABit(1000);
         List<WebElementFacade> buttonsAtTheTooltip = findAll(By.xpath(Path.LIST_BUTTONS_AT_TOOLTIP));
         for (WebElementFacade webElementFacade : buttonsAtTheTooltip) {
             webElementFacade.getText();
@@ -150,6 +152,7 @@ public class AccountManagementPage extends PageObject {
         $(Path.ADD_ITEM_BUTTON).click();
         $(Path.PRODUCT_NUMBER_FIELD).sendKeys(product);
         $(Path.PRODUCT_NUMBER_FIELD).sendKeys(Keys.TAB);
+        waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.ADD_BUTTON)));
         $(Path.ADD_BUTTON).click();
     }
 
@@ -290,6 +293,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public boolean isProductAddedToThePAndA() {
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.PRODUCT_IN_THE_TABLE_AT_PRICE_AND_AVAILABILITY)));
         return $(Path.PRODUCT_IN_THE_TABLE_AT_PRICE_AND_AVAILABILITY).isDisplayed();
     }
 
@@ -547,5 +551,16 @@ public class AccountManagementPage extends PageObject {
 
     public boolean isCartSAved(String arg0) {
         return  $(Path.CART_NAME_IN_THE_TABLE.replace("$",arg0)).isDisplayed();
+    }
+
+    public void clickOnSavedCart(String arg0) {
+        List<WebElementFacade> webelementFacadeList = findAll(By.xpath(Path.LIST_CARTS_IN_THE_TABLE));
+        for (WebElementFacade webelementFacade : webelementFacadeList){
+            webelementFacade.getText();
+            if (webelementFacade.getText().equalsIgnoreCase(arg0)){
+                webelementFacade.click();
+                return;
+            }
+        }
     }
 }

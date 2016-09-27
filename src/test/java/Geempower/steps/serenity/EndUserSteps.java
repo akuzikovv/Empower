@@ -308,4 +308,8 @@ public class EndUserSteps extends ScenarioSteps {
     public void isNewCartCreated(String arg0) {
         Assert.assertTrue(accountManagementPage.isCartSAved(arg0));
     }
+
+    public void clickOnSavedCartInTheTable(String arg0) {
+        accountManagementPage.clickOnSavedCart(arg0);
+    }
 }
