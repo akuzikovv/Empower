@@ -64,6 +64,7 @@ public class AccountManagementPage extends PageObject {
 
 
     public void clickAccountNumber(String account) {
+        waitABit(500);
         List<WebElementFacade> accounts = findAll(By.xpath(Path.LIST_OF_ACCOUNTS_ACCOUNT_MANAGEMENT));
         for (WebElementFacade webElementFacade : accounts) {
             webElementFacade.getText();
@@ -145,6 +146,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public boolean isCartPageOpened() {
+        waitABit(500);
         return $(Path.MY_CART_LOGO).isDisplayed();
     }
 
@@ -389,7 +391,7 @@ public class AccountManagementPage extends PageObject {
 
     public void clickButtonAtTheNavbar(String arg0) {
 //        withTimeoutOf(100, TimeUnit.MILLISECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.OVERLAY_3)));
-        waitABit(500);
+        waitABit(1000);
         List<WebElementFacade> webelementFacadeList = findAll(Path.LIST_OF_BUTTONS_AT_NAVBAR_HEADER);
         for (WebElementFacade webElementFacade : webelementFacadeList){
             webElementFacade.getText();
@@ -401,7 +403,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public boolean isAllListsPageOpened() {
-//        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.ALL_LISTS_TEXT)));
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.ALL_LISTS_TEXT)));
        return  $(Path.ALL_LISTS_TEXT).isDisplayed();
     }
 
@@ -424,7 +426,7 @@ public class AccountManagementPage extends PageObject {
         return false;
     }*/
     public boolean isListAddedToTheTable(String arg0){
-//        waitABit(2000);
+        waitABit(1000);
         return $(Path.LIST_NAME_IN_THE_TABLE.replace("$",arg0)).isDisplayed();
     }
 
@@ -449,6 +451,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public void addProdactToTheList(String arg0) {
+        waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.ADD_ITEM_BUTTON)));
         $(Path.ADD_ITEM_BUTTON).click();
         $(Path.INPUT_PRODUCT_NUMBER).sendKeys(arg0);
         $(Path.ADD_PRODUCT_BUTTON_TO_LIST).click();
@@ -456,6 +459,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public boolean isProductAddedToTheList(String arg0) {
+        waitABit(500);
         List<WebElementFacade> webElementFacadeList = findAll(Path.LIST_OF_PRODUCTS_IN_THE_LIST);
         for (WebElementFacade webElementFacade : webElementFacadeList) {
             if (webElementFacade.getText().equalsIgnoreCase(arg0)) {
@@ -470,6 +474,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public long getNumberOfProductsInTheList() {
+        waitABit(500);
         String numberOfProducts =  $(Path.NUMBER_OF_ITEMS_IN_THE_LIST).getText();
         long number = Long.parseLong(numberOfProducts);
         return number;
@@ -477,9 +482,12 @@ public class AccountManagementPage extends PageObject {
     }
 
     public void deleteList(String arg0) {
+        waitABit(500);
         $(Path.ACTION_LIST_BUTTON.replace("$",arg0)).click();
         waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.DELETE_BUTTON_AT_SAVED_LISTS.replace("$", arg0))));
         $(Path.DELETE_BUTTON_AT_SAVED_LISTS.replace("$", arg0)).click();
+        waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(Path.DELETE_BUTTON_AT_DELETE_LIST_POPUP)));
+        waitABit(500);
         $(Path.DELETE_BUTTON_AT_DELETE_LIST_POPUP).click();
     }
 
@@ -497,6 +505,7 @@ public class AccountManagementPage extends PageObject {
     public void addProdToTheNewListFromPriceAndAvailabilityPage(String arg0) {
         $(Path.SAVE_TO_LIST_BUTTON).click();
         $(Path.INPUT_TIPE_LIST_NAME_AT_PRICE_AND_AVAILABILITY).sendKeys(arg0);
+        waitABit(500);
         $(Path.SAVE_BUTTON_AT_THE_SAVE_TO_LIST_POPUP).click();
 
     }
@@ -541,11 +550,14 @@ public class AccountManagementPage extends PageObject {
     public void saveNewCartToTheList(String arg0) {
         $(Path.INPUT_LIST_NAME).clear();
         $(Path.INPUT_LIST_NAME).sendKeys(arg0);
+        waitABit(500);
         $(Path.SAVE_BUTTON_AT_THE_SAVE_TO_CURT_POPUP).click();
 
     }
 
     public void clickGELogoInTheHeader() {
+        waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.CART_SAVE_LIST_MODAL)));
+        waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.MODAL_BACKDROP_FADE)));
         $(Path.GE_LOGO_IN_THE_HEADER).click();
     }
 

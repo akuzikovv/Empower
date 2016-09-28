@@ -159,14 +159,16 @@ public interface Path {
     String ALL_LISTS_TEXT = ".//*[.='All Items']";
     String DELETE_BUTTON_AT_SAVED_LISTS = "(//td/a[.='$']/../../td[last()]//a)[2]";
     String NEW_LIST_MODAL_POPUP = "//*[@class='modal fade in']";
-    String LIST_NAME_IN_THE_TABLE = "//table[@ID='savedListTable']//tr//a[.='$']";
+    String LIST_NAME_IN_THE_TABLE = "//table[@id='savedListTable']//tr//a[.='$']";
     String INPUT_PRODUCT_NUMBER = ".//ul[@id='addProductList']//input[@name='rows[0].productNo']";
     String LIST_OF_PRODUCTS_IN_THE_LIST = ".//td/a[contains(@class,'catalog-name-input')]";
     String NUMBER_OF_ITEMS_IN_THE_LIST = "(//td/a[.='1TestAuto']/../../td[4])[1]";
     String DELETE_BUTTON_AT_DELETE_LIST_POPUP = "//div[contains(@style,'display')]//button[.='Delete']";
     String NEW_LIST_AT_RECENT_LISTS = ".//*[@id='recentListsPanel']/li[1]//a[.='$']";
-    String CART_NAME_IN_THE_TABLE = "//table[@ID='savedCartTable']//tr//a[.='$']";
+    String CART_NAME_IN_THE_TABLE = "//table[@id='savedCartTable']//tr//a[.='$']";
     String LIST_CARTS_IN_THE_TABLE = ".//table[@id='savedCartTable']//tbody/tr/td[1]/a";
+    String CART_SAVE_LIST_MODAL = ".//*[@id='cart-save-list-modal']";
+    String MODAL_BACKDROP_FADE = "//div[@class='modal-backdrop fade in']";
 
 //    =============================================================================
 
