@@ -60,5 +60,77 @@ Feature: Geempower Saved Lists
     And All Lists page is opened
     And new cart is created "NewCartName"
     When click on "NewCartName" saved cart in the table
+    And Cart page is opened
+    And Product is added to the cart
+    When Go to the Dashboard clicking on the GE logo
+    When Click on "SAVED ITEMS" link in the header
+    When Delete "NewCartName" from the list
+    Then "NewCartName" is deleted
+
+  Scenario: Check that user able to save cart on the second step and returne to the saved cart
+    Given open custom login page
+    When login user
+    When Search for NA "1318501" account
+    When Click "1318501" account
+    When Click "Skip" button
+    And  Dashboard page is opened
+    When Click on cart icon in the header
+    When Click Checkout button in the dropdoun
+    And Cart page is opened
+    When Add product "THQL1120"to the cart
+    And Product is added to the cart
+    When Click Next buttton
+    When Enter PO number "1A"
+    When Choose stok address
+    When Click "Save items" button at the cart
+    When Save "NewCartName" cart to the list of saved carts
+    When Go to the Dashboard clicking on the GE logo
+    When Click on "SAVED ITEMS" link in the header
+    And All Lists page is opened
+    And new cart is created "NewCartName"
+    When click on "NewCartName" saved cart in the table
+    And Cart page is opened
+    And Product is added to the cart
+    When Click Next buttton
+    And entered PO number "1A" and stock address "MAYER ELECTRIC SUPPLY COMPANY, INC, 3405 4TH AVE S, BIRMINGHAM, Alabama, 35222, United States" are saved
+    When Go to the Dashboard clicking on the GE logo
+    When Click on "SAVED ITEMS" link in the header
+    When Delete "NewCartName" from the list
+    Then "NewCartName" is deleted
+
+  Scenario: Check that user able to save cart on the third step and returne to the saved cart
+    Given open custom login page
+    When login user
+    When Search for NA "1318501" account
+    When Click "1318501" account
+    When Click "Skip" button
+    And  Dashboard page is opened
+    When Click on cart icon in the header
+    When Click Checkout button in the dropdoun
+    And Cart page is opened
+    When Add product "THQL1120"to the cart
+    And Product is added to the cart
+    When Click Next buttton
+    When Enter PO number "1A"
+    When Choose stok address
+    When Click Next buttton second step
+    And Minimum Shipment Changes popus is displayed
+    When Click Continue button
+    When Click "Save items" button at the cart
+    When Save "NewCartName" cart to the list of saved carts
+    When Go to the Dashboard clicking on the GE logo
+    When Click on "SAVED ITEMS" link in the header
+    And All Lists page is opened
+    And new cart is created "NewCartName"
+    When click on "NewCartName" saved cart in the table
+    And Cart page is opened
+    And Product is added to the cart
+    When Click Next buttton
+    And entered PO number "1A" and stock address "MAYER ELECTRIC SUPPLY COMPANY, INC, 3405 4TH AVE S, BIRMINGHAM, Alabama, 35222, United States" are saved
+    When Go to the Dashboard clicking on the GE logo
+    When Click on "SAVED ITEMS" link in the header
+    When Delete "NewCartName" from the list
+    Then "NewCartName" is deleted
+
 
 

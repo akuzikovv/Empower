@@ -5,6 +5,7 @@ import Geempower.Path;
 
 import gherkin.lexer.Pa;
 //import javafx.collections.ListChangeListener;
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.exceptions.SerenityManagedException;
 import net.serenitybdd.core.pages.WebElementState;
 import net.thucydides.core.Thucydides;
@@ -536,6 +537,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public void clickButtonAtCartHeader(String arg0) {
+        waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.MINIMUM_SHIPMENT_CHARGES_POPUP)));
         List<WebElementFacade> webelementFacadeList = findAll(By.xpath(Path.LIST_OF_BUTTONS_AT_CART_NAVBAR_HEADER));
         for (WebElementFacade webelementFacade : webelementFacadeList){
             webelementFacade.getText();
@@ -573,6 +575,42 @@ public class AccountManagementPage extends PageObject {
                 webelementFacade.click();
                 return;
             }
+        }
+    }
+
+    public void deleteNewSavedcart(String arg0) {
+        waitABit(500);
+        $(Path.ACTION_LIST_BUTTON.replace("$",arg0)).click();
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.DELETE_BUTTON_AT_SAVED_LISTS.replace("$", arg0))));
+        $(Path.DELETE_BUTTON_AT_SAVED_LISTS.replace("$", arg0)).click();
+        waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(Path.DELETE_BUTTON_AT_DELETE_LIST_POPUP)));
+        waitABit(500);
+        $(Path.DELETE_BUTTON_AT_DELETE_LIST_POPUP).click();
+    }
+
+    public boolean isCartRemoved(String arg0) {
+        waitForAbsenceOf(Path.CART_NAME_IN_THE_TABLE.replace("$",arg0));
+        try {
+            $(Path.CART_NAME_IN_THE_TABLE.replace("$",arg0));
+            return false;
+        }catch (NoSuchElementException e){
+            return true;
+        }
+    }
+
+    public boolean isEnteredPONumberSaved(String arg0) {
+        if ($(Path.PO_NUMBER_INPUT).getAttribute("value").equalsIgnoreCase(arg0)){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public boolean isEnteredStockAddressSaved(String arg1) {
+        if ($(Path.SHIPMENT_ADDRESS_COMBOBOX).getAttribute("title").equalsIgnoreCase(arg1)){
+            return true;
+        }else {
+            return false;
         }
     }
 }

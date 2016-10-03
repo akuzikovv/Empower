@@ -312,4 +312,18 @@ public class EndUserSteps extends ScenarioSteps {
     public void clickOnSavedCartInTheTable(String arg0) {
         accountManagementPage.clickOnSavedCart(arg0);
     }
+
+    public void deletesavedCart(String arg0) {
+        accountManagementPage.deleteNewSavedcart(arg0);
+    }
+
+    public void isCartDeletedFromTheList(String arg0) {
+        Assert.assertTrue(accountManagementPage.isCartRemoved(arg0));
+    }
+
+
+    public void isPONumberAndStockAddresSaved(String arg0, String arg1) {
+        Assert.assertTrue(accountManagementPage.isEnteredPONumberSaved(arg0));
+        Assert.assertTrue(accountManagementPage.isEnteredStockAddressSaved(arg1));
+    }
 }

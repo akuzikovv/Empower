@@ -383,4 +383,19 @@ public class GeempowerBinder {
     public void clickOnSavedCartInTheTable(String arg0) {
        steps.clickOnSavedCartInTheTable(arg0);
     }
+
+    @When("^Delete \"([^\"]*)\" from the list$")
+    public void deleteFromTheList(String arg0)  {
+        steps.deletesavedCart(arg0);
+    }
+
+    @Then("^\"([^\"]*)\" is deleted$")
+    public void isDeleted(String arg0) {
+        steps.isCartDeletedFromTheList(arg0);
+    }
+
+    @And("^entered PO number \"([^\"]*)\" and stock address \"([^\"]*)\" are saved$")
+    public void enteredPONumberAndStockAddressAreSaved(String arg0, String arg1)  {
+        steps.isPONumberAndStockAddresSaved(arg0,arg1);
+    }
 }
