@@ -36,7 +36,7 @@ import static ch.lambdaj.Lambda.forEach;
 
 //@DefaultUrl("http://qa.geempower.com/qa/")
 @DefaultUrl("http://qa.geempower.com/geempower/")
-
+//@DefaultUrl("http://qa.geempower.com/demo/")
 public class AccountManagementPage extends PageObject {
 
     /*@FindBy(xpath = Path.USER_ID_FIELD)
@@ -55,6 +55,7 @@ public class AccountManagementPage extends PageObject {
         $(Path.SIGN_IN_BUTTON).click();
         waitABit(3000);
         getDriver().get("http://qa.geempower.com/geempower/");
+//        getDriver().get("http://qa.geempower.com/demo/");
 //        getDriver().get("http://qa.geempower.com/qa/");
     }
 
@@ -177,7 +178,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public boolean isProductsDisplayedAtThePriceAndAvailability(String arg0) {
-
+waitABit(10000);
         List<WebElementFacade> webElementFacadeList = findAll(Path.LIST_ACCOUNT_NUMBERS_AT_THE_PRICE_AND_AVAILABILITY);
         for (WebElementFacade webElementFacade : webElementFacadeList) {
             if (webElementFacade.getText().equalsIgnoreCase(arg0)) {

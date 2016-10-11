@@ -398,4 +398,61 @@ public class GeempowerBinder {
     public void enteredPONumberAndStockAddressAreSaved(String arg0, String arg1)  {
         steps.isPONumberAndStockAddresSaved(arg0,arg1);
     }
+
+    @And("^\"([^\"]*)\" spa is displayed$")
+    public void spaIsDisplayed(String arg0)  {
+        steps.isStandartSpaDisplayed(arg0);
+    }
+
+    @When("^Open Special Pricing Lookup$")
+    public void openSpecialPricingLookup() throws Throwable {
+       steps.openSpecialPricingLookup();
+    }
+
+    @When("^Click on \"([^\"]*)\" spa$")
+    public void clickOnSpa(String arg0) throws Throwable {
+        steps.clickOnSpainpopup(arg0);
+    }
+
+    @When("^Click \"([^\"]*)\" button at Special Pricing Lookup$")
+    public void clickButtonAtSpecialPricingLookup(String arg0) throws Throwable {
+        steps.clickOnButtonAtSpecialPricingLookup(arg0);
+    }
+
+    @When("^Update Price and Availability at P&A page$")
+    public void updatePriceAndAvailabilityAtPAPage() throws Throwable {
+        steps.UpdatePriceAndAvailabilityAtPAPage();
+    }
+
+
+    @Then("^Final Net Price and Extnd Price are updated to \"([^\"]*)\"$")
+    public void finalNetPriceAndExtndPriceAreUpdatedTo(String arg0) throws Throwable {
+        steps.isPricesChanged(arg0);
+
+    }
+
+    @When("^Qty \"([^\"]*)\" is displayed$")
+    public void qtyIsDisplayed(String arg0) throws Throwable {
+        steps.checkThatQtyisDisplayed(arg0);
+    }
+
+    @Then("^Extnd price is \"([^\"]*)\"$")
+    public void extndPriceIs(String arg0) throws Throwable {
+        steps.checkThatExtndPriceCorrect(arg0);
+    }
+
+    @When("^click \"([^\"]*)\" at the P&A page$")
+    public void clickAtThePAPage(String arg0) throws Throwable {
+        steps.clickAddItemButton(arg0);
+    }
+
+    @When("^add product \"([^\"]*)\" to the Price and Availability page$")
+    public void addProductToThePriceAndAvailabilityPage(String arg0) throws Throwable {
+        steps.addProductToPAndA(arg0);
+    }
+
+    @Then("^Check that both \"([^\"]*)\" and \"([^\"]*)\" products are displayed$")
+    public void checkThatBothAndProductsAreDisplayed(String arg0, String arg1) throws Throwable {
+        steps.checkIfAllProductsAddedToPriceAndAvailability(arg0, arg1);
+    }
 }

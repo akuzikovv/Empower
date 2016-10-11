@@ -142,7 +142,15 @@ public interface Path {
     String SAVE_TO_LIST_BUTTON = ".//button[.='Save to List']";
     String INPUT_TIPE_LIST_NAME_AT_PRICE_AND_AVAILABILITY = "//input[@class='form-control new-list-input']";
     String SAVE_BUTTON_AT_THE_SAVE_TO_LIST_POPUP = ".//button[.='Save']";
-
+    String SPA_TEXTBOX = "//tbody//input[contains(@class,'special-pricing-input')]";
+    String SPA_IN_THE_SP_LOOKUP = ".//td[.='45000210']";
+    String MAGNIFYING_GLASS = ".//a[@class='input-group-addon pricing-lookup-link']//i";
+    String LIST_BUTTONS_AT_SP_LOOKUP = ".//form[@class='special-pricing-form']//button";
+    String UPDATE_PRICE_AND_AVAILABILITY_BUTTON_AT_PA_PAGE = ".//*[@id='upd_pr_and_av_btn']";
+    String FINAL_NET_PRICE_PA_PAGE = ".//*[contains(@id, 'price-item-tr')]/td[7]";
+    String EXTND_PRICE_PA_PAGE  = ".//*[contains(@id, 'price-item-tr')]/td[8]";
+    String QTY_INPUT_PA_PAGE = ".//tr[1][contains(@id, 'price-item-tr')]//input[contains(@class, 'catalog-qty-input')]";
+    String LIST_OF_BUTTONS_AT_NAVBAR_HEADER_AT_PRICE_AND_AVAILABILITY = ".//ul[@class='navigation-action-panel']//button";
 
 
 //    ===========================================================================
@@ -169,6 +177,8 @@ public interface Path {
     String LIST_CARTS_IN_THE_TABLE = ".//table[@id='savedCartTable']//tbody/tr/td[1]/a";
     String CART_SAVE_LIST_MODAL = ".//*[@id='cart-save-list-modal']";
     String MODAL_BACKDROP_FADE = "//div[@class='modal-backdrop fade in']";
+
+
 
 //    =============================================================================
 

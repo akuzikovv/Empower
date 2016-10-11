@@ -3,6 +3,7 @@ package Geempower.steps.serenity;
 import Geempower.Path;
 import Geempower.pages.AccountManagementPage;
 import Geempower.pages.DashboardPage;
+import Geempower.pages.PriceAndAvailability;
 import cucumber.api.java.cs.A;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.pages.WebElementState;
@@ -20,7 +21,9 @@ public class EndUserSteps extends ScenarioSteps {
 
     AccountManagementPage accountManagementPage;
     DashboardPage dashboardPage;
-    private Long arg0;
+    PriceAndAvailability priceAndAvailability;
+
+
 
 
     @Step
@@ -325,5 +328,48 @@ public class EndUserSteps extends ScenarioSteps {
     public void isPONumberAndStockAddresSaved(String arg0, String arg1) {
         Assert.assertTrue(accountManagementPage.isEnteredPONumberSaved(arg0));
         Assert.assertTrue(accountManagementPage.isEnteredStockAddressSaved(arg1));
+    }
+
+    public void isStandartSpaDisplayed(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isStandartSpaPreselected(arg0));
+    }
+
+    public void openSpecialPricingLookup() {
+        priceAndAvailability.clickOnMagnifyingGlass();
+    }
+
+    public void clickOnSpainpopup(String arg0) {
+        priceAndAvailability.chooseSpaInTheSPPopup(arg0);
+    }
+
+    public void clickOnButtonAtSpecialPricingLookup(String arg0) {
+        priceAndAvailability.clickButtonAtSPLookap(arg0);
+    }
+
+    public void UpdatePriceAndAvailabilityAtPAPage() {
+        priceAndAvailability.clickUpdatePrAndAvButton();
+    }
+
+    public void isPricesChanged(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isFinalNetPriceUpdated(arg0));
+        Assert.assertTrue(priceAndAvailability.isExtndPriceUpdated(arg0));
+    }
+
+    public void checkThatQtyisDisplayed(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isAppropriateQtyDisplayed(arg0));
+    }
+
+
+    public void checkThatExtndPriceCorrect(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isExtndPriceUpdated(arg0));
+
+    }
+
+    public void clickAddItemButton(String arg0) {
+        priceAndAvailability.clickOnButtonAtTheHeaderAtPriceAndAnailability(arg0);
+    }
+
+    public void addProductToPAndA(String arg0) {
+        priceAndAvailability.addprodToThePage(arg0);
     }
 }
