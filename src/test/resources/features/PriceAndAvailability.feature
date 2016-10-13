@@ -44,3 +44,19 @@ Feature: Geempower P&A
     When click "ADD Item" at the P&A page
     When  add product "TCAL18" to the Price and Availability page
     Then Check that both "Thql1120" and "TCAL18" products are displayed
+
+  Scenario: Check that user able to apply one spa for all prodicts
+    Given open custom login page
+    When login user
+    When Search for NA "1318501" account
+    When Click "1318501" account
+    When Click "Skip" button
+    And  Dashboard page is opened
+    When At the Dashboard enter Product "THQL1120" and check Price and Availability
+    When click "ADD Item" at the P&A page
+    When  add product "TCAL18" to the Price and Availability page
+    Then Check that both "Thql1120" and "TCAL18" products are displayed
+    When Open Special Pricing Lookup
+    When Click on "45000210" spa
+    When Click "Apply to All" button at Special Pricing Lookup
+    Then "45000210" spa applied for all products

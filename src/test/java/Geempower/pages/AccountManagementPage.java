@@ -178,7 +178,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public boolean isProductsDisplayedAtThePriceAndAvailability(String arg0) {
-waitABit(10000);
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.PRODUCT_IN_THE_TABLE_AT_LIST.replace("$", "TCAL18"))));
         List<WebElementFacade> webElementFacadeList = findAll(Path.LIST_ACCOUNT_NUMBERS_AT_THE_PRICE_AND_AVAILABILITY);
         for (WebElementFacade webElementFacade : webElementFacadeList) {
             if (webElementFacade.getText().equalsIgnoreCase(arg0)) {

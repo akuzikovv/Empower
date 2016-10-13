@@ -151,6 +151,7 @@ public interface Path {
     String EXTND_PRICE_PA_PAGE  = ".//*[contains(@id, 'price-item-tr')]/td[8]";
     String QTY_INPUT_PA_PAGE = ".//tr[1][contains(@id, 'price-item-tr')]//input[contains(@class, 'catalog-qty-input')]";
     String LIST_OF_BUTTONS_AT_NAVBAR_HEADER_AT_PRICE_AND_AVAILABILITY = ".//ul[@class='navigation-action-panel']//button";
+    String PRODUCT_IN_THE_TABLE_AT_LIST = ".//td/a[.='$'and contains(@class,'catalog-name-input')]";
 
 
 //    ===========================================================================
@@ -161,7 +162,6 @@ public interface Path {
     String ADD_BUTTON_AT_LISTS_PAGE = ".//button[.='Add']";
     String LIST_LISTS_IN_THE_TABLE = ".//table[@id='savedListTable']//tbody/tr/td[1]/a";
     String ADD_PRODUCT_BUTTON_TO_LIST = ".//*[@id='addProduct']";
-    String PRODUCT_IN_THE_TABLE_AT_LIST = ".//td/a[.='THQL1120'and contains(@class,'catalog-name-input')]";
     String BACK_TO_ALL_LISTS_BUTTON = "//a[@class='back-link']";
     String ACTION_LIST_BUTTON = "(//td/a[.='$']/../../td[last()]//a)[1]";
     String ALL_LISTS_TEXT = ".//*[.='All Items']";

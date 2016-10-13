@@ -372,4 +372,8 @@ public class EndUserSteps extends ScenarioSteps {
     public void addProductToPAndA(String arg0) {
         priceAndAvailability.addprodToThePage(arg0);
     }
+
+    public void checkThatSpaAppliedForAllProdInTable(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isStandartSpaPreselected(arg0));
+    }
 }

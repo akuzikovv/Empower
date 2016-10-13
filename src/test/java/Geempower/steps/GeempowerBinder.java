@@ -455,4 +455,9 @@ public class GeempowerBinder {
     public void checkThatBothAndProductsAreDisplayed(String arg0, String arg1) throws Throwable {
         steps.checkIfAllProductsAddedToPriceAndAvailability(arg0, arg1);
     }
+
+    @Then("^\"([^\"]*)\" spa applied for all products$")
+    public void spaAppliedForAllProducts(String arg0) throws Throwable {
+        steps.checkThatSpaAppliedForAllProdInTable(arg0);
+    }
 }
