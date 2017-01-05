@@ -11,10 +11,7 @@ import net.serenitybdd.core.pages.WebElementState;
 import net.thucydides.core.Thucydides;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.junit.Before;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import net.serenitybdd.core.pages.WebElementFacade;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
@@ -178,7 +175,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public boolean isProductsDisplayedAtThePriceAndAvailability(String arg0) {
-        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.PRODUCT_IN_THE_TABLE_AT_LIST.replace("$", "TCAL18"))));
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.PRODUCT_IN_THE_TABLE_AT_LIST.replace("$", arg0))));
         List<WebElementFacade> webElementFacadeList = findAll(Path.LIST_ACCOUNT_NUMBERS_AT_THE_PRICE_AND_AVAILABILITY);
         for (WebElementFacade webElementFacade : webElementFacadeList) {
             if (webElementFacade.getText().equalsIgnoreCase(arg0)) {
@@ -226,7 +223,7 @@ public class AccountManagementPage extends PageObject {
         waitForAbsenceOf(Path.OVERLAY_MINIMAL_SHIPMENT_CHARGES);
         waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.PLACE_ORDER_BUTTON)));
         waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.PROGRESS_INDICATOR)));
-//        waitABit(1000);
+        waitABit(1000);
        try {
            $(Path.PLACE_ORDER_BUTTON).click();
        }catch (SerenityManagedException e){
@@ -279,6 +276,8 @@ public class AccountManagementPage extends PageObject {
 //        withTimeoutOf(10,TimeUnit.MILLISECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.OVERLAY_3)));
         waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.OVERLAY_3)));
 //        waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.PROGRESS_INDICATOR)));
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) getDriver();
+        javascriptExecutor.executeScript("scroll(0,250);");
         $(Path.P_AND_A_WIDGET_CHECK_PA_BUTTON).click();
     }
 
@@ -476,7 +475,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public long getNumberOfProductsInTheList() {
-        waitABit(500);
+        waitABit(600);
         String numberOfProducts =  $(Path.NUMBER_OF_ITEMS_IN_THE_LIST).getText();
         long number = Long.parseLong(numberOfProducts);
         return number;
@@ -484,7 +483,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public void deleteList(String arg0) {
-        waitABit(500);
+        waitABit(1000);
         $(Path.ACTION_LIST_BUTTON.replace("$",arg0)).click();
         waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.DELETE_BUTTON_AT_SAVED_LISTS.replace("$", arg0))));
         $(Path.DELETE_BUTTON_AT_SAVED_LISTS.replace("$", arg0)).click();
@@ -543,6 +542,7 @@ public class AccountManagementPage extends PageObject {
         for (WebElementFacade webelementFacade : webelementFacadeList){
             webelementFacade.getText();
             if (webelementFacade.getText().equalsIgnoreCase(arg0)){
+                waitABit(1000);
                 webelementFacade.click();
                 return;
             }

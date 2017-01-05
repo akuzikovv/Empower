@@ -9,6 +9,9 @@ public interface Path {
     String SIGN_IN_BUTTON = "//button[contains(@class,'sign-in-btn')]";
     String LOGIN_1 = "502535068";
     String PASSWORD_1 = "ir0st1slavi";
+//    String LOGIN_1 = "testuser2016";
+//    String PASSWORD_1 = "test123test";
+
 //    String LOGIN_1 = "tonygeorge";
 //    String PASSWORD_1 = "test123test";
 
@@ -112,7 +115,7 @@ public interface Path {
     String OVERLAY_MINIMAL_SHIPMENT_CHARGES = ".//*[@class='modal fade minimum-shipment-charges-modal-js'and @aria-hidden=\"true\"]";
     String PROGRESS_INDICATOR = "//img[contains(@src,'loader')]";
     String ADD_MORE_ITEMS = ".//*[@id='minimum-shipment-charges-mexico-modal']//button[.='Add More Items']";
-    String QTY_INPUT_OE1 = ".//*[@id='priceTable']/tbody/tr[1]//input[@class='form-control catalog-qty-input-col onchange-warning']";
+    String QTY_INPUT_OE1 = ".//*[@id='priceTable']/tbody/tr[1]//input[@class='form-control catalog-qty-input-col onchange-warning qty-desk']";
     String UPDATE_PRISE_AND_AVAILABILITY_BUTTON_OE1 = ".//*[@id='updatePricesBtn']";
     String DISABLED_PRICE_AND_AVAILABILITY_BUTTON_OE1 = ".//*[@id='updatePricesBtn' and@disabled=''] ";
     String CHECKBOX_FIRSR_PRODUCT_OE1 =  ".//*[@id='priceTable']/tbody/tr[1]//div[@class='checkbox']/div";
@@ -138,12 +141,12 @@ public interface Path {
     String CHECKBOX_AT_PRODUCT_LINE_P_ANA_A = ".//*[@id='priceTable']/tbody//ins";
     String CHECKBOX_AT_HEADER_P_ANA_A = ".//*[@id='priceTable']/thead//ins";
     String ADD_TO_CART_BUTTON = ".//button[contains(text(),'Add to Cart')]";
-    String LIST_ACCOUNT_NUMBERS_AT_THE_PRICE_AND_AVAILABILITY = ".//*[@id='priceTable']/tbody/tr//a[@class='catalog-name-input modal-toggle']";
+    String LIST_ACCOUNT_NUMBERS_AT_THE_PRICE_AND_AVAILABILITY = ".//*[@id='priceTable']/tbody/tr//a[contains(@class,'catalog-name-input modal-toggle')]";
     String SAVE_TO_LIST_BUTTON = ".//button[.='Save to List']";
     String INPUT_TIPE_LIST_NAME_AT_PRICE_AND_AVAILABILITY = "//input[@class='form-control new-list-input']";
     String SAVE_BUTTON_AT_THE_SAVE_TO_LIST_POPUP = ".//button[.='Save']";
     String SPA_TEXTBOX = "//tbody//input[contains(@class,'special-pricing-input')]";
-    String SPA_IN_THE_SP_LOOKUP = ".//td[.='45000210']";
+    String SPA_IN_THE_SP_LOOKUP = ".//td[.='$']";
     String MAGNIFYING_GLASS = ".//a[@class='input-group-addon pricing-lookup-link']//i";
     String LIST_BUTTONS_AT_SP_LOOKUP = ".//form[@class='special-pricing-form']//button";
     String UPDATE_PRICE_AND_AVAILABILITY_BUTTON_AT_PA_PAGE = ".//*[@id='upd_pr_and_av_btn']";
@@ -152,6 +155,10 @@ public interface Path {
     String QTY_INPUT_PA_PAGE = ".//tr[1][contains(@id, 'price-item-tr')]//input[contains(@class, 'catalog-qty-input')]";
     String LIST_OF_BUTTONS_AT_NAVBAR_HEADER_AT_PRICE_AND_AVAILABILITY = ".//ul[@class='navigation-action-panel']//button";
     String PRODUCT_IN_THE_TABLE_AT_LIST = ".//td/a[.='$'and contains(@class,'catalog-name-input')]";
+    String DISABLED_APPLY_TO_ALL_BUTTON = "//button[@disabled='' and @class='btn primary-btn spl-pricing-apply-all']";
+    String SPA_POPUP_SEARCH_INPUT = ".//*[@id='searchSpaInp']";
+    String SPA_POPUP_MAGNIFYING_GLASS = ".//*[@id='searchSpaBtn']";
+    String SPECIAL_PRICING_LOOKUP_MODUL = ".//*[@id='special-pricing-lookup-modal' and @class='modal fade in']";
 
 
 //    ===========================================================================
@@ -163,9 +170,9 @@ public interface Path {
     String LIST_LISTS_IN_THE_TABLE = ".//table[@id='savedListTable']//tbody/tr/td[1]/a";
     String ADD_PRODUCT_BUTTON_TO_LIST = ".//*[@id='addProduct']";
     String BACK_TO_ALL_LISTS_BUTTON = "//a[@class='back-link']";
-    String ACTION_LIST_BUTTON = "(//td/a[.='$']/../../td[last()]//a)[1]";
+    String ACTION_LIST_BUTTON = "(//td/a[.='$']/../../td[last()-1]//a)[1]";
     String ALL_LISTS_TEXT = ".//*[.='All Items']";
-    String DELETE_BUTTON_AT_SAVED_LISTS = "(//td/a[.='$']/../../td[last()]//a)[2]";
+    String DELETE_BUTTON_AT_SAVED_LISTS = "(//td/a[.='$']/../../td[last()-1]//a)[2]";
     String NEW_LIST_MODAL_POPUP = "//*[@class='modal fade in']";
     String LIST_NAME_IN_THE_TABLE = "//table[@id='savedListTable']//tr//a[.='$']";
     String INPUT_PRODUCT_NUMBER = ".//ul[@id='addProductList']//input[@name='rows[0].productNo']";
@@ -177,7 +184,7 @@ public interface Path {
     String LIST_CARTS_IN_THE_TABLE = ".//table[@id='savedCartTable']//tbody/tr/td[1]/a";
     String CART_SAVE_LIST_MODAL = ".//*[@id='cart-save-list-modal']";
     String MODAL_BACKDROP_FADE = "//div[@class='modal-backdrop fade in']";
-
+    String PRICING_AGREEMENT_IS_INVALID_ERROR = ".//tr//p[.='Pricing agreement is invalid. Standard price is displayed.']";
 
 
 //    =============================================================================

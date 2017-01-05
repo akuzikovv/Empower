@@ -460,4 +460,34 @@ public class GeempowerBinder {
     public void spaAppliedForAllProducts(String arg0) throws Throwable {
         steps.checkThatSpaAppliedForAllProdInTable(arg0);
     }
+
+    @When("^Search by \"([^\"]*)\" SPA No$")
+    public void searchBySPANo(String arg0) throws Throwable {
+        steps.searchBySpaNoSpaPopup(arg0);
+    }
+
+    @When("^Search by \"([^\"]*)\" Customer Name$")
+    public void searchByCustomerName(String arg0) throws Throwable {
+        steps.searchByCustomerName(arg0);
+    }
+
+    @When("^Search by \"([^\"]*)\" Customer No$")
+    public void searchByCustomerNo(String arg0) throws Throwable {
+        steps.searchByCustomerNumber(arg0);
+    }
+
+    @Then("^\"([^\"]*)\" error message is displayed at the P&A results page$")
+    public void errorMessageIsDisplayedAtThePAResultsPage(String arg0) throws Throwable {
+        steps.InvalidSpaErrorIsDisplayedAtPandAPage(arg0);
+
+    }
+
+    @When("^click on \"([^\"]*)\" product in the table$")
+    public void clickOnProductInTheTable(String arg0) throws Throwable {
+        steps.clickOnProductInThePandAList(arg0);
+    }
+
+    @Then("^\"([^\"]*)\" tab is shown at the product details popup$")
+    public void tabIsShownAtTheProductDetailsPopup(String arg0) throws Throwable {
+        steps.checkthatSpecificationsTabIsOpened(arg0);
 }

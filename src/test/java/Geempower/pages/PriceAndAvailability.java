@@ -6,20 +6,27 @@ import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
+import net.thucydides.core.pages.jquery.JQueryEnabledPage;
 import org.jruby.util.SafePropertyAccessor;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 
 public class PriceAndAvailability extends PageObject {
 
     public boolean isStandartSpaPreselected(String arg0) {
+        waitABit(1000);
         List<WebElementFacade> list = findAll(By.xpath(Path.SPA_TEXTBOX));
         boolean bool = false;
-        for (WebElementFacade facade : list){
-            if (facade.getText().equalsIgnoreCase(arg0)){
+        for (WebElementFacade facade : list) {
+            if (facade.getValue().equalsIgnoreCase(arg0)) {
                 bool = true;
                 break;
             }
@@ -28,24 +35,41 @@ public class PriceAndAvailability extends PageObject {
     }
 
 
-
-
     public void clickOnMagnifyingGlass() {
+
         $(Path.MAGNIFYING_GLASS).click();
     }
 
+
+    public void scrollDown(String xpath) {
+        WebElement element = $(find(By.xpath(xpath)));
+        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView();", element);
+    }
+
     public void chooseSpaInTheSPPopup(String arg0) {
-        List<WebElementFacade> webelementFacadeList = findAll(By.xpath(Path.SPA_IN_THE_SP_LOOKUP));
-        for (WebElementFacade facade : webelementFacadeList) {
-            facade.getText();
-            if (facade.getText().equalsIgnoreCase(arg0)) {
-                facade.click();
-            }
+        waitABit(1000);
+        List<WebElementFacade> webelementFacadeList = findAll(By.xpath(Path.SPA_IN_THE_SP_LOOKUP.replace("$", arg0)));
+        try {
+            waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.DISABLED_APPLY_TO_ALL_BUTTON)));
+        }catch (NoSuchElementException e){
         }
+        scrollDown(Path.SPA_IN_THE_SP_LOOKUP.replace("$", arg0));
+
+//        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) getDriver();
+//        javascriptExecutor.executeScript("arguments[0].scrollIntoView();",$(Path.SPA_IN_THE_SP_LOOKUP.replace("$", arg0)));
+
+        for (WebElementFacade facade : webelementFacadeList) {
+                        facade.getText();
+            if (facade.getText().equalsIgnoreCase(arg0)) {
+                    facade.click();
+            }break;
+        }
+
+
     }
 
     public void clickButtonAtSPLookap(String arg0) {
-        waitABit(1000);
+
         List<WebElementFacade> webElementFacadelist = findAll(By.xpath(Path.LIST_BUTTONS_AT_SP_LOOKUP));
         for (WebElementFacade facade : webElementFacadelist) {
             facade.getText();
@@ -53,6 +77,7 @@ public class PriceAndAvailability extends PageObject {
                 facade.click();
             }
         }
+
     }
 
     public void clickUpdatePrAndAvButton() {
@@ -97,6 +122,36 @@ public class PriceAndAvailability extends PageObject {
 
     public void addprodToThePage(String arg0) {
         $(Path.INPUT_PRODUCT_NUMBER).sendKeys(arg0);
+        waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.ADD_PRODUCT_BUTTON_TO_LIST)));
         $(Path.ADD_PRODUCT_BUTTON_TO_LIST).click();
+    }
+
+    public void searchAtSpapopup(String arg0) {
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.SPA_POPUP_SEARCH_INPUT)));
+        $(Path.SPA_POPUP_SEARCH_INPUT).sendKeys(arg0);
+        $(Path.SPA_POPUP_MAGNIFYING_GLASS).click();
+    }
+
+
+    public boolean isInvalidSpaErrorDisplayedAtPanaAPage(String arg0) {
+        if (arg0.equalsIgnoreCase($(Path.PRICING_AGREEMENT_IS_INVALID_ERROR).getText().toString())) {
+            return true;
+        }
+        return false;
+    }
+
+    public void clickOnProductInTheTable(String arg0) {
+        List<WebElementFacade> list = findAll(By.xpath(Path.PRODUCT_IN_THE_TABLE_AT_PRICE_AND_AVAILABILITY));
+        for (WebElementFacade facade : list){
+            facade.getText();
+            if (facade.getText().equalsIgnoreCase(arg0));
+            facade.click();
+        }
+
+    }
+
+
+    public boolean isCorrectTabOpenedAtPDP(String arg0) {
+
     }
 }

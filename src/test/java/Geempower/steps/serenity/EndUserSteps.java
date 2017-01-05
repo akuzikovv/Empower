@@ -376,4 +376,28 @@ public class EndUserSteps extends ScenarioSteps {
     public void checkThatSpaAppliedForAllProdInTable(String arg0) {
         Assert.assertTrue(priceAndAvailability.isStandartSpaPreselected(arg0));
     }
+
+    public void searchBySpaNoSpaPopup(String arg0) {
+        priceAndAvailability.searchAtSpapopup(arg0);
+    }
+
+    public void searchByCustomerNumber(String arg0) {
+        priceAndAvailability.searchAtSpapopup(arg0);
+    }
+
+    public void searchByCustomerName(String arg0) {
+        priceAndAvailability.searchAtSpapopup(arg0);
+    }
+
+    public void InvalidSpaErrorIsDisplayedAtPandAPage(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isInvalidSpaErrorDisplayedAtPanaAPage(arg0));
+    }
+
+    public void clickOnProductInThePandAList(String arg0) {
+        priceAndAvailability.clickOnProductInTheTable(arg0);
+    }
+
+    public void checkthatSpecificationsTabIsOpened(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isCorrectTabOpenedAtPDP(arg0));
+    }
 }
