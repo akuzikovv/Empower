@@ -137,7 +137,7 @@ public interface Path {
 //    =======================================================================
 //    Price & Availability
     String PRICE_AND_AVAILABILITY_PAGE = ".//h3[.='Price and Availability']";
-    String PRODUCT_IN_THE_TABLE_AT_PRICE_AND_AVAILABILITY = ".//td/a[.='THQL1120'and contains(@class,'catalog-name-input')]";
+    String PRODUCT_IN_THE_TABLE_AT_PRICE_AND_AVAILABILITY = ".//td/a[.='$'and contains(@class,'catalog-name-input')]";
     String CHECKBOX_AT_PRODUCT_LINE_P_ANA_A = ".//*[@id='priceTable']/tbody//ins";
     String CHECKBOX_AT_HEADER_P_ANA_A = ".//*[@id='priceTable']/thead//ins";
     String ADD_TO_CART_BUTTON = ".//button[contains(text(),'Add to Cart')]";
@@ -159,6 +159,7 @@ public interface Path {
     String SPA_POPUP_SEARCH_INPUT = ".//*[@id='searchSpaInp']";
     String SPA_POPUP_MAGNIFYING_GLASS = ".//*[@id='searchSpaBtn']";
     String SPECIAL_PRICING_LOOKUP_MODUL = ".//*[@id='special-pricing-lookup-modal' and @class='modal fade in']";
+    String TABS_AT_THE_PRODUCT_DETAILS_POPUP = ".//a[contains(text(),'Specifications') or contains(text(),' Product Details') or @href='#Availability-detail' ]";
 
 
 //    ===========================================================================
@@ -185,6 +186,8 @@ public interface Path {
     String CART_SAVE_LIST_MODAL = ".//*[@id='cart-save-list-modal']";
     String MODAL_BACKDROP_FADE = "//div[@class='modal-backdrop fade in']";
     String PRICING_AGREEMENT_IS_INVALID_ERROR = ".//tr//p[.='Pricing agreement is invalid. Standard price is displayed.']";
+    String PRICING_AGREEMENT_IS_INVALID_ERROR_PDP = ".//*[@id='product-details']//p[contains(text(),'Pricing agreement is invalid. Standard price is displayed.')]";
+    String FINAL_NET_PRICE_IS_GREATER_THAN_STANDART_PRICE = ".//*[@id='product-details']//p[contains(text(),'Final Net Price is greater than Standard Price')]";
 
 
 //    =============================================================================

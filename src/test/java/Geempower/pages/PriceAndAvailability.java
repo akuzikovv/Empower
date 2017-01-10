@@ -49,10 +49,11 @@ public class PriceAndAvailability extends PageObject {
     public void chooseSpaInTheSPPopup(String arg0) {
         waitABit(1000);
         List<WebElementFacade> webelementFacadeList = findAll(By.xpath(Path.SPA_IN_THE_SP_LOOKUP.replace("$", arg0)));
-        try {
-            waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.DISABLED_APPLY_TO_ALL_BUTTON)));
-        }catch (NoSuchElementException e){
-        }
+        waitABit(1000);
+//        try {
+//            waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.DISABLED_APPLY_TO_ALL_BUTTON)));
+//        }catch (NoSuchElementException e){
+//        }
         scrollDown(Path.SPA_IN_THE_SP_LOOKUP.replace("$", arg0));
 
 //        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) getDriver();
@@ -134,24 +135,49 @@ public class PriceAndAvailability extends PageObject {
 
 
     public boolean isInvalidSpaErrorDisplayedAtPanaAPage(String arg0) {
-        if (arg0.equalsIgnoreCase($(Path.PRICING_AGREEMENT_IS_INVALID_ERROR).getText().toString())) {
-            return true;
-        }
-        return false;
+       try {
+           if (arg0.equalsIgnoreCase($(Path.PRICING_AGREEMENT_IS_INVALID_ERROR).getText().toString())) {
+               return true;
+           }
+               return false;
+       }catch (NoSuchElementException e){
+           return false;
+       }
     }
 
     public void clickOnProductInTheTable(String arg0) {
-        List<WebElementFacade> list = findAll(By.xpath(Path.PRODUCT_IN_THE_TABLE_AT_PRICE_AND_AVAILABILITY));
+        List<WebElementFacade> list = findAll(By.xpath(Path.PRODUCT_IN_THE_TABLE_AT_PRICE_AND_AVAILABILITY.replace("$",arg0)));
         for (WebElementFacade facade : list){
             facade.getText();
             if (facade.getText().equalsIgnoreCase(arg0));
             facade.click();
         }
-
     }
 
 
     public boolean isCorrectTabOpenedAtPDP(String arg0) {
+        if (arg0.equalsIgnoreCase($(Path.TABS_AT_THE_PRODUCT_DETAILS_POPUP).getText().trim())) {
+            return true;
+        } else return false;
+    }
 
+    public void clickTabInPDP(String arg0) {
+        List<WebElementFacade> list = findAll(By.xpath(Path.TABS_AT_THE_PRODUCT_DETAILS_POPUP));
+        for (WebElementFacade facade : list){
+            facade.getText();
+            if (facade.getText().trim().equalsIgnoreCase(arg0));
+            facade.click();
+        }
+    }
+
+
+    public boolean isPricingAgreementIsInvalidErrorIsDisplayedAtPDPopup(String arg0) {
+       try {
+           if (arg0.equalsIgnoreCase($(Path.PRICING_AGREEMENT_IS_INVALID_ERROR_PDP).getText().trim())) {
+               return true;
+           } else return false;
+       }catch (NoSuchElementException e){
+           return false;
+       }
     }
 }

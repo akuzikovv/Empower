@@ -350,10 +350,15 @@ public class EndUserSteps extends ScenarioSteps {
         priceAndAvailability.clickUpdatePrAndAvButton();
     }
 
-    public void isPricesChanged(String arg0) {
+    public void isFinalNetPricesChanged(String arg0) {
         Assert.assertTrue(priceAndAvailability.isFinalNetPriceUpdated(arg0));
+    }
+
+    public void isExtndPricesChanged(String arg0) {
         Assert.assertTrue(priceAndAvailability.isExtndPriceUpdated(arg0));
     }
+
+
 
     public void checkThatQtyisDisplayed(String arg0) {
         Assert.assertTrue(priceAndAvailability.isAppropriateQtyDisplayed(arg0));
@@ -399,5 +404,21 @@ public class EndUserSteps extends ScenarioSteps {
 
     public void checkthatSpecificationsTabIsOpened(String arg0) {
         Assert.assertTrue(priceAndAvailability.isCorrectTabOpenedAtPDP(arg0));
+    }
+
+    public void clickOntabInPDP(String arg0) {
+        priceAndAvailability.clickTabInPDP(arg0);
+    }
+
+    public void checkThatPricingAgreementIsInvalidErrorIsDisplayedAtPDP(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isPricingAgreementIsInvalidErrorIsDisplayedAtPDPopup(arg0));
+    }
+
+    public void checkThatPricingAgreementIsntInvalidErrorIsDisplayedAtPandApage(String arg0) {
+        Assert.assertFalse(priceAndAvailability.isInvalidSpaErrorDisplayedAtPanaAPage(arg0));
+    }
+
+    public void checkThatPricingAgreementIsInvalidErrorIsntDisplayedAtPDP(String arg0) {
+        Assert.assertFalse(priceAndAvailability.isPricingAgreementIsInvalidErrorIsDisplayedAtPDPopup(arg0));
     }
 }

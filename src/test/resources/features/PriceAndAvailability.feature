@@ -15,7 +15,9 @@ Feature: Geempower P&A
     When Click "Apply & Copy" button at Special Pricing Lookup
     When "45001743" spa is displayed
     When Update Price and Availability at P&A page
-    Then Final Net Price and Extnd Price are updated to "3.42"
+    Then Final Net Price are updated to "3.42"
+    Then Extnd Price are updated to "3.42"
+
 
   Scenario: Check that user able to upload file with product and spa displayed at the P&A page
     Given open custom login page
@@ -119,18 +121,28 @@ Scenario: Chech that "Pricing agreement is invalid. Standard price is displayed.
   When Click "Skip" button
   And  Dashboard page is opened
   When At the Dashboard enter Product "THQL1120" and check Price and Availability
-  And product is displayed at the Price and Availability page
+#  And product is displayed at the Price and Availability page
   When Open Special Pricing Lookup
   When Click on "45000210" spa
   When Click "Apply & Copy" button at Special Pricing Lookup
-  When "45001743" spa is displayed
+  When "45000210" spa is displayed
   When Update Price and Availability at P&A page
   Then "Pricing agreement is invalid. Standard price is displayed." error message is displayed at the P&A results page
-  When click on "TGHQL1120" product in the table
+  When click on "THQL1120" product in the table
   Then "Specifications" tab is shown at the product details popup
   When Click on "Product Details" tab
   Then "Pricing agreement is invalid. Standard price is displayed." error message is displayed at the Product details popup
 
-
-
-
+  Scenario: Chech that "Pricing agreement is invalid. Standard price is displayed." error messages aren't displayed if standart SPA
+    Given open custom login page
+    When login user
+    When Search for NA "1318501" account
+    When Click "1318501" account
+    When Click "Skip" button
+    And  Dashboard page is opened
+    When At the Dashboard enter Product "THQL1120" and check Price and Availability
+#  And product is displayed at the Price and Availability page`
+    Then "Pricing agreement is invalid. Standard price is displayed." error message isn't displayed at the P&A results page
+    When click on "THQL1120" product in the table
+    When Click on "Product Details" tab
+    Then "Pricing agreement is invalid. Standard price is displayed." error message isn't displayed at the Product details popup

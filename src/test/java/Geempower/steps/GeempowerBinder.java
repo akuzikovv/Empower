@@ -213,8 +213,8 @@ public class GeempowerBinder {
     }
 
     @When("^Click Add More Items Button$")
-    public void clickAddMoreItemsButton()  {
-       steps.clickAddMoreItemsButton();
+    public void clickAddMoreItemsButton() {
+        steps.clickAddMoreItemsButton();
     }
 
 
@@ -229,19 +229,19 @@ public class GeempowerBinder {
     }
 
     @When("^upload \"([^\"]*)\" document with products$")
-    public void uploadDocumentWithProducts(String arg0)  {
-       steps.uploaadDocumentWithProducts(arg0);
+    public void uploadDocumentWithProducts(String arg0) {
+        steps.uploaadDocumentWithProducts(arg0);
 
     }
 
     @When("^Click Check Price And Availability button$")
-    public void clickCheckPriceAndAvailabilityButton()  {
+    public void clickCheckPriceAndAvailabilityButton() {
         steps.clickCeckPandAButton();
     }
 
     @When("^Search for EMEA \"([^\"]*)\" account$")
-        public void searchForEMEAAccount(String account) {
-            steps.search_for_account(account);
+    public void searchForEMEAAccount(String account) {
+        steps.search_for_account(account);
     }
 
     @When("^Enter products \"([^\"]*)\", \"([^\"]*)\" to the P&A vidget$")
@@ -251,7 +251,7 @@ public class GeempowerBinder {
     }
 
     @When("^Check All products in the table$")
-    public void checkAllProductsInTheTable()  {
+    public void checkAllProductsInTheTable() {
         steps.CheckCheckboxInTheHeader();
     }
 
@@ -266,25 +266,24 @@ public class GeempowerBinder {
     }
 
 
-
     @When("^Click on \"([^\"]*)\" link in the header$")
-    public void clickOnLinkInTheHeader(String arg0)  {
+    public void clickOnLinkInTheHeader(String arg0) {
         steps.ClickSavedListsInTheHeader(arg0);
     }
 
     @And("All Lists page is opened$")
-    public void pageIsOpened()  {
+    public void pageIsOpened() {
         steps.chechThatAllListsPageIsOpened();
     }
 
     @When("^Create new list \"([^\"]*)\"$")
-    public void createNewList(String arg0)  {
+    public void createNewList(String arg0) {
         steps.createNewList(arg0);
 
     }
 
     @And("^new list is created \"([^\"]*)\"$")
-    public void newListIsCreated(String arg0)  {
+    public void newListIsCreated(String arg0) {
         steps.checkThatNewListIsCreated(arg0);
     }
 
@@ -310,7 +309,7 @@ public class GeempowerBinder {
     }
 
     @And("^product \"([^\"]*)\" is added to the list$")
-    public void productIsAddedToTheList(String arg0)  {
+    public void productIsAddedToTheList(String arg0) {
         steps.checkThaTProductIsAddedToList(arg0);
     }
 
@@ -348,7 +347,7 @@ public class GeempowerBinder {
 
     @When("^Click on \"([^\"]*)\" list at the Recent Lists widget$")
     public void clickOnListAtTheRecentListsWidget(String arg0) {
-       steps.clickOnListAtDashdoard(arg0);
+        steps.clickOnListAtDashdoard(arg0);
     }
 
 
@@ -359,33 +358,33 @@ public class GeempowerBinder {
     }
 
     @When("^Click \"([^\"]*)\" button at the cart$")
-    public void clickButtonAtTheAcrt(String arg0)  {
+    public void clickButtonAtTheAcrt(String arg0) {
         steps.clickButtonInTheCartHeader(arg0);
     }
 
     @When("^Save \"([^\"]*)\" cart to the list of saved carts$")
-    public void saveCartToTheListOfSavedCarts(String arg0)  {
+    public void saveCartToTheListOfSavedCarts(String arg0) {
         steps.saveNewCart(arg0);
     }
 
     @When("^Go to the Dashboard clicking on the GE logo$")
-    public void goToTheDashboardClickingOnTheGELogo()  {
+    public void goToTheDashboardClickingOnTheGELogo() {
         steps.clickGELogo();
     }
 
     @And("^new cart is created \"([^\"]*)\"$")
-    public void newCartIsCreated(String arg0)  {
+    public void newCartIsCreated(String arg0) {
         steps.isNewCartCreated(arg0);
 
     }
 
     @When("^click on \"([^\"]*)\" saved cart in the table$")
     public void clickOnSavedCartInTheTable(String arg0) {
-       steps.clickOnSavedCartInTheTable(arg0);
+        steps.clickOnSavedCartInTheTable(arg0);
     }
 
     @When("^Delete \"([^\"]*)\" from the list$")
-    public void deleteFromTheList(String arg0)  {
+    public void deleteFromTheList(String arg0) {
         steps.deletesavedCart(arg0);
     }
 
@@ -395,18 +394,18 @@ public class GeempowerBinder {
     }
 
     @And("^entered PO number \"([^\"]*)\" and stock address \"([^\"]*)\" are saved$")
-    public void enteredPONumberAndStockAddressAreSaved(String arg0, String arg1)  {
-        steps.isPONumberAndStockAddresSaved(arg0,arg1);
+    public void enteredPONumberAndStockAddressAreSaved(String arg0, String arg1) {
+        steps.isPONumberAndStockAddresSaved(arg0, arg1);
     }
 
     @And("^\"([^\"]*)\" spa is displayed$")
-    public void spaIsDisplayed(String arg0)  {
+    public void spaIsDisplayed(String arg0) {
         steps.isStandartSpaDisplayed(arg0);
     }
 
     @When("^Open Special Pricing Lookup$")
     public void openSpecialPricingLookup() throws Throwable {
-       steps.openSpecialPricingLookup();
+        steps.openSpecialPricingLookup();
     }
 
     @When("^Click on \"([^\"]*)\" spa$")
@@ -425,11 +424,16 @@ public class GeempowerBinder {
     }
 
 
-    @Then("^Final Net Price and Extnd Price are updated to \"([^\"]*)\"$")
-    public void finalNetPriceAndExtndPriceAreUpdatedTo(String arg0) throws Throwable {
-        steps.isPricesChanged(arg0);
-
+    @Then("^Final Net Price are updated to \"([^\"]*)\"$")
+    public void finalNetPriceAreUpdatedTo(String arg0) throws Throwable {
+        steps.isFinalNetPricesChanged(arg0);
     }
+
+    @Then("^Extnd Price are updated to \"([^\"]*)\"$")
+    public void extndPriceAreUpdatedTo(String arg0) throws Throwable {
+        steps.isExtndPricesChanged(arg0);
+    }
+
 
     @When("^Qty \"([^\"]*)\" is displayed$")
     public void qtyIsDisplayed(String arg0) throws Throwable {
@@ -490,4 +494,25 @@ public class GeempowerBinder {
     @Then("^\"([^\"]*)\" tab is shown at the product details popup$")
     public void tabIsShownAtTheProductDetailsPopup(String arg0) throws Throwable {
         steps.checkthatSpecificationsTabIsOpened(arg0);
+    }
+
+    @When("^Click on \"([^\"]*)\" tab$")
+    public void clickOnTab(String arg0) throws Throwable {
+        steps.clickOntabInPDP(arg0);
+    }
+
+    @Then("^\"([^\"]*)\" error message is displayed at the Product details popup$")
+    public void errorMessageIsDisplayedAtTheProductDetailsPopup(String arg0) throws Throwable {
+        steps.checkThatPricingAgreementIsInvalidErrorIsDisplayedAtPDP(arg0);
+    }
+
+    @Then("^\"([^\"]*)\" error message isn't displayed at the P&A results page$")
+    public void errorMessageIsnTDisplayedAtThePAResultsPage(String arg0) throws Throwable {
+        steps.checkThatPricingAgreementIsntInvalidErrorIsDisplayedAtPandApage(arg0);
+    }
+
+    @Then("^\"([^\"]*)\" error message isn't displayed at the Product details popup$")
+    public void errorMessageIsnTDisplayedAtTheProductDetailsPopup(String arg0) throws Throwable {
+        steps.checkThatPricingAgreementIsInvalidErrorIsntDisplayedAtPDP(arg0);
+    }
 }
