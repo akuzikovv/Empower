@@ -187,9 +187,9 @@ public class GeempowerBinder {
         steps.checkThatPriceAndAvailabilityPageOpened();
     }
 
-    @And("^product is displayed at the Price and Availability page$")
-    public void productIsDisplayedAtThePriceAndAvailabilityPage() {
-        steps.checkThatProductIsAddedToThePriceAndAvailabilityPage();
+    @And("^\"([^\"]*)\" product is displayed at the Price and Availability page$")
+    public void productIsDisplayedAtThePriceAndAvailabilityPage(String arg0) {
+        steps.checkThatProductIsAddedToThePriceAndAvailabilityPage(arg0);
     }
 
     @When("^Add product from P&A page to the cart$")
@@ -514,5 +514,11 @@ public class GeempowerBinder {
     @Then("^\"([^\"]*)\" error message isn't displayed at the Product details popup$")
     public void errorMessageIsnTDisplayedAtTheProductDetailsPopup(String arg0) throws Throwable {
         steps.checkThatPricingAgreementIsInvalidErrorIsntDisplayedAtPDP(arg0);
+    }
+
+
+    @Then("^\"([^\"]*)\" error message isn't displayed at Product details popup$")
+    public void errorMessageIsnTDisplayedAtProductDetailsPopup(String arg0) throws Throwable {
+        steps.checkThanFinalNetpriceIsGreaterErrorMessageIsDisplayedAtPDP(arg0);
     }
 }

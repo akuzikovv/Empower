@@ -168,8 +168,8 @@ public class EndUserSteps extends ScenarioSteps {
         Assert.assertTrue(accountManagementPage.isPriceAndAvailabilityPageOpened());
     }
     @Step
-    public void checkThatProductIsAddedToThePriceAndAvailabilityPage() {
-        Assert.assertTrue(accountManagementPage.isProductAddedToThePAndA());
+    public void checkThatProductIsAddedToThePriceAndAvailabilityPage(String arg0) {
+        Assert.assertTrue(accountManagementPage.isProductAddedToThePAndA(arg0));
     }
     @Step
     public void clickAddToCartButton() {
@@ -420,5 +420,9 @@ public class EndUserSteps extends ScenarioSteps {
 
     public void checkThatPricingAgreementIsInvalidErrorIsntDisplayedAtPDP(String arg0) {
         Assert.assertFalse(priceAndAvailability.isPricingAgreementIsInvalidErrorIsDisplayedAtPDPopup(arg0));
+    }
+
+    public void checkThanFinalNetpriceIsGreaterErrorMessageIsDisplayedAtPDP(String arg0) {
+        Assert.assertFalse(priceAndAvailability.isFinalNetPriceIsGreaterErrorIsDisplayedAtPDPopup(arg0));
     }
 }

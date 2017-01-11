@@ -3,6 +3,7 @@ package Geempower.pages;
 import ch.lambdaj.function.convert.Converter;
 import Geempower.Path;
 import net.serenitybdd.core.Serenity;
+import net.serenitybdd.core.exceptions.SerenityManagedException;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
@@ -17,6 +18,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 
 public class PriceAndAvailability extends PageObject {
@@ -50,10 +52,10 @@ public class PriceAndAvailability extends PageObject {
         waitABit(1000);
         List<WebElementFacade> webelementFacadeList = findAll(By.xpath(Path.SPA_IN_THE_SP_LOOKUP.replace("$", arg0)));
         waitABit(1000);
-//        try {
-//            waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.DISABLED_APPLY_TO_ALL_BUTTON)));
-//        }catch (NoSuchElementException e){
-//        }
+        try {
+            waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.DISABLED_APPLY_TO_ALL_BUTTON)));
+        }catch (NoSuchElementException e){
+        }
         scrollDown(Path.SPA_IN_THE_SP_LOOKUP.replace("$", arg0));
 
 //        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) getDriver();
@@ -168,6 +170,7 @@ public class PriceAndAvailability extends PageObject {
             if (facade.getText().trim().equalsIgnoreCase(arg0));
             facade.click();
         }
+
     }
 
 
@@ -180,4 +183,15 @@ public class PriceAndAvailability extends PageObject {
            return false;
        }
     }
+    public boolean isFinalNetPriceIsGreaterErrorIsDisplayedAtPDPopup(String arg0) {
+        try {
+            if (arg0.equalsIgnoreCase($(Path.FINAL_NET_PRICE_IS_GREATER_THAN_STANDART_PRICE).getText().trim())) {
+                return true;
+            } else return false;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+
 }

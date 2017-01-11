@@ -295,9 +295,9 @@ public class AccountManagementPage extends PageObject {
         return $(Path.PRICE_AND_AVAILABILITY_PAGE).isEnabled();
     }
 
-    public boolean isProductAddedToThePAndA() {
-        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.PRODUCT_IN_THE_TABLE_AT_PRICE_AND_AVAILABILITY)));
-        return $(Path.PRODUCT_IN_THE_TABLE_AT_PRICE_AND_AVAILABILITY).isDisplayed();
+    public boolean isProductAddedToThePAndA(String arg0) {
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.PRODUCT_IN_THE_TABLE_AT_PRICE_AND_AVAILABILITY.replace("$",arg0))));
+        return $(Path.PRODUCT_IN_THE_TABLE_AT_PRICE_AND_AVAILABILITY.replace("$",arg0)).isDisplayed();
     }
 
     public void clicAddToCartButton() {
