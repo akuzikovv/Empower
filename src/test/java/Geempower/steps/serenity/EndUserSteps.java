@@ -277,7 +277,7 @@ public class EndUserSteps extends ScenarioSteps {
     }
     @Step
     public void checkThatListIsRemoved(String arg0) {
-        Assert.assertTrue(accountManagementPage.isListRemoved(arg0));
+        Assert.assertFalse(accountManagementPage.isListRemoved(arg0));
     }
     @Step
     public void addProductToTHeNewList(String arg0) {
@@ -293,7 +293,7 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     public void checkThatListIsDeletedFromDashboardWidget() {
-        Assert.assertTrue(accountManagementPage.isListRemovedFromDashboard());
+        Assert.assertFalse(accountManagementPage.isListRemovedFromDashboard());
     }
 
     public void clickButtonInTheCartHeader(String arg0) {
@@ -321,7 +321,7 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     public void isCartDeletedFromTheList(String arg0) {
-        Assert.assertTrue(accountManagementPage.isCartRemoved(arg0));
+        Assert.assertFalse(accountManagementPage.isCartRemoved(arg0));
     }
 
 

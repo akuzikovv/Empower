@@ -36,7 +36,7 @@ Feature: Geempower Order Entry
     When At the Dashboard enter Product "THQL1120" and check Price and Availability
     When Select ship addres popup is appeared
     When Click Submit button at the Select ship addres popup
-    And product is displayed at the Price and Availability page
+    And "THQL1120" product is displayed at the Price and Availability page
     When Check product in the table
     When Add product from P&A page to the cart
     When Click on cart icon in the header

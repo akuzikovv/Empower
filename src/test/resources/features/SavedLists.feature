@@ -28,7 +28,7 @@ Feature: Geempower Saved Lists
     When Click "Skip" button
     And  Dashboard page is opened
     When At the Dashboard enter Product "THQL1120" and check Price and Availability
-    And product is displayed at the Price and Availability page
+    And "THQL1120" product is displayed at the Price and Availability page
     When Check product in the table
     When Add product to the "2TestAuto" new list
     When Click on "Home" link in the header
