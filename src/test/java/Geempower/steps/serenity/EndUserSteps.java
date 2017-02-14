@@ -425,4 +425,9 @@ public class EndUserSteps extends ScenarioSteps {
     public void checkThanFinalNetpriceIsGreaterErrorMessageIsDisplayedAtPDP(String arg0) {
         Assert.assertFalse(priceAndAvailability.isFinalNetPriceIsGreaterErrorIsDisplayedAtPDPopup(arg0));
     }
+
+
+    public void CheckThatWarningPriceMessageisDisplayed(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isFinalNetPriceIsGreaterErrorIsDisplayedAtPDPopup(arg0));
+    }
 }

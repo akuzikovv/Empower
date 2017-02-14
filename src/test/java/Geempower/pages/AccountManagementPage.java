@@ -455,6 +455,7 @@ public class AccountManagementPage extends PageObject {
         waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.ADD_ITEM_BUTTON)));
         $(Path.ADD_ITEM_BUTTON).click();
         $(Path.INPUT_PRODUCT_NUMBER).sendKeys(arg0);
+        waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.ADD_PRODUCT_BUTTON_TO_LIST)));
         $(Path.ADD_PRODUCT_BUTTON_TO_LIST).click();
 
     }

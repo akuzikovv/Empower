@@ -167,10 +167,11 @@ public class PriceAndAvailability extends PageObject {
         List<WebElementFacade> list = findAll(By.xpath(Path.TABS_AT_THE_PRODUCT_DETAILS_POPUP));
         for (WebElementFacade facade : list){
             facade.getText();
-            if (facade.getText().trim().equalsIgnoreCase(arg0));
-            facade.click();
-        }
+            if (facade.getText().trim().equalsIgnoreCase(arg0)){
+                facade.click();
+            }
 
+        }
     }
 
 
@@ -192,6 +193,7 @@ public class PriceAndAvailability extends PageObject {
             return false;
         }
     }
+
 
 
 }

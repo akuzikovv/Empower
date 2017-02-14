@@ -521,4 +521,10 @@ public class GeempowerBinder {
     public void errorMessageIsnTDisplayedAtProductDetailsPopup(String arg0) throws Throwable {
         steps.checkThanFinalNetpriceIsGreaterErrorMessageIsDisplayedAtPDP(arg0);
     }
+
+
+    @Then("^\"([^\"]*)\" error message is displayed at Product details popup$")
+    public void errorMessageIsDisplayedAtProductDetailsPopup(String arg0) throws Throwable {
+        steps.CheckThatWarningPriceMessageisDisplayed(arg0);
+    }
 }
