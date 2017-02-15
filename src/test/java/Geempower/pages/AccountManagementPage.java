@@ -158,7 +158,11 @@ public class AccountManagementPage extends PageObject {
     }
 
     public boolean is_poructAddedToTheCart() {
-        waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.PROGRESS_INDICATOR)));
+        try {
+            waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.PROGRESS_INDICATOR)));
+        }catch (Exception e){
+
+        }
         return $(Path.PRODUCT_IN_THE_TABLE).isDisplayed();
     }
 

@@ -199,3 +199,18 @@ Feature: Geempower P&A
     When click on "104PBG00B3" product in the table
     When Click on "Availability Details" tab
     Then "Final Net Price is greater than Standard Price" error message isn't displayed at Product details popup
+
+  Scenario: Check that "Pricing agreement is invalid. Standard price is displayed." error messages aren't displayed if standart SPA
+    Given open custom login page
+    When login user
+    When Search for EMEA "9005898" account
+    When Click "9005898" account
+    When Click "Skip" button
+    And  Dashboard page is opened
+    When At the Dashboard enter Product "109244" and check Price and Availability
+    And "109244" product is displayed at the Price and Availability page
+    Then "Pricing agreement is invalid. Standard price is displayed." error message isn't displayed at the P&A results page
+    When click on "109244" product in the table
+    When Click on "Product Details" tab
+    Then "Pricing agreement is invalid. Standard price is displayed." error message isn't displayed at the Product details popup
+    Then "Final Net Price is greater than Standard Price" error message isn't displayed at the Product details popup

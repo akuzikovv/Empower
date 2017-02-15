@@ -8,7 +8,7 @@ Feature: Geempower Account Management
   Scenario: Check that user able to choose appropriate account
     Given open custom login page
     When login user
-    When Click account number
+    When Click "1318501" account
     When Click "Skip" button
     Then Dashboard page is opened
 
