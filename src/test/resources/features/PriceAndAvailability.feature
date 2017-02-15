@@ -200,11 +200,11 @@ Feature: Geempower P&A
     When Click on "Availability Details" tab
     Then "Final Net Price is greater than Standard Price" error message isn't displayed at Product details popup
 
-  Scenario: Check that "Pricing agreement is invalid. Standard price is displayed." error messages aren't displayed if standart SPA
+  Scenario: Check that "Pricing agreement is invalid. Standard price is displayed." error messages aren't displayed if standart SPA for EMEA
     Given open custom login page
     When login user
     When Search for EMEA "9005898" account
-    When Click "9005898" account
+    When Click "9005898_ITS1_10_10" EMEA account
     When Click "Skip" button
     And  Dashboard page is opened
     When At the Dashboard enter Product "109244" and check Price and Availability
@@ -214,3 +214,23 @@ Feature: Geempower P&A
     When Click on "Product Details" tab
     Then "Pricing agreement is invalid. Standard price is displayed." error message isn't displayed at the Product details popup
     Then "Final Net Price is greater than Standard Price" error message isn't displayed at the Product details popup
+
+  Scenario: Check that "Pricing agreement is invalid. Standard price is displayed." error message is displayed with Invalid SPA for EMEA
+    Given open custom login page
+    When login user
+    When Search for EMEA "9005898" account
+    When Click "9005898_ITS1_10_10" EMEA account
+    When Click "Skip" button
+    And  Dashboard page is opened
+    When At the Dashboard enter Product "109244" and check Price and Availability
+    And "109244" product is displayed at the Price and Availability page
+    When Open Special Pricing Lookup
+    When Click on "140011550" spa
+    When Click "Apply & Copy" button at Special Pricing Lookup
+    When "140011550" spa is displayed
+    When Update Price and Availability at P&A page
+    Then "Pricing agreement is invalid. Standard price is displayed." error message is displayed at the P&A results page
+    When click on "140011550" product in the table
+    Then "Specifications" tab is shown at the product details popup
+    When Click on "Product Details" tab
+    Then "Pricing agreement is invalid. Standard price is displayed." error message is displayed at the Product details popup

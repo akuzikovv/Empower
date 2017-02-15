@@ -527,4 +527,9 @@ public class GeempowerBinder {
     public void errorMessageIsDisplayedAtProductDetailsPopup(String arg0) throws Throwable {
         steps.CheckThatWarningPriceMessageisDisplayed(arg0);
     }
+
+    @When("^Click \"([^\"]*)\" EMEA account$")
+    public void clickEMEAAccount(String arg0) throws Throwable {
+        steps.clickEMEAAccount(arg0);
+    }
 }

@@ -430,4 +430,8 @@ public class EndUserSteps extends ScenarioSteps {
     public void CheckThatWarningPriceMessageisDisplayed(String arg0) {
         Assert.assertTrue(priceAndAvailability.isFinalNetPriceIsGreaterErrorIsDisplayedAtPDPopup(arg0));
     }
+@Step
+    public void clickEMEAAccount(String arg0) {
+    priceAndAvailability.clickEMEAAccunt(arg0);
+    }
 }

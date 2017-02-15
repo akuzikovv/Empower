@@ -188,6 +188,7 @@ public interface Path {
     String PRICING_AGREEMENT_IS_INVALID_ERROR = ".//tr//p[.='Pricing agreement is invalid. Standard price is displayed.']";
     String PRICING_AGREEMENT_IS_INVALID_ERROR_PDP = ".//*[@id='product-details']//p[contains(text(),'Pricing agreement is invalid. Standard price is displayed.')]";
     String FINAL_NET_PRICE_IS_GREATER_THAN_STANDART_PRICE = ".//*[@id='product-details']//p[contains(text(),'Final Net Price is greater than Standard Price')]";
+    String EMEA_ACCOUNT = ".//td/a[contains(@href,'my-account/select-account/000$')]";
 
 
 //    =============================================================================

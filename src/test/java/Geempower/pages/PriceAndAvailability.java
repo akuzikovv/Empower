@@ -195,5 +195,7 @@ public class PriceAndAvailability extends PageObject {
     }
 
 
-
+    public void clickEMEAAccunt(String arg0) {
+        $(Path.EMEA_ACCOUNT.replace("$",arg0)).click();
+    }
 }
