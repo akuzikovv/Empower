@@ -291,142 +291,142 @@ public class EndUserSteps extends ScenarioSteps {
     public void clickOnListAtDashdoard(String arg0) {
         accountManagementPage.clickOnAppropriateListAtDashboard(arg0);
     }
-
+    @Step
     public void checkThatListIsDeletedFromDashboardWidget() {
         Assert.assertFalse(accountManagementPage.isListRemovedFromDashboard());
     }
-
+    @Step
     public void clickButtonInTheCartHeader(String arg0) {
         accountManagementPage.clickButtonAtCartHeader(arg0);
     }
-
+    @Step
     public void saveNewCart(String arg0) {
         accountManagementPage.saveNewCartToTheList(arg0);
     }
-
+    @Step
     public void clickGELogo() {
         accountManagementPage.clickGELogoInTheHeader();
     }
-
+    @Step
     public void isNewCartCreated(String arg0) {
         Assert.assertTrue(accountManagementPage.isCartSAved(arg0));
     }
-
+    @Step
     public void clickOnSavedCartInTheTable(String arg0) {
         accountManagementPage.clickOnSavedCart(arg0);
     }
-
+    @Step
     public void deletesavedCart(String arg0) {
         accountManagementPage.deleteNewSavedcart(arg0);
     }
-
+    @Step
     public void isCartDeletedFromTheList(String arg0) {
         Assert.assertFalse(accountManagementPage.isCartRemoved(arg0));
     }
 
-
+    @Step
     public void isPONumberAndStockAddresSaved(String arg0, String arg1) {
         Assert.assertTrue(accountManagementPage.isEnteredPONumberSaved(arg0));
         Assert.assertTrue(accountManagementPage.isEnteredStockAddressSaved(arg1));
     }
-
+    @Step
     public void isStandartSpaDisplayed(String arg0) {
         Assert.assertTrue(priceAndAvailability.isStandartSpaPreselected(arg0));
     }
-
+    @Step
     public void openSpecialPricingLookup() {
         priceAndAvailability.clickOnMagnifyingGlass();
     }
-
+    @Step
     public void clickOnSpainpopup(String arg0) {
         priceAndAvailability.chooseSpaInTheSPPopup(arg0);
     }
-
+    @Step
     public void clickOnButtonAtSpecialPricingLookup(String arg0) {
         priceAndAvailability.clickButtonAtSPLookap(arg0);
     }
-
+    @Step
     public void UpdatePriceAndAvailabilityAtPAPage() {
         priceAndAvailability.clickUpdatePrAndAvButton();
     }
-
+    @Step
     public void isFinalNetPricesChanged(String arg0) {
         Assert.assertTrue(priceAndAvailability.isFinalNetPriceUpdated(arg0));
     }
-
+    @Step
     public void isExtndPricesChanged(String arg0) {
         Assert.assertTrue(priceAndAvailability.isExtndPriceUpdated(arg0));
     }
 
 
-
+    @Step
     public void checkThatQtyisDisplayed(String arg0) {
         Assert.assertTrue(priceAndAvailability.isAppropriateQtyDisplayed(arg0));
     }
 
-
+    @Step
     public void checkThatExtndPriceCorrect(String arg0) {
         Assert.assertTrue(priceAndAvailability.isExtndPriceUpdated(arg0));
 
     }
-
+    @Step
     public void clickAddItemButton(String arg0) {
         priceAndAvailability.clickOnButtonAtTheHeaderAtPriceAndAnailability(arg0);
     }
-
+    @Step
     public void addProductToPAndA(String arg0) {
         priceAndAvailability.addprodToThePage(arg0);
     }
-
+    @Step
     public void checkThatSpaAppliedForAllProdInTable(String arg0) {
         Assert.assertTrue(priceAndAvailability.isStandartSpaPreselected(arg0));
     }
-
+    @Step
     public void searchBySpaNoSpaPopup(String arg0) {
         priceAndAvailability.searchAtSpapopup(arg0);
     }
-
+    @Step
     public void searchByCustomerNumber(String arg0) {
         priceAndAvailability.searchAtSpapopup(arg0);
     }
-
+    @Step
     public void searchByCustomerName(String arg0) {
         priceAndAvailability.searchAtSpapopup(arg0);
     }
-
+    @Step
     public void InvalidSpaErrorIsDisplayedAtPandAPage(String arg0) {
         Assert.assertTrue(priceAndAvailability.isInvalidSpaErrorDisplayedAtPanaAPage(arg0));
     }
-
+    @Step
     public void clickOnProductInThePandAList(String arg0) {
         priceAndAvailability.clickOnProductInTheTable(arg0);
     }
-
+    @Step
     public void checkthatSpecificationsTabIsOpened(String arg0) {
         Assert.assertTrue(priceAndAvailability.isCorrectTabOpenedAtPDP(arg0));
     }
-
+    @Step
     public void clickOntabInPDP(String arg0) {
         priceAndAvailability.clickTabInPDP(arg0);
     }
-
+    @Step
     public void checkThatPricingAgreementIsInvalidErrorIsDisplayedAtPDP(String arg0) {
         Assert.assertTrue(priceAndAvailability.isPricingAgreementIsInvalidErrorIsDisplayedAtPDPopup(arg0));
     }
-
+    @Step
     public void checkThatPricingAgreementIsntInvalidErrorIsDisplayedAtPandApage(String arg0) {
         Assert.assertFalse(priceAndAvailability.isInvalidSpaErrorDisplayedAtPanaAPage(arg0));
     }
-
+    @Step
     public void checkThatPricingAgreementIsInvalidErrorIsntDisplayedAtPDP(String arg0) {
         Assert.assertFalse(priceAndAvailability.isPricingAgreementIsInvalidErrorIsDisplayedAtPDPopup(arg0));
     }
-
+    @Step
     public void checkThanFinalNetpriceIsGreaterErrorMessageIsDisplayedAtPDP(String arg0) {
         Assert.assertFalse(priceAndAvailability.isFinalNetPriceIsGreaterErrorIsDisplayedAtPDPopup(arg0));
     }
 
-
+    @Step
     public void CheckThatWarningPriceMessageisDisplayed(String arg0) {
         Assert.assertTrue(priceAndAvailability.isFinalNetPriceIsGreaterErrorIsDisplayedAtPDPopup(arg0));
     }
