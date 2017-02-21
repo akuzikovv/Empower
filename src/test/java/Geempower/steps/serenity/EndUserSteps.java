@@ -1,9 +1,7 @@
 package Geempower.steps.serenity;
 
 import Geempower.Path;
-import Geempower.pages.AccountManagementPage;
-import Geempower.pages.DashboardPage;
-import Geempower.pages.PriceAndAvailability;
+import Geempower.pages.*;
 import cucumber.api.java.cs.A;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.pages.WebElementState;
@@ -22,6 +20,9 @@ public class EndUserSteps extends ScenarioSteps {
     AccountManagementPage accountManagementPage;
     DashboardPage dashboardPage;
     PriceAndAvailability priceAndAvailability;
+    OrderStatus orderStatus;
+    Invoice invoice;
+    ManageUsers manageusers;
 
 
 
@@ -433,5 +434,45 @@ public class EndUserSteps extends ScenarioSteps {
 @Step
     public void clickEMEAAccount(String arg0) {
     priceAndAvailability.clickEMEAAccunt(arg0);
+    }
+
+    public void chechThatAllOrdersPageIsOpened() {
+        Assert.assertTrue(orderStatus.isOrderStatusPageOpened());
+    }
+
+    public void searchByAtOrderStatus(String arg0) {
+        orderStatus.searchByAtOrderStatus(arg0);
+    }
+
+    public void appropriateOrderNumberIsDisplayedAtTheTable(String arg0) {
+        Assert.assertTrue(orderStatus.isAppropriateOrderDisplayed(arg0));
+    }
+
+    public void checkThatAppropriatePONumberIsDisplayedAtTheTable(String arg0) {
+        Assert.assertTrue(orderStatus.isAppropriatePODisplayed(arg0));
+    }
+
+    public void chceckThatJobNameIsDisplayedAtTheTable(String arg0) {
+        Assert.assertTrue(orderStatus.isAppropriateJobNameDisplayed(arg0));
+    }
+
+    public void clickOnAppropriateOrder(String arg0) {
+        orderStatus.clickOnOrder(arg0);
+    }
+
+    public void clcikOnAppropriatePO(String arg0) {
+        orderStatus.clickOnPONumber(arg0);
+    }
+
+    public void checkCheckboxInTheHeader() {
+        orderStatus.checkCheckboxInHeader();
+    }
+
+    public void clickNextButtonAtThePOPage() {
+        orderStatus.clickNextButtonPOPage();
+    }
+
+    public void checkThatPOOrderDetailsPageOpened() {
+        Assert.assertTrue(orderStatus.isPOOrderDetailPageopened());
     }
 }

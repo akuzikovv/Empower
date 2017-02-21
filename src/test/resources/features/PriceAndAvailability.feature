@@ -234,3 +234,4 @@ Feature: Geempower P&A
     Then "Specifications" tab is shown at the product details popup
     When Click on "Product Details" tab
     Then "Pricing agreement is invalid. Standard price is displayed." error message is displayed at the Product details popup
+

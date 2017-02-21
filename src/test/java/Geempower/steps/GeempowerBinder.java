@@ -532,4 +532,54 @@ public class GeempowerBinder {
     public void clickEMEAAccount(String arg0) throws Throwable {
         steps.clickEMEAAccount(arg0);
     }
+
+    @Then("^All Orders page is opened$")
+    public void allOrdersPageIsOpened() throws Throwable {
+        steps.chechThatAllOrdersPageIsOpened();
+    }
+
+    @When("^Search by \"([^\"]*)\"$")
+    public void searchBy(String arg0) throws Throwable {
+        steps.searchByAtOrderStatus(arg0);
+    }
+
+    @Then("^\"([^\"]*)\" order number is displayed at the table$")
+    public void orderNumberIsDisplayedAtTheTable(String arg0) throws Throwable {
+       steps.appropriateOrderNumberIsDisplayedAtTheTable(arg0);
+    }
+
+    @Then("^\"([^\"]*)\" PO number is displayed at the table$")
+    public void poNumberIsDisplayedAtTheTable(String arg0) throws Throwable {
+        steps.checkThatAppropriatePONumberIsDisplayedAtTheTable(arg0);
+    }
+
+    @Then("^\"([^\"]*)\" Job Name is displayed at the table$")
+    public void jobNameIsDisplayedAtTheTable(String arg0) throws Throwable {
+       steps.chceckThatJobNameIsDisplayedAtTheTable(arg0);
+    }
+
+    @When("^Click on \"([^\"]*)\" order number$")
+    public void clickOnOrderNumber(String arg0) throws Throwable {
+      steps.clickOnAppropriateOrder(arg0);
+    }
+
+    @When("^Click on \"([^\"]*)\" PO order number$")
+    public void clickOnPOOrderNumber(String arg0) throws Throwable {
+        steps.clcikOnAppropriatePO(arg0);
+    }
+
+    @When("^Check all orders in the table$")
+    public void checkAllOrdersInTheTable() throws Throwable {
+        steps.checkCheckboxInTheHeader();
+    }
+
+    @When("^click next button$")
+    public void clickNextButton() throws Throwable {
+        steps.clickNextButtonAtThePOPage();
+    }
+
+    @Then("^PO Order details page is opened$")
+    public void poOrderDetailsPageIsOpened() throws Throwable {
+        steps.checkThatPOOrderDetailsPageOpened();
+    }
 }
