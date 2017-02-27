@@ -4,6 +4,7 @@ Feature: Geempower Saved Lists
   Scenario: Check that user able to create new list at the "All Items" page, add product to the list, and delete list
     Given open custom login page
     When login user
+    When Choose "EMEA" region
     When Search for NA "1318501" account
     When Click "1318501" account
     When Click "Skip" button
@@ -23,6 +24,7 @@ Feature: Geempower Saved Lists
   Scenario: Check that user able to add product to the new list from P&A page, and delete list
     Given open custom login page
     When login user
+    When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
     When Click "Skip" button
@@ -44,6 +46,7 @@ Feature: Geempower Saved Lists
   Scenario: Check that user able to save cart on the first step and returne to the saved cart
     Given open custom login page
     When login user
+    When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
     When Click "Skip" button
@@ -70,6 +73,7 @@ Feature: Geempower Saved Lists
   Scenario: Check that user able to save cart on the second step and returne to the saved cart
     Given open custom login page
     When login user
+    When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
     When Click "Skip" button
@@ -101,6 +105,7 @@ Feature: Geempower Saved Lists
   Scenario: Check that user able to save cart on the third step and returne to the saved cart
     Given open custom login page
     When login user
+    When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
     When Click "Skip" button

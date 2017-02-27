@@ -33,7 +33,7 @@ public interface Path {
     String LIST_OF_STATES = "//tbody//td[contains(@class,'table-visible-lg-block')]";
     String LIST_OF_SALES_ORG = "//tbody//td[contains(@class,'sales-org-col table-visible-lg-block')]";
     String LIST_OF_SALES_CHANNELS = "//tbody//td[contains(@class,'sales-channel-col table-visible-lg-block')]";
-
+    String LIST_OF_ORDERS = ".//ul[@id='select2-region-results']/li";
 
 
 
@@ -204,6 +204,13 @@ String ALL_ORDERS_TEXT = ".//h3[.='All Orders']";
     String NEXT_BUTTON_PO_PAGE = "//button[.='Next']";
     String DISABLED_NEXT_BUTTON_PO_PAGE = "//button[.='Next' and @disabled='']";
     String STATUS_MARKERS_AT_THE_PO_ORDER_DETAILS_PAGE = ".//ul[@class='status-legend-list clearfix']";
+
+    //    =============================================================================
+
+    String ALL_INVOICES_TEXT = ".//h3[.='All Invoices']";
+    String SELECT_REGION_COMBOBOX = ".//*[@id='select2-region-container']";
+
+
     //    =============================================================================
 
 

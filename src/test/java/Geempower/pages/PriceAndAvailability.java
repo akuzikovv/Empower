@@ -198,4 +198,15 @@ public class PriceAndAvailability extends PageObject {
     public void clickEMEAAccunt(String arg0) {
         $(Path.EMEA_ACCOUNT.replace("$",arg0)).click();
     }
+
+    public void chooceAppropriateRegion(String arg0) {
+        $(Path.SELECT_REGION_COMBOBOX).click();
+        List <WebElementFacade> facade = findAll(By.xpath(Path.LIST_OF_ORDERS));
+        for (WebElementFacade webfacade : facade){
+            if(webfacade.getText().equalsIgnoreCase(arg0)){
+                webfacade.click();
+            }
+        }
+
+    }
 }

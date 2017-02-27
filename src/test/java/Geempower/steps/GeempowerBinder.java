@@ -582,4 +582,14 @@ public class GeempowerBinder {
     public void poOrderDetailsPageIsOpened() throws Throwable {
         steps.checkThatPOOrderDetailsPageOpened();
     }
+
+    @Then("^All Invoices page is opened$")
+    public void allInvoicesPageIsOpened() throws Throwable {
+        steps.checkThatAllInvoicedPageOpened();
+    }
+
+    @When("^Choose \"([^\"]*)\" region$")
+    public void chooseRegion(String arg0) throws Throwable {
+        steps.chooseRegion(arg0);
+    }
 }

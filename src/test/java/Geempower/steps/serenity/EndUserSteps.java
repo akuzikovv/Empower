@@ -475,4 +475,12 @@ public class EndUserSteps extends ScenarioSteps {
     public void checkThatPOOrderDetailsPageOpened() {
         Assert.assertTrue(orderStatus.isPOOrderDetailPageopened());
     }
+
+    public void checkThatAllInvoicedPageOpened() {
+        Assert.assertTrue(invoice.isAllInvoicesPageOpened());
+    }
+
+    public void chooseRegion(String arg0) {
+        priceAndAvailability.chooceAppropriateRegion(arg0);
+    }
 }
