@@ -54,7 +54,7 @@ public class PriceAndAvailability extends PageObject {
         waitABit(1000);
         try {
             waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.DISABLED_APPLY_TO_ALL_BUTTON)));
-        }catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
         }
         scrollDown(Path.SPA_IN_THE_SP_LOOKUP.replace("$", arg0));
 
@@ -62,10 +62,11 @@ public class PriceAndAvailability extends PageObject {
 //        javascriptExecutor.executeScript("arguments[0].scrollIntoView();",$(Path.SPA_IN_THE_SP_LOOKUP.replace("$", arg0)));
 
         for (WebElementFacade facade : webelementFacadeList) {
-                        facade.getText();
+            facade.getText();
             if (facade.getText().equalsIgnoreCase(arg0)) {
-                    facade.click();
-            }break;
+                facade.click();
+            }
+            break;
         }
 
 
@@ -137,21 +138,21 @@ public class PriceAndAvailability extends PageObject {
 
 
     public boolean isInvalidSpaErrorDisplayedAtPanaAPage(String arg0) {
-       try {
-           if (arg0.equalsIgnoreCase($(Path.PRICING_AGREEMENT_IS_INVALID_ERROR).getText().toString())) {
-               return true;
-           }
-               return false;
-       }catch (NoSuchElementException e){
-           return false;
-       }
+        try {
+            if (arg0.equalsIgnoreCase($(Path.PRICING_AGREEMENT_IS_INVALID_ERROR).getText().toString())) {
+                return true;
+            }
+            return false;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
 
     public void clickOnProductInTheTable(String arg0) {
-        List<WebElementFacade> list = findAll(By.xpath(Path.PRODUCT_IN_THE_TABLE_AT_PRICE_AND_AVAILABILITY.replace("$",arg0)));
-        for (WebElementFacade facade : list){
+        List<WebElementFacade> list = findAll(By.xpath(Path.PRODUCT_IN_THE_TABLE_AT_PRICE_AND_AVAILABILITY.replace("$", arg0)));
+        for (WebElementFacade facade : list) {
             facade.getText();
-            if (facade.getText().equalsIgnoreCase(arg0));
+            if (facade.getText().equalsIgnoreCase(arg0)) ;
             facade.click();
         }
     }
@@ -165,9 +166,9 @@ public class PriceAndAvailability extends PageObject {
 
     public void clickTabInPDP(String arg0) {
         List<WebElementFacade> list = findAll(By.xpath(Path.TABS_AT_THE_PRODUCT_DETAILS_POPUP));
-        for (WebElementFacade facade : list){
+        for (WebElementFacade facade : list) {
             facade.getText();
-            if (facade.getText().trim().equalsIgnoreCase(arg0)){
+            if (facade.getText().trim().equalsIgnoreCase(arg0)) {
                 facade.click();
             }
 
@@ -176,37 +177,38 @@ public class PriceAndAvailability extends PageObject {
 
 
     public boolean isPricingAgreementIsInvalidErrorIsDisplayedAtPDPopup(String arg0) {
-       try {
-           if (arg0.equalsIgnoreCase($(Path.PRICING_AGREEMENT_IS_INVALID_ERROR_PDP).getText().trim())) {
-               return true;
-           } else return false;
-       }catch (NoSuchElementException e){
-           return false;
-       }
+        try {
+            if (arg0.equalsIgnoreCase($(Path.PRICING_AGREEMENT_IS_INVALID_ERROR_PDP).getText().trim())) {
+                return true;
+            } else return false;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
+
     public boolean isFinalNetPriceIsGreaterErrorIsDisplayedAtPDPopup(String arg0) {
         try {
             if (arg0.equalsIgnoreCase($(Path.FINAL_NET_PRICE_IS_GREATER_THAN_STANDART_PRICE).getText().trim())) {
                 return true;
             } else return false;
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
 
 
     public void clickEMEAAccunt(String arg0) {
-        $(Path.EMEA_ACCOUNT.replace("$",arg0)).click();
+        $(Path.EMEA_ACCOUNT.replace("$", arg0)).click();
     }
 
     public void chooceAppropriateRegion(String arg0) {
         $(Path.SELECT_REGION_COMBOBOX).click();
-        List <WebElementFacade> facade = findAll(By.xpath(Path.LIST_OF_ORDERS));
-        for (WebElementFacade webfacade : facade){
-            if(webfacade.getText().equalsIgnoreCase(arg0)){
+        List<WebElementFacade> facade = findAll(By.xpath(Path.LIST_OF_ORDERS));
+        for (WebElementFacade webfacade : facade) {
+            if (webfacade.getText().equalsIgnoreCase(arg0)) {
                 webfacade.click();
+                break;
             }
         }
-
     }
 }
