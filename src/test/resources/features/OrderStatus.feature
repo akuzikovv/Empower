@@ -45,8 +45,8 @@ Feature: Geempower Order Status
     When Click "Skip" button
     And  Dashboard page is opened
     When Click on "Order Status" link in the header
-    When Search by "REQ DATE TESTING"
-    Then "REQ DATE TESTING" Job Name is displayed at the table
+    When Search by "NORMAL NA ORDER"
+    Then "NORMAL NA ORDER" Job Name is displayed at the table
 
   Scenario: check that Order Details page opened
     Given open custom login page

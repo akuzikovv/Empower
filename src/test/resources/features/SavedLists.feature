@@ -4,7 +4,7 @@ Feature: Geempower Saved Lists
   Scenario: Check that user able to create new list at the "All Items" page, add product to the list, and delete list
     Given open custom login page
     When login user
-    When Choose "EMEA" region
+    When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
     When Click "Skip" button
