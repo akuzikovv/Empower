@@ -461,7 +461,7 @@ public class GeempowerBinder {
     }
 
     @Then("^\"([^\"]*)\" spa applied for all products$")
-    public void spaAppliedForAllProducts(String arg0) throws Throwable {
+    public void spaAppliedForAllProducts(String arg0) {
         steps.checkThatSpaAppliedForAllProdInTable(arg0);
     }
 

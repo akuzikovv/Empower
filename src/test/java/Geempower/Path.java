@@ -133,6 +133,23 @@ public interface Path {
 
     String ORDER_DETAILS_PAGE = ".//h3[.='Order Details']";
     String ORDER_DETAILS_ORDER_NUMBER = ".//div[@class='panel-body']/ul[1]/li[1]";
+    String ALL_ORDERS_TEXT = ".//h3[.='All Orders']";
+    String ORDER_STATUS_SEARCH_INPUT_FIELD = ".//*[@id='order-filter-by-value']";
+    String MAGNIFYING_GLASS_BUTTON = ".//*[@id='order-search-button']";
+    String ORDER_IN_THE_TABLE=".//tbody/tr[1]/td[1]/a";
+    String ALL_ORDERS_IN_THE_TABLE=".//tbody/tr/td[1]/a";
+    String LIST_OF_PO_NUMBERS_IN_THE_TABLE = "//table[@class='table info-table all-order-list-table dataTable no-footer']//tbody/tr/td[2]/a";
+    String LIST_OF_ALL_JOB_NAMES_IN_THE_TABLES = "//table[@class='table info-table all-order-list-table dataTable no-footer']//tbody/tr/td[3]";
+    String CHECK_BOX_IN_THE_HEADER_AT_PO_PAGE = ".//input[@class='po-order' and @name='radio']/following-sibling::ins";
+    String NEXT_BUTTON_PO_PAGE = "//button[.='Next']";
+    String DISABLED_NEXT_BUTTON_PO_PAGE = "//button[.='Next' and @disabled='']";
+    String STATUS_MARKERS_AT_THE_PO_ORDER_DETAILS_PAGE = ".//ul[@class='status-legend-list clearfix']";
+    String FIRST_LINE = ".//ul[@class='account-desc-list row'][1]/li[1]/a";
+    String CATALOG_NO_AT_FIRST_LINE = ".//ul[@class='account-desc-list row'][1]/li[6]/a";
+    String FIRST_LINE_PO_PAGE = ".//div[@class='po-order-detail-wrapper'][1]//ul[@class='account-desc-list row'][1]/li[1]/a";
+    String CATALOG_NO_AT_FIRST_LINE_PO_PAGE = ".//div[@class='po-order-detail-wrapper'][1]//ul[@class='account-desc-list row'][1]/li[6]/a";
+
+
 
 //    =======================================================================
 //    Price & Availability
@@ -193,17 +210,6 @@ public interface Path {
 
 //    =============================================================================
 
-String ALL_ORDERS_TEXT = ".//h3[.='All Orders']";
-    String ORDER_STATUS_SEARCH_INPUT_FIELD = ".//*[@id='order-filter-by-value']";
-    String MAGNIFYING_GLASS_BUTTON = ".//*[@id='order-search-button']";
-    String ORDER_IN_THE_TABLE=".//tbody/tr[1]/td[1]/a";
-    String ALL_ORDERS_IN_THE_TABLE=".//tbody/tr/td[1]/a";
-    String LIST_OF_PO_NUMBERS_IN_THE_TABLE = "//table[@class='table info-table all-order-list-table dataTable no-footer']//tbody/tr/td[2]/a";
-    String LIST_OF_ALL_JOB_NAMES_IN_THE_TABLES = "//table[@class='table info-table all-order-list-table dataTable no-footer']//tbody/tr/td[3]";
-    String CHECK_BOX_IN_THE_HEADER_AT_PO_PAGE = ".//input[@class='po-order' and @name='radio']/following-sibling::ins";
-    String NEXT_BUTTON_PO_PAGE = "//button[.='Next']";
-    String DISABLED_NEXT_BUTTON_PO_PAGE = "//button[.='Next' and @disabled='']";
-    String STATUS_MARKERS_AT_THE_PO_ORDER_DETAILS_PAGE = ".//ul[@class='status-legend-list clearfix']";
 
     //    =============================================================================
 
