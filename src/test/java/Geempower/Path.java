@@ -148,6 +148,7 @@ public interface Path {
     String CATALOG_NO_AT_FIRST_LINE = ".//ul[@class='account-desc-list row'][1]/li[6]/a";
     String FIRST_LINE_PO_PAGE = ".//div[@class='po-order-detail-wrapper'][1]//ul[@class='account-desc-list row'][1]/li[1]/a";
     String CATALOG_NO_AT_FIRST_LINE_PO_PAGE = ".//div[@class='po-order-detail-wrapper'][1]//ul[@class='account-desc-list row'][1]/li[6]/a";
+    String LINE_ITEM_DETAILS = "//a[contains(text(),'Item Details')]";
 
 
 

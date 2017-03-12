@@ -592,4 +592,14 @@ public class GeempowerBinder {
     public void chooseRegion(String arg0) throws Throwable {
         steps.chooseRegion(arg0);
     }
+
+    @When("^Click on first order line item$")
+    public void clickOnFirstOrderLineItem() throws Throwable {
+        steps.clickOnOrderLineDetails();
+    }
+
+    @Then("^order line item deteils is opened$")
+    public void orderLineItemDeteilsIsOpened() throws Throwable {
+        steps.checkThatOrderLineItemDetailsIsDisplayed();
+    }
 }

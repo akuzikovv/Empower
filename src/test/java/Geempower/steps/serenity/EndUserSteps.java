@@ -483,4 +483,12 @@ public class EndUserSteps extends ScenarioSteps {
     public void chooseRegion(String arg0) {
         priceAndAvailability.chooceAppropriateRegion(arg0);
     }
+
+    public void clickOnOrderLineDetails() {
+        orderStatus.clickOrderLineDetails();
+    }
+
+    public void checkThatOrderLineItemDetailsIsDisplayed() {
+        Assert.assertTrue(orderStatus.checkThatOrderLineItemDetailsIsOpened());
+    }
 }

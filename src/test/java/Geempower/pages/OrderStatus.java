@@ -83,4 +83,13 @@ public class OrderStatus extends PageObject {
     public boolean isPOOrderDetailPageopened() {
         return $(Path.STATUS_MARKERS_AT_THE_PO_ORDER_DETAILS_PAGE).isDisplayed();
     }
+
+    public void clickOrderLineDetails() {
+        $(Path.FIRST_LINE).click();
+    }
+
+    public boolean checkThatOrderLineItemDetailsIsOpened() {
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.LINE_ITEM_DETAILS)));
+        return $(Path.LINE_ITEM_DETAILS).isDisplayed();
+    }
 }

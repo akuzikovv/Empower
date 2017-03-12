@@ -48,7 +48,7 @@ Feature: Geempower Order Status
     When Search by "NORMAL NA ORDER"
     Then "NORMAL NA ORDER" Job Name is displayed at the table
 
-  Scenario: check that Order Details page opened
+  Scenario: check that Order Details page and Order line Item details opened
     Given open custom login page
     When login user
     When Choose "North America" region
@@ -60,6 +60,8 @@ Feature: Geempower Order Status
     When Search by "150593309"
     When Click on "150593309" order number
     Then Order details page is opened
+    When Click on first order line item
+    Then order line item deteils is opened
 
   Scenario: check that PO Order Details page opened
     Given open custom login page
@@ -75,6 +77,8 @@ Feature: Geempower Order Status
     When Check all orders in the table
     When click next button
     Then PO Order details page is opened
+    When Click on first PO order line item
+    Then order line item deteils is opened
 
 
 
