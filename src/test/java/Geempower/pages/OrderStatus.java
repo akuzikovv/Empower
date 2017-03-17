@@ -92,4 +92,8 @@ public class OrderStatus extends PageObject {
         waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Path.LINE_ITEM_DETAILS)));
         return $(Path.LINE_ITEM_DETAILS).isDisplayed();
     }
+
+    public void clickOnFirstPOOrderLineNumber() {
+        $(Path.FIRST_LINE_PO_PAGE).click();
+    }
 }

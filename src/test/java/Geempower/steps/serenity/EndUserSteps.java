@@ -491,4 +491,8 @@ public class EndUserSteps extends ScenarioSteps {
     public void checkThatOrderLineItemDetailsIsDisplayed() {
         Assert.assertTrue(orderStatus.checkThatOrderLineItemDetailsIsOpened());
     }
+
+    public void clickOnFirstPOOrderLine() {
+        orderStatus.clickOnFirstPOOrderLineNumber();
+    }
 }

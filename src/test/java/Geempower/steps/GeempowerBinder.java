@@ -602,4 +602,9 @@ public class GeempowerBinder {
     public void orderLineItemDeteilsIsOpened() throws Throwable {
         steps.checkThatOrderLineItemDetailsIsDisplayed();
     }
+
+    @When("^Click on first PO order line item$")
+    public void clickOnFirstPOOrderLineItem() throws Throwable {
+        steps.clickOnFirstPOOrderLine();
+    }
 }
