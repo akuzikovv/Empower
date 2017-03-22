@@ -45,8 +45,8 @@ Feature: Geempower Order Status
     When Click "Skip" button
     And  Dashboard page is opened
     When Click on "Order Status" link in the header
-    When Search by "NORMAL NA ORDER"
-    Then "NORMAL NA ORDER" Job Name is displayed at the table
+    When Search by "test job name search"
+    Then "test job name search" Job Name is displayed at the table
 
   Scenario: check that Order Details page and Order line Item details opened
     Given open custom login page
