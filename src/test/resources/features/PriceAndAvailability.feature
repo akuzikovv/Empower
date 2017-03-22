@@ -244,8 +244,7 @@ Feature: Geempower P&A
     When "140011550" spa is displayed
     When Update Price and Availability at P&A page
     Then "Pricing agreement is invalid. Standard price is displayed." error message is displayed at the P&A results page
-    When click on "140011550" product in the table
-    Then "Specifications" tab is shown at the product details popup
+    When click on "109244" product in the table
     When Click on "Product Details" tab
     Then "Pricing agreement is invalid. Standard price is displayed." error message is displayed at the Product details popup
 
