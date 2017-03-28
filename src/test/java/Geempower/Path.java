@@ -34,7 +34,7 @@ public interface Path {
     String LIST_OF_SALES_ORG = "//tbody//td[contains(@class,'sales-org-col table-visible-lg-block')]";
     String LIST_OF_SALES_CHANNELS = "//tbody//td[contains(@class,'sales-channel-col table-visible-lg-block')]";
     String LIST_OF_ORDERS = ".//ul[@id='select2-region-results']/li";
-
+    String TAB_WITH_ACCOUNTS_AT_ACCOUNT_MANAGEMENT_PAGE = ".//ul[@class='my-pending-account-list mytabs dynamic-tabs']/li/a";
 
 
 
@@ -216,6 +216,7 @@ public interface Path {
 
     String ALL_INVOICES_TEXT = ".//h3[.='All Invoices']";
     String SELECT_REGION_COMBOBOX = ".//*[@id='select2-region-container']";
+
 
 
     //    =============================================================================

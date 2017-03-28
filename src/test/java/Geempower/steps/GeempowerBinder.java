@@ -607,4 +607,9 @@ public class GeempowerBinder {
     public void clickOnFirstPOOrderLineItem() throws Throwable {
         steps.clickOnFirstPOOrderLine();
     }
+
+    @When("^Click \"([^\"]*)\" tab$")
+    public void clickTab(String arg0) throws Throwable {
+        steps.clickOnTabAtAccountManagementPage(arg0);
+    }
 }

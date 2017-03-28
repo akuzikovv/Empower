@@ -495,4 +495,8 @@ public class EndUserSteps extends ScenarioSteps {
     public void clickOnFirstPOOrderLine() {
         orderStatus.clickOnFirstPOOrderLineNumber();
     }
+
+    public void clickOnTabAtAccountManagementPage(String arg0) {
+        accountManagementPage.clickOnAppropriateTabWithAccounts(arg0);
+    }
 }

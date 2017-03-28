@@ -619,4 +619,14 @@ public class AccountManagementPage extends PageObject {
             return false;
         }
     }
+
+    public void clickOnAppropriateTabWithAccounts(String arg0) {
+        List<WebElementFacade> list = findAll(By.xpath(Path.TAB_WITH_ACCOUNTS_AT_ACCOUNT_MANAGEMENT_PAGE));
+        for(WebElementFacade webelementfacade : list){
+            webelementfacade.getText();
+            if (webelementfacade.getText().equalsIgnoreCase(arg0)){
+                webelementfacade.click();
+            }
+        }
+    }
 }
