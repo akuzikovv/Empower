@@ -35,7 +35,7 @@ public interface Path {
     String LIST_OF_SALES_CHANNELS = "//tbody//td[contains(@class,'sales-channel-col table-visible-lg-block')]";
     String LIST_OF_ORDERS = ".//ul[@id='select2-region-results']/li";
     String TAB_WITH_ACCOUNTS_AT_ACCOUNT_MANAGEMENT_PAGE = ".//ul[@class='my-pending-account-list mytabs dynamic-tabs']/li/a";
-
+    String SELECT_REGION_COMBOBOX = ".//*[@id='select2-region-container']";
 
 
     //=================================================================
@@ -215,7 +215,19 @@ public interface Path {
     //    =============================================================================
 
     String ALL_INVOICES_TEXT = ".//h3[.='All Invoices']";
-    String SELECT_REGION_COMBOBOX = ".//*[@id='select2-region-container']";
+    String SEARCH_INPUT_INVOICEC = ".//input[@class='form-control account-search-input']";
+    String SEARCH_BUTTON_INVOICES = ".//*[@class='input-group-addon account-search-link']";
+    String ALL_OPEN_INVOICES_BUBBLE = ".//a[@data-val='Open']";
+    String CURRENT_DUE_BUBBLE = ".//a[@data-val='Current Due']";
+    String PAST_DUE_BUBBLE = "Past Due";
+    String CREDIT_BUBBLE = ".//a[@data-val='Credit']";
+//990007528 invoice number for download
+    String STATUS_COMBOBOX = ".//*[@id='select2-invoice-status-select-container']";
+    String LIST_OF_INVOICES_TEXT = ".//*[@class='invoice-list-txt']";
+    String LIST_OF_STATUSES_IN_THE_TABLE = ".//*[@class='table info-table invoice-table dataTable no-footer']/tbody/tr/td[8]";
+    String INVOISE_IN_THE_TABLE = "";
+    String PO_NO_IN_THE_TABLE = "";
+    String GE_ORDER_NUMBER_IN_THE_TABLE = "";
 
 
 

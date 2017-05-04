@@ -17,8 +17,8 @@ Feature: Geempower P&A
     When Click "Apply & Copy" button at Special Pricing Lookup
     When "45001743" spa is displayed
     When Update Price and Availability at P&A page
-    Then Final Net Price are updated to "3.42"
-    Then Extnd Price are updated to "3.42"
+    Then Final Net Price are updated to "3.59"
+    Then Extnd Price are updated to "3.59"
 
 
   Scenario: Check that user able to upload file with product and spa displayed at the P&A page
@@ -35,7 +35,7 @@ Feature: Geempower P&A
     And "THQL1120" product is displayed at the Price and Availability page
     When "45001743" spa is displayed
     When Qty "10" is displayed
-    Then Extnd price is "34.20"
+    Then Extnd price is "35.90"
 
   Scenario: Check that after uploading file with product user able to add a product at the P&A page
     Given open custom login page
