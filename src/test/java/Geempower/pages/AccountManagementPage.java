@@ -267,6 +267,7 @@ public class AccountManagementPage extends PageObject {
         }catch (Exception e){
 
         }finally {
+            waitFor(ExpectedConditions.elementToBeClickable(By.xpath(Path.ORDER_SUCCESSFUL_POPUP_CLOSE_BUTTON)));
             $(Path.ORDER_SUCCESSFUL_POPUP_CLOSE_BUTTON).click();
         }
 

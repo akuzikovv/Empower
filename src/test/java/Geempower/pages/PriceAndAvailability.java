@@ -198,6 +198,7 @@ public class PriceAndAvailability extends PageObject {
 
 
     public void clickEMEAAccunt(String arg0) {
+        waitFor(ExpectedConditions.elementToBeClickable(By.xpath((Path.EMEA_ACCOUNT.replace("$", arg0)))));
         $(Path.EMEA_ACCOUNT.replace("$", arg0)).click();
     }
 
