@@ -4,7 +4,7 @@ Feature: Geempower Order Status
   Scenario: check that All Orders page is opened
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -16,7 +16,7 @@ Feature: Geempower Order Status
   Scenario: check search by Order Number
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -29,7 +29,7 @@ Feature: Geempower Order Status
   Scenario: check search by PO Number
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -42,7 +42,7 @@ Feature: Geempower Order Status
   Scenario: check search by Job Name Number
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -55,7 +55,7 @@ Feature: Geempower Order Status
   Scenario: check that Order Details page and Order line Item details opened
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -71,7 +71,7 @@ Feature: Geempower Order Status
   Scenario: check that PO Order Details page opened
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account

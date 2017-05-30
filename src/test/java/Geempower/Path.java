@@ -225,9 +225,9 @@ public interface Path {
     String STATUS_COMBOBOX = ".//*[@id='select2-invoice-status-select-container']";
     String LIST_OF_INVOICES_TEXT = ".//*[@class='invoice-list-txt']";
     String LIST_OF_STATUSES_IN_THE_TABLE = ".//*[@class='table info-table invoice-table dataTable no-footer']/tbody/tr/td[8]";
-    String INVOISE_IN_THE_TABLE = "";
-    String PO_NO_IN_THE_TABLE = "";
-    String GE_ORDER_NUMBER_IN_THE_TABLE = "";
+    String INVOISE_IN_THE_TABLE = ".//tbody//td[2]/a";
+    String PO_NO_IN_THE_TABLE = ".//table[contains(@class,'invoice')]//tbody//td[3]";
+    String GE_ORDER_NUMBER_IN_THE_TABLE = ".//table[contains(@class,'invoice')]//tbody//td[4]";
 
 
 

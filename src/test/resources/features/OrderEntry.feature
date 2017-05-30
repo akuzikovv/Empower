@@ -4,7 +4,7 @@ Feature: Geempower Order Entry
   Scenario: Check that user from NA region able to place the order
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -31,7 +31,7 @@ Feature: Geempower Order Entry
   Scenario: Check that user from LA region able to place the order
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "Latin America" region
     When Search for LA "9000084" account
     When Click "9000084" account
@@ -66,7 +66,7 @@ Feature: Geempower Order Entry
   Scenario: Check that user from EMEA region able to place the order
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "EMEA" region
     When Search for EMEA "9006003" account
     When Click "9006003" account
@@ -94,7 +94,7 @@ Feature: Geempower Order Entry
   Scenario: Check that user from ASIA region able to place the order
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "ASIA" region
     When Search for EMEA "30003" account
     When Click "30003" account

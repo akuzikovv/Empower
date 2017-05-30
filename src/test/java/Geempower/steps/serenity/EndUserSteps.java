@@ -499,4 +499,16 @@ public class EndUserSteps extends ScenarioSteps {
     public void clickOnTabAtAccountManagementPage(String arg0) {
         accountManagementPage.clickOnAppropriateTabWithAccounts(arg0);
     }
+
+    public void enterValueToTheSearchInpetFieldAtInvoicePage(String arg0) {
+        invoice.enterInvoiceNumber(arg0);
+    }
+
+    public void ckickSerachButtonInvoicesPage() {
+        invoice.clickSearchButton();
+    }
+
+    public void checkThatAppropriateInvoiceDisplayedAtThePage(String arg0) {
+        Assert.assertTrue(invoice.isAppropriateInvoiceShown(arg0));
+    }
 }

@@ -612,4 +612,19 @@ public class GeempowerBinder {
     public void clickTab(String arg0) throws Throwable {
         steps.clickOnTabAtAccountManagementPage(arg0);
     }
+
+    @When("^Enter invoice No \"([^\"]*)\" to the search input field$")
+    public void enterInvoiceNoToTheSearchInputField(String arg0) throws Throwable {
+        steps.enterValueToTheSearchInpetFieldAtInvoicePage(arg0);
+    }
+
+    @When("^click search button$")
+    public void clickSearchButton() throws Throwable {
+        steps.ckickSerachButtonInvoicesPage();
+    }
+
+    @Then("^\"([^\"]*)\" invoice displayed at the table$")
+    public void invoiceDisplayedAtTheTable(String arg0) throws Throwable {
+        steps.checkThatAppropriateInvoiceDisplayedAtThePage(arg0);
+    }
 }

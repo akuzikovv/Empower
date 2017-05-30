@@ -3,7 +3,7 @@ Feature: Geempower P&A
   Scenario: Check that STANDART SPA is displayed at the P&A page and user able to choose appropriate spa
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -24,7 +24,7 @@ Feature: Geempower P&A
   Scenario: Check that user able to upload file with product and spa displayed at the P&A page
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -40,7 +40,7 @@ Feature: Geempower P&A
   Scenario: Check that after uploading file with product user able to add a product at the P&A page
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -56,7 +56,7 @@ Feature: Geempower P&A
   Scenario: Check that user able to apply one spa for all products
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -75,7 +75,7 @@ Feature: Geempower P&A
   Scenario: Check that user able to search SPA by  SPA No. at SPA popup
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -92,7 +92,7 @@ Feature: Geempower P&A
   Scenario: Check that user able to search SPA by Customer Name at SPA popup
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -109,7 +109,7 @@ Feature: Geempower P&A
   Scenario: Check that user able to search SPA by  Customer numebr
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -127,7 +127,7 @@ Feature: Geempower P&A
   Scenario: Check that "Pricing agreement is invalid. Standard price is displayed." error message is displayed with Invalid SPA
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -149,7 +149,7 @@ Feature: Geempower P&A
   Scenario: Check that "Pricing agreement is invalid. Standard price is displayed." error messages aren't displayed if standart SPA
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -166,7 +166,7 @@ Feature: Geempower P&A
   Scenario: Check that "Pricing agreement is invalid. Standard price is displayed." error messages aren't displayed if valid SPA
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -188,7 +188,7 @@ Feature: Geempower P&A
   Scenario: Check that "Final Net Price is greater than Standard Price" error messages is displayed
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -208,7 +208,7 @@ Feature: Geempower P&A
   Scenario: Check that "Final Net Price is greater than Standard Price" error messages isn't displayed
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account
@@ -227,7 +227,7 @@ Feature: Geempower P&A
   Scenario: Check that "Pricing agreement is invalid. Standard price is displayed." error messages aren't displayed if standart SPA for EMEA
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "EMEA" region
     When Search for EMEA "9005898" account
     When Click "9005898_ITS1_10_10" EMEA account
@@ -244,7 +244,7 @@ Feature: Geempower P&A
   Scenario: Check that "Pricing agreement is invalid. Standard price is displayed." error message is displayed with Invalid SPA for EMEA
     Given open custom login page
     When login user
-    When Click "Approved Accounts" tab
+#    When Click "Approved Accounts" tab
     When Choose "EMEA" region
     When Search for EMEA "9005898" account
     When Click "9005898_ITS1_10_10" EMEA account
