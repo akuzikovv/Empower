@@ -168,7 +168,7 @@ public interface Path {
     String MAGNIFYING_GLASS = ".//a[@class='input-group-addon pricing-lookup-link']//i";
     String LIST_BUTTONS_AT_SP_LOOKUP = ".//form[@class='special-pricing-form']//button";
     String UPDATE_PRICE_AND_AVAILABILITY_BUTTON_AT_PA_PAGE = ".//*[@id='upd_pr_and_av_btn']";
-    String FINAL_NET_PRICE_PA_PAGE = ".//*[contains(@id, 'price-item-tr')]/td[7]";
+    String FINAL_NET_PRICE_PA_PAGE = ".//*[contains(@id, 'price-item-tr')][1]/td[7]";
     String EXTND_PRICE_PA_PAGE  = ".//*[contains(@id, 'price-item-tr')]/td[8]";
     String QTY_INPUT_PA_PAGE = ".//tr[1][contains(@id, 'price-item-tr')]//input[contains(@class, 'catalog-qty-input')]";
     String LIST_OF_BUTTONS_AT_NAVBAR_HEADER_AT_PRICE_AND_AVAILABILITY = ".//ul[@class='navigation-action-panel']//button";

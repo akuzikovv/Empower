@@ -262,3 +262,23 @@ Feature: Geempower P&A
     When Click on "Product Details" tab
     Then "Pricing agreement is invalid. Standard price is displayed." error message is displayed at the Product details popup
 
+  Scenario: Check that SPA# remains for product after new item is added to the list
+    Given open custom login page
+    When login user
+#    When Click "Approved Accounts" tab
+    When Choose "North America" region
+    When Search for NA "5251101" account
+    When Click "5251101_USS1_10_10" EMEA account
+    When Click "Skip" button
+    And  Dashboard page is opened
+    When At the Dashboard enter Product "AMC6FJFP" and check Price and Availability
+    And "AMC6FJFP" product is displayed at the Price and Availability page
+    When Open Special Pricing Lookup
+    When Click on "45000927" spa
+    When Click "Apply & Copy" button at Special Pricing Lookup
+    When "45000927" spa is displayed
+    When Update Price and Availability at P&A page
+    When click "ADD Item" at the P&A page
+    When  add product "TCAL18" to the Price and Availability page
+    Then Final Net Price are updated to "371.10"
+
