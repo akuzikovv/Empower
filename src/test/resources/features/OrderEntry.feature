@@ -96,8 +96,8 @@ Feature: Geempower Order Entry
     When login user
 #    When Click "Approved Accounts" tab
     When Choose "ASIA" region
-    When Search for EMEA "30003" account
-    When Click "30003" account
+    When Search for NA "1000481" account
+    When Click "1000481_CNS2_10_10" EMEA account
     When Click "Skip" button
     And  Dashboard page is opened
     When Enter products "113701", "113707 20" to the P&A vidget
