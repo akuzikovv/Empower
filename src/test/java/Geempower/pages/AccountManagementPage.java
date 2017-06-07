@@ -51,8 +51,8 @@ public class AccountManagementPage extends PageObject {
         $(Path.PASSWORD_FIELD).sendKeys(Path.PASSWORD_1);
         $(Path.SIGN_IN_BUTTON).click();
         waitABit(3000);
-        getDriver().get("http://qa.geempower.com/geempower/");
-//        getDriver().get("http://qa.geempower.com/demo/");
+//        getDriver().get("http://qa.geempower.com/geempower/");
+        getDriver().get("http://qa.geempower.com/demo/");
 //        getDriver().get("http://qa.geempower.com/qa/");
     }
 
