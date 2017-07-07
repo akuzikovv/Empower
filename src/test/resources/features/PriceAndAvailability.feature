@@ -18,7 +18,7 @@ Feature: Geempower P&A
     When "45001743" spa is displayed
     When Update Price and Availability at P&A page
     Then Final Net Price are updated to "3.59"
-    Then Extnd Price are updated to "3.59"
+    Then Extnd Price are updated to "35.90"
 
 
   Scenario: Check that user able to upload file with product and spa displayed at the P&A page
