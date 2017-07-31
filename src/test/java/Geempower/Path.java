@@ -36,6 +36,7 @@ public interface Path {
     String LIST_OF_ORDERS = ".//ul[@id='select2-region-results']/li";
     String TAB_WITH_ACCOUNTS_AT_ACCOUNT_MANAGEMENT_PAGE = ".//ul[@class='my-pending-account-list mytabs dynamic-tabs']/li/a";
     String SELECT_REGION_COMBOBOX = ".//*[@id='select2-region-container']";
+    String FUUL_SCREEN_PROGRESS_INDICATOR = "//div[@id.='FullScreenProgressIndicatorModalDialog']";
 
 
     //=================================================================

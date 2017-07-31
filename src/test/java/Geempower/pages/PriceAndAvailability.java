@@ -203,6 +203,8 @@ public class PriceAndAvailability extends PageObject {
     }
 
     public void chooceAppropriateRegion(String arg0) {
+
+        waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(Path.FUUL_SCREEN_PROGRESS_INDICATOR)));
         $(Path.SELECT_REGION_COMBOBOX).click();
         List<WebElementFacade> facade = findAll(By.xpath(Path.LIST_OF_ORDERS));
         for (WebElementFacade webfacade : facade) {
