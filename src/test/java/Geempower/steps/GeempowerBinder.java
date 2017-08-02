@@ -1,23 +1,12 @@
 package Geempower.steps;
 
-
-import Geempower.Path;
-import Geempower.pages.AccountManagementPage;
+import Geempower.steps.serenity.EndUserSteps;
 import cucumber.api.PendingException;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
-import net.serenitybdd.core.Serenity;
-import net.thucydides.core.annotations.Steps;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
-import Geempower.steps.serenity.EndUserSteps;
-import net.thucydides.core.annotations.WithTag;
-import org.junit.Assert;
-import org.openqa.selenium.firefox.FirefoxProfile;
-
-import javax.validation.constraints.AssertTrue;
+import net.thucydides.core.annotations.Steps;
 
 public class GeempowerBinder {
 
@@ -263,5 +252,457 @@ public class GeempowerBinder {
     @When("^Click on \"([^\"]*)\" link in the header$")
     public void clickOnLinkInTheHeader(String arg0)  {
         steps.ClickSavedListsInTheHeader(arg0);
+    }
+
+
+
+    //////////////////////////////////ANTON'S CODE /////////////////////////////////////////////////
+
+    @When("^Choose ASIA region in the region combobox$")
+    public void chooseASIARegionInTheRegionCombobox() throws Throwable {
+        steps.chooseASIARegionInTheCombobox();
+    }
+
+    @When("^Enter \"([^\"]*)\" account number to the Account textbox$")
+    public void enterAccountNumberToTheAccountTextbox(String accountNumber) throws Throwable {
+        steps.enterAccountNumberToTheAccountTextbox(accountNumber);
+    }
+
+    @When("^Click Search Account button$")
+    public void clickSearchAccountButton() throws Throwable {
+        steps.clickSearchAccountButton();
+    }
+
+    @Then("^\"([^\"]*)\" account is displayed in the table$")
+    public void accountIsDisplayedInTheTable(String accountNumber) throws Throwable {
+        steps.accountIsDisplayedInTheTable(accountNumber);
+    }
+
+    @And("^Click RESET button$")
+    public void clickRESETButton() throws Throwable {
+        steps.clickRESETButton();
+    }
+
+    @When("^Enter \"([^\"]*)\" account name to the Account textbox$")
+    public void enterAccountNameToTheAccountTextbox(String accountName) throws Throwable {
+        steps.enterAccountNameToTheAccountTextbox(accountName);
+    }
+
+    @Then("^\"([^\"]*)\" account name is displayed in the table$")
+    public void accountNameIsDisplayedInTheTable(String accountName) throws Throwable {
+        steps.accountNameIsDisplayedInTheTable(accountName);
+    }
+
+    @When("^Choose EMEA region in the region combobox$")
+    public void chooseEMEARegionInTheRegionCombobox() throws Throwable {
+        steps.chooseEMEARegionInTheRegionCombobox();
+    }
+
+    @When("^Choose Latin America region in the region combobox$")
+    public void chooseLatinAmericaRegionInTheRegionCombobox() throws Throwable {
+        steps.chooseLatinAmericaRegionInTheRegionCombobox();
+    }
+
+    @When("^Choose North America region in the region combobox$")
+    public void chooseNorthAmericaRegionInTheRegionCombobox() throws Throwable {
+        steps.chooseNorthAmericaRegionInTheRegionCombobox();
+    }
+
+    @Then("^All accounts from ASIA region are displayed in the table$")
+    public void allAccountsFromASIARegionAreDisplayedInTheTable() throws Throwable {
+        steps.allAccountsFromASIARegionAreDisplayedInTheTable();
+    }
+
+    @Then("^All accounts from EMEA region are displayed in the table$")
+    public void allAccountsFromEMEARegionAreDisplayedInTheTable() throws Throwable {
+        steps.allAccountsFromEMEARegionAreDisplayedInTheTable();
+    }
+
+    @Then("^All accounts from Latin America region are displayed in the table$")
+    public void allAccountsFromLatinAmericaRegionAreDisplayedInTheTable() throws Throwable {
+        steps.allAccountsFromLatinAmericaRegionAreDisplayedInTheTable();
+    }
+
+    @Then("^All accounts from North America region are displayed in the table$")
+    public void allAccountsFromNorthAmericaRegionAreDisplayedInTheTable() throws Throwable {
+        steps.allAccountsFromNorthAmericaRegionAreDisplayedInTheTable();
+    }
+
+    @Then("^Region and Account fields are blank$")
+    public void regionAndAccountFieldsAreBlank() throws Throwable {
+        steps.regionAndAccountFieldsAreBlank();
+    }
+
+    @Then("^10 accounts are displayed at one page$")
+    public void _10accountsAreDisplayedAtOnePage() throws Throwable {
+        steps._10accountsAreDisplayedAtOnePage();
+    }
+
+    @Then("^All Orders page is opened$")
+    public void allOrdersPageIsOpened() throws Throwable {
+        steps.checkThatallOrdersPageIsOpened();
+    }
+
+    @And("^Click HOME button$")
+    public void clickHOMEButton() throws Throwable {
+        steps.clickHOMEButton();
+    }
+
+    @Then("^Open text is displayed in the Status combobox$")
+    public void openTextIsDisplayedInTheStatusCombobox() throws Throwable {
+        steps.checkThatopenTextIsDisplayedInTheStatusCombobox();
+    }
+
+    @Then("^Shipped text is displayed in the Status combobox$")
+    public void shippedTextIsDisplayedInTheStatusCombobox() throws Throwable {
+        steps.checkThatshippedTextIsDisplayedInTheStatusCombobox();
+    }
+
+    @Then("^On hold text is displayed in the Status combobox$")
+    public void onHoldTextIsDisplayedInTheStatusCombobox() throws Throwable {
+        steps.checkThatonHoldTextIsDisplayedInTheStatusCombobox();
+    }
+
+    @Then("^Cancelled text is displayed in the Status combobox$")
+    public void cancelledTextIsDisplayedInTheStatusCombobox() throws Throwable {
+        steps.checkThatcancelledTextIsDisplayedInTheStatusCombobox();
+    }
+
+    @Then("^Entered order is displayed in the table$")
+    public void enteredOrderIsDisplayedInTheTable() throws Throwable {
+        steps.checkThatenteredOrderIsDisplayedInTheTable();
+    }
+
+    @Then("^Entered  Po order is displayed in the table$")
+    public void enteredPoOrderIsDisplayedInTheTable() throws Throwable {
+        steps.checkThatenteredPoOrderIsDisplayedInTheTable();
+    }
+
+    @Then("^Order Details page is opened$")
+    public void orderDetailsPageIsOpened1() throws Throwable {
+        steps.checkThatorderDetailsPageIsOpened();
+    }
+
+    @Then("^PO Order Details page is opened$")
+    public void poOrderDetailsPageIsOpened() throws Throwable {
+        steps.checkThatpoOrderDetailsPageIsOpened();
+    }
+
+    @Then("^Check that status the same in the widget and in the Order Details page$")
+    public void checkThatStatusTheSameInTheWidgetAndInTheOrderDetailsPage() throws Throwable {
+        steps.checkThatStatusTheSameInTheWidgetAndInTheOrderDetailsPage();
+    }
+
+    @Given("^open Dashboard page$")
+    public void openDashboardPage() throws Throwable {
+        steps.openSignInPage();
+        steps.authorization();
+//        steps.selectAccount();
+    }
+
+    @Then("^Dashboard page contains all necessary fields, widgets and buttons$")
+    public void dashboardPageContainsAllNecessaryFieldsWidgetsAndButtons() throws Throwable {
+        steps.checkThatdashboardPageContainsAllNecessaryFieldsWidgetsAndButtons();
+    }
+
+    @When("^Click Next button on every balloon$")
+    public void clickNextButtonOnEveryBalloon() throws Throwable {
+        steps.clickNextButtonOnEveryBalloon();
+    }
+
+    @Then("^For each widget appropriate balloon is displayed$")
+    public void forEachWidgetAppropriateBalloonIsDisplayed() throws Throwable {
+        steps.checkThatforEachWidgetAppropriateBalloonIsDisplayed();
+    }
+
+    @When("^Click Previous button on every balloon$")
+    public void clickPreviousButtonOnEveryBalloon() throws Throwable {
+        steps.clickPreviousButtonOnEveryBalloon();
+    }
+
+    @And("^Click Skip button$")
+    public void clickSkipButton() throws Throwable {
+        steps.clickSkipButton();
+    }
+
+    @Then("^Training layer is closed$")
+    public void trainingLayerIsClosed() throws Throwable {
+        steps.checkThattrainingLayerIsClosed();
+    }
+
+    @When("^Click on account number in the header$")
+    public void clickOnAccountNumberInTheHeader() throws Throwable {
+        steps.clickOnAccountNumberInTheHeader();
+    }
+
+    @Then("^Necessary fields are shown$")
+    public void necessaryFieldsAreShown() throws Throwable {
+        steps.checkThatnecessaryFieldsAreShown();
+    }
+
+    @When("^Click Change Account button in the dropdown list$")
+    public void clickChangeAccountButtonInTheDropdownList() throws Throwable {
+        steps.clickChangeAccountButtonInTheDropdownList();
+    }
+
+    @Then("^Account Management page is opened$")
+    public void accountManagementPageIsOpened() throws Throwable {
+        steps.checkThataccountManagementPageIsOpened();
+    }
+
+    @When("^Click on  account number in the list$")
+    public void clickOnAccountNumberInTheList() throws Throwable {
+        steps.clickOnAccountNumberInTheList();
+    }
+
+    @Then("^Dashboard page is opened1$")
+    public void dashboardPageIsOpened1() throws Throwable {
+        steps.dashboardPageIsOpened1();
+    }
+
+    @Then("^Order Status widget contains all necessary elements$")
+    public void orderStatusWidgetContainsAllNecessaryElements() throws Throwable {
+        steps.checkThatorderStatusWidgetContainsAllNecessaryElements();
+    }
+
+    @When("^Click Total Prices circle$")
+    public void clickTotalPricesCircle() throws Throwable {
+        steps.clickTotalPricesCircle();
+    }
+
+    @When("^Click Open circle$")
+    public void clickOpenCircle() throws Throwable {
+        steps.clickOpenCircle();
+    }
+
+    @When("^Click Shipped circle$")
+    public void clickShippedCircle() throws Throwable {
+        steps.clickShippedCircle();
+    }
+
+    @When("^Click OnHold circle$")
+    public void clickOnHoldCircle() throws Throwable {
+        steps.clickOnHoldCircle();
+    }
+
+    @When("^Click Cancelled circle$")
+    public void clickCancelledCircle() throws Throwable {
+        steps.clickCancelledCircle();
+    }
+
+    @Then("^Check that Track you Order widget contains all necessary elements$")
+    public void checkThatTrackYouOrderWidgetContainsAllNecessaryElements() throws Throwable {
+        steps.checkThatTrackYouOrderWidgetContainsAllNecessaryElements();
+    }
+
+    @When("^Enter order number to the  Enter Order or PO Number textbox$")
+    public void enterOrderNumberToTheEnterOrderOrPONumberTextbox() throws Throwable {
+        steps.enterOrderNumberToTheEnterOrderOrPONumberTextbox();
+    }
+
+    @When("^Click Search button$")
+    public void clickSearchButton() throws Throwable {
+        steps.clickSearchButton();
+    }
+
+    @When("^Enter PO order number to the  Enter Order or PO Number textbox$")
+    public void enterPOOrderNumberToTheEnterOrderOrPONumberTextbox() throws Throwable {
+        steps.enterPOOrderNumberToTheEnterOrderOrPONumberTextbox();
+    }
+
+    @Then("^Check that Recent Orders widget contains all necessary elements$")
+    public void checkThatRecentOrdersWidgetContainsAllNecessaryElements() throws Throwable {
+        steps.checkThatRecentOrdersWidgetContainsAllNecessaryElements();
+    }
+
+    @When("^Click View All button at the Recent Orders widget$")
+    public void clickViewAllButtonAtTheRecentOrdersWidget() throws Throwable {
+        steps.clickViewAllButtonAtTheRecentOrdersWidget();
+    }
+
+    @When("^Click on any Order No at the Recent Orders widget$")
+    public void clickOnAnyOrderNoAtTheRecentOrdersWidget() throws Throwable {
+        steps.clickOnAnyOrderNoAtTheRecentOrdersWidget();
+    }
+
+    @When("^Click on any  Po Order No at the Recent Orders widget$")
+    public void clickOnAnyPoOrderNoAtTheRecentOrdersWidget() throws Throwable {
+        steps.clickOnAnyPoOrderNoAtTheRecentOrdersWidget();
+    }
+
+    @When("^Click on Any Order at the Recent Orders widget$")
+    public void clickOnAnyOrderAtTheRecentOrdersWidget() throws Throwable {
+        steps.clickOnAnyOrderAtTheRecentOrdersWidget();
+    }
+
+    @Then("^Check that Recent Lists widget contains all necessary elements$")
+    public void checkThatRecentListsWidgetContainsAllNecessaryElements() throws Throwable {
+        steps.checkThatRecentListsWidgetContainsAllNecessaryElements();
+    }
+
+    @When("^Click on list name$")
+    public void clickOnListName() throws Throwable {
+        steps.clickOnListName();
+    }
+
+    @Then("^Created date is correct$")
+    public void createdDateIsCorrect() throws Throwable {
+        steps.createdDateIsCorrect();
+    }
+
+    @When("^Click on the View All button at the Recent Lists widget$")
+    public void clickOnTheViewAllButtonAtTheRecentListsWidget() throws Throwable {
+        steps.clickOnTheViewAllButtonAtTheRecentListsWidget();
+    }
+
+    @Then("^Check that Featured Tools widget contains all necessary elements$")
+    public void checkThatFeaturedToolsWidgetContainsAllNecessaryElements() throws Throwable {
+        steps.checkThatFeaturedToolsWidgetContainsAllNecessaryElements();
+    }
+
+    @Then("^Then Page \"([^\"]*)\" is opened in the separate tab$")
+    public void thenPageIsOpenedInTheSeparateTab(String arg0) throws Throwable {
+        steps.pageIsOpenedInTheSeparateTab(arg0);
+    }
+
+    @When("^Click View All button at the Featured Tools widget$")
+    public void clickViewAllButtonAtTheFeaturedToolsWidget() throws Throwable {
+        steps.clickViewAllButtonAtTheFeaturedToolsWidget();
+    }
+
+    @When("^Click on Publication Library tool in the widget$")
+    public void clickOnPUBLICATION_LIBRARYToolInTheWidget() throws Throwable {
+        steps.clickOnPUBLICATION_LIBRARYToolInTheWidget();
+    }
+
+    @Then("^\"([^\"]*)\" page is opened in the separate tab$")
+    public void pageIsOpenedInTheSeparateTab(String arg0) throws Throwable {
+        steps.pageIsOpenedInTheSeparateTab(arg0);
+    }
+
+    @When("^Click on the QUOTES button$")
+    public void clickOnTheQUOTESButton() throws Throwable {
+        steps.clickOnTheQUOTESButton();
+    }
+
+    @Then("^List of products from chosen list is displayed at the Saved Lists page$")
+    public void listOfProductsFromChosenListIsDisplayedAtTheSavedListsPage() throws Throwable {
+        steps.checkThatlistOfProductsFromChosenListIsDisplayedAtTheSavedListsPage();
+    }
+
+    @And("^Go to the Saved Lists Page$")
+    public void goToTheSavedListsPage() throws Throwable {
+        steps.goToTheSavedListsPage();
+    }
+
+    @When("^Create new List$")
+    public void createNewList() throws Throwable {
+        steps.createNewList();
+    }
+
+    @Then("^Check that Number of items the same in the list and in the widget$")
+    public void checkThatNumberOfItemsTheSameInTheListAndInTheWidget() throws Throwable {
+        steps.checkThatNumberOfItemsTheSameInTheListAndInTheWidget();
+    }
+
+    @When("^Click sortByDateCreate$")
+    public void clickSortByDateCreate() throws Throwable {
+        steps.clickSortByDateCreate();
+    }
+
+    @When("^Click sortByDateCreateDescending$")
+    public void clickSortByDateCreateDescending() throws Throwable {
+        steps.clickSortByDateCreateDescending();
+    }
+
+    @When("^Click on the Next button$")
+    public void clickOnTheNextButton() throws Throwable {
+      steps.clickOnTheNextButton();
+    }
+
+    @Then("^Next list of accounts is displayed$")
+    public void nextListOfAccountsIsDisplayed() throws Throwable {
+        steps.nextListOfAccountsIsDisplayed();
+    }
+
+    @When("^Click on the Last button$")
+    public void clickOnTheLastButton() throws Throwable {
+        steps.clickOnTheLastButton();
+    }
+
+    @Then("^Last list of accounts is displayed$")
+    public void lastListOfAccountsIsDisplayed() throws Throwable {
+        steps.lastListOfAccountsIsDisplayed();
+    }
+
+    @When("^Click on the Previous button$")
+    public void clickOnThePreviousButton() throws Throwable {
+      steps.clickOnThePreviousButton();
+    }
+
+    @Then("^Previous list of accounts is displayed$")
+    public void previousListOfAccountsIsDisplayed() throws Throwable {
+        steps.previousListOfAccountsIsDisplayed();
+
+    }
+
+    @When("^Click on the First button$")
+    public void clickOnTheFirstButton() throws Throwable {
+        steps.clickOnTheFirstButton();
+    }
+
+    @Then("^First list of accounts is displayed$")
+    public void firstListOfAccountsIsDisplayed() throws Throwable {
+        steps.firstListOfAccountsIsDisplayed();
+    }
+
+    @When("^Click Favorites Tab$")
+    public void clickFavoritesTab() throws Throwable {
+        steps.clickFavoritesTab();
+    }
+
+    @Then("^Favorites tab is opened$")
+    public void favoritesTabIsOpened() throws Throwable {
+        steps.favoritesTabIsOpened();
+    }
+
+    @When("^Click on the star button$")
+    public void clickOnTheStarButton() throws Throwable {
+        steps.clickOnTheStarButton();
+    }
+
+    @Then("^\"([^\"]*)\" account isn't displayed in the table$")
+    public void accountIsnTDisplayedInTheTable(String accountNumber) throws Throwable {
+        steps.accountIsnTDisplayedInTheTable(accountNumber);
+    }
+
+    @When("^Click on the star(\\d+) button$")
+    public void clickOnTheStarButton(int arg0) throws Throwable {
+        steps.clickOnTheStar1Button();
+    }
+
+    @When("^Delete list$")
+    public void deleteList() throws Throwable {
+        steps.deleteList();
+    }
+
+    @Then("^List is deleted$")
+    public void listIsDeleted() throws Throwable {
+        steps.listIsDeleted();
+    }
+
+    @When("^Click close cookies bar$")
+    public void clickCloseCookiesBar() throws Throwable {
+        steps.clickCloseCookiesBar();
+    }
+
+    @When("^Click on the Approved Tab$")
+    public void clickOnTheApprovedTab() throws Throwable {
+        steps.clickApprovedAccountsTab();
+    }
+
+    @When("^open Dashboard page(\\d+)$")
+    public void openDashboardPage(int arg0) throws Throwable {
+        steps.selectAccount();
     }
 }

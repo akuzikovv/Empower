@@ -8,7 +8,7 @@ public interface Path {
     String PASSWORD_FIELD = ".//*[@id='password']";
     String SIGN_IN_BUTTON = "//button[contains(@class,'sign-in-btn')]";
     String LOGIN_1 = "502535068";
-    String PASSWORD_1 = "r0st1slavi";
+    String PASSWORD_1 = "ir0st1slavi";
 //    String LOGIN_1 = "tonygeorge";
 //    String PASSWORD_1 = "test123test";
 
@@ -17,7 +17,7 @@ public interface Path {
     //    Account Managenment page
     String ACOUNT_MANAGEMENT_LOGO = ".//p[.='Account Management']";
     String NA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
-    String LIST_OF_ACCOUNTS_ACCOUNT_MANAGEMENT = ".//div[@class='my-pending-accounts-wrapper']//tr[@class='odd'or@class='even']/*[2]/a";
+    String LIST_OF_ACCOUNTS_ACCOUNT_MANAGEMENT = "//div[@id='activeRequestsTable_wrapper']//tr[@class='odd' or @class='even']/*[2]/a";
 //    String LA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
 //    String EMEA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";
 //    String ASIA_ACCOUNT_NUMBER = ".//td/a[contains(@href,'0001318501_USS1_10_10')]";

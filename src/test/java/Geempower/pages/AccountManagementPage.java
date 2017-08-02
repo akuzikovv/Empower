@@ -1,24 +1,15 @@
 package Geempower.pages;
 
-import ch.lambdaj.function.convert.Converter;
+import Geempower.ILocators;
 import Geempower.Path;
-
-import gherkin.lexer.Pa;
-//import javafx.collections.ListChangeListener;
-import net.serenitybdd.core.pages.WebElementState;
-import net.thucydides.core.Thucydides;
+import net.serenitybdd.core.Serenity;
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
-import org.junit.Before;
+import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import net.serenitybdd.core.pages.WebElementFacade;
-
-import net.serenitybdd.core.annotations.findby.FindBy;
-
-import net.thucydides.core.pages.PageObject;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.awt.*;
@@ -28,8 +19,7 @@ import java.io.File;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import static ch.lambdaj.Lambda.convert;
-import static ch.lambdaj.Lambda.forEach;
+//import javafx.collections.ListChangeListener;
 
 @DefaultUrl("http://qa.geempower.com/geempower/")
 
@@ -46,10 +36,11 @@ public class AccountManagementPage extends PageObject {
     public void loginUser() {
 
         $(Path.USER_ID_FIELD).clear();
-        $(Path.USER_ID_FIELD).sendKeys(Path.LOGIN_1);
+        $(Path.USER_ID_FIELD).sendKeys(ILocators.LOGIN_1);
         $(Path.PASSWORD_FIELD).clear();
-        $(Path.PASSWORD_FIELD).sendKeys(Path.PASSWORD_1);
+        $(Path.PASSWORD_FIELD).sendKeys(ILocators.PASSWORD_1);
         $(Path.SIGN_IN_BUTTON).click();
+        getDriver().get("http://qa.geempower.com/geempower/");
     }
 
 
@@ -68,7 +59,7 @@ public class AccountManagementPage extends PageObject {
             }
 
         }
-        throw new NoSuchElementException("Necessary account absent");
+        throw new NoSuchElementException("Necessary account is absent");
     }
 
     public void clickNameOfButton(String nameOfButton) {
@@ -372,4 +363,361 @@ public class AccountManagementPage extends PageObject {
             }
         }
     }
+
+    //////////////////////////////////////////////////   ANTON'S CODE //////////////////////
+
+    public void selectAccount() {
+        waitABit(3000);
+        $(ILocators.REGION_COMBOBOX).click();
+
+        $(ILocators.NORTH_AMERICA_REGION).click();
+
+        String account = "1318501";
+        WebElement element = $(ILocators.SEARCH_ACCOUNT_FIELD);
+        element.sendKeys(account);
+        $(ILocators.SEARCH_ACCOUNT_BUTTON).click();
+        List<WebElementFacade> accounts = findAll(By.xpath(ILocators.LIST_OF_ACCOUNTS_ACCOUNT_MANAGEMENT));
+            for (WebElementFacade webElementFacade : accounts) {
+            webElementFacade.getText();
+            if (webElementFacade.getText().equals(account)) {
+                webElementFacade.click();
+                return;         }      }
+        throw new NoSuchElementException("Necessary account absent");                                             }
+
+    public boolean regionComboboxIsDisplayed()      {return $(ILocators.REGION_COMBOBOX).isDisplayed();           }
+    public boolean searchTextboxIsDisplayed()       {return $(ILocators.SEARCH_TEXTBOX).isDisplayed();            }
+    public boolean requestAccountButtonIsDisplayed(){return $(ILocators.REQUEST_ACCOUNT_BUTTON).isDisplayed();    }
+    public boolean CancelButtonIsDisplayed()        {return $(ILocators.CANCEL_BUTTON).isDisplayed();             }
+    public boolean ResetButtonIsDisplayed()         {return $(ILocators.RESET_BUTTON).isDisplayed();              }
+    public boolean searchButtonIsDisplayed()        {return $(ILocators.SEARCH_ACCOUNT_BUTTON).isDisplayed();     }
+    public boolean ApprovedAccountsTabIsDisplayed() {return $(ILocators.APPROVED_ACCOUNTS_TAB).isDisplayed(); }
+    public boolean PendingForApprovalTabIsDisplayed()       {return $(ILocators.PENDING_FOR_APPROVAL_TAB).isDisplayed();     }
+    public boolean FavoritesTabIsDisplayedByDefault()         {return $(ILocators.Favotites_active_tab).isDisplayed();}
+    public boolean ShowingTextIsDisplayed()         {
+       waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.SHOWING_TO_OF_ENTRIES_TEXT)));
+        return $(ILocators.SHOWING_TO_OF_ENTRIES_TEXT).isDisplayed();}
+    public boolean OptionalTextIsDisplayed() {return $(ILocators.OPTIONAL_TEXT).isDisplayed();   }
+    public boolean PReAuthorizationTextfieldIsDisplayed() { return $(ILocators.PREAUTHORIZATION_TEXTFIELD).isDisplayed();    }
+    public boolean GoButtonIsDisplayed() { return $(ILocators.GO_BUTTON).isDisplayed();}
+    public boolean PaginationButtonsIsDisplayed() { return $(ILocators.PAGINATION_BUTTONS_FAVORITE_TAB).isDisplayed();
+    }
+
+    public void chooseASIARegionInTheCombobox() {
+        $(ILocators.REGION_COMBOBOX).click();
+        $(ILocators.ASIA_REGION).click();
+    }
+
+    public void enterAccountNumberToTheAccountTextbox(String accountNumber) {
+        WebElement textfield = $(ILocators.SEARCH_ACCOUNT_FIELD);
+        textfield.sendKeys(accountNumber);
+    }
+
+    public void clickSearchAccountButton() {
+        $(ILocators.SEARCH_ACCOUNT_BUTTON).click();
+        waitFor(ExpectedConditions.elementToBeClickable(By.xpath(ILocators.APPROVED_ACCOUNTS_TAB)));
+
+    }
+
+
+    public boolean accountIsDisplayedInTheTable(String accountNumber) {
+              List<WebElementFacade> accounts = findAll(By.xpath(ILocators.LIST_OF_ACCOUNTS_ACCOUNT_MANAGEMENT));
+        for (WebElementFacade webElementFacade : accounts) {
+            webElementFacade.getText();
+           webElementFacade.getText().equals(accountNumber);
+            }
+        return true;
+    }
+
+    public void clickRESETButton() {
+        $(ILocators.RESET_BUTTON).click();
+        Serenity.getCurrentSession().put("Region combobox", $(ILocators.REGION_COMBOBOX).getText());
+        Serenity.getCurrentSession().put("Search accounts field", $(ILocators.SEARCH_ACCOUNT_FIELD).getText());
+    }
+
+    public void enterAccountNameToTheAccountTextbox(String accountName) {
+        WebElement textfield = $(ILocators.SEARCH_ACCOUNT_FIELD);
+        textfield.sendKeys(accountName);
+    }
+
+    public boolean accountNameIsDisplayedInTheTable(String accountName) {
+        List<WebElementFacade> accounts = findAll(By.xpath(ILocators.LIST_OF_ACCOUNTS_ACCOUNT_MANAGEMENT));
+        for (WebElementFacade webElementFacade : accounts) {
+            webElementFacade.getText();
+            webElementFacade.getText().equals(accountName);
+        }
+        return true;
+    }
+
+    public void chooseEMEARegionInTheRegionCombobox() {
+        $(ILocators.REGION_COMBOBOX).click();
+        $(ILocators.EMEA_REGION).click();
+
+    }
+
+    public void chooseLatinAmericaRegionInTheRegionCombobox() {
+        $(ILocators.REGION_COMBOBOX).click();
+        $(ILocators.LATIN_AMERICA_REGION).click();
+    }
+
+    public void chooseNorthAmericaRegionInTheRegionCombobox() {
+        $(ILocators.REGION_COMBOBOX).click();
+        $(ILocators.NORTH_AMERICA_REGION).click();
+    }
+
+    public boolean allAccountsFromASIARegionAreDisplayedInTheTable() {
+        List<WebElementFacade> accounts = findAll(By.xpath(ILocators.LIST_OF_ACCOUNTS_STATE));
+        for (WebElementFacade webElementFacade : accounts) {
+            webElementFacade.getText();
+            try {   if (webElementFacade.getText().equals("Shanghai")) return true;
+            } catch (Exception e) {   System.out.println("Not Shanghai");        }
+            try {
+                if (webElementFacade.getText().equals("New South Wales")) return true;
+            } catch (Exception e) {   System.out.println("Not New South Wales");        }
+            try {
+                if (webElementFacade.getText().equals("DKI Jakarta Raya")) return true;
+            } catch (Exception e) {   System.out.println("Not DKI Jakarta Raya");        }
+            try {
+                if (webElementFacade.getText().equals("T´ai-pei")) return true;
+            } catch (Exception e) {   System.out.println("Not T´ai-pei");        }
+            try {
+                if (webElementFacade.getText().equals("Nakhon Pathom")) return true;
+            } catch (Exception e) {   System.out.println("Not Nakhon Pathom");        }
+            try {
+                if (webElementFacade.getText().equals("Bangladesh")) return true;
+            } catch (Exception e) {   System.out.println("Not Bangladesh");        }
+            try {
+                if (webElementFacade.getText().equals("Singapore")) return true;
+            } catch (Exception e) {   System.out.println("Not Singapore");        }
+            try {
+                if (webElementFacade.getText().equals("Saudi Arabia")) return true;
+            } catch (Exception e) {   System.out.println("Not Saudi Arabia");        }
+            try {
+                if (webElementFacade.getText().equals("Western Australia")) return true;
+            } catch (Exception e) {   System.out.println("Not Western Australia");        }
+               }
+        return false; }
+
+
+    public boolean allAccountsFromEMEARegionAreDisplayedInTheTable() {
+        List<WebElementFacade> accounts = findAll(By.xpath(ILocators.LIST_OF_ACCOUNTS_STATE));
+        for (WebElementFacade webElementFacade : accounts) {
+            webElementFacade.getText();
+            try {
+                if (webElementFacade.getText().equals("Bavaria")) return true;
+            } catch (Exception e) {   System.out.println("Not Bavaria");        }
+            try {
+                if (webElementFacade.getText().equals("Bacs-Kiskun")) return true;
+            } catch (Exception e) {   System.out.println("Not Bacs-Kiskun");        }
+            try {
+                if (webElementFacade.getText().equals("Brussels (Capital)")) return true;
+            } catch (Exception e) {   System.out.println("Not Brussels (Capital)");        }
+            try {
+                if (webElementFacade.getText().equals("Maine-et-Loire")) return true;
+            } catch (Exception e) {   System.out.println("Not T´ai-pei");        }
+            try {
+                if (webElementFacade.getText().equals("Rome")) return true;
+            } catch (Exception e) {   System.out.println("Not Rome");        }
+            try {
+                if (webElementFacade.getText().equals("Danish Capital Reg.")) return true;
+            } catch (Exception e) {   System.out.println("Not Danish Capital Reg.");        }
+            try {
+                if (webElementFacade.getText().equals("Manche")) return true;
+            } catch (Exception e) {   System.out.println("Not Manche");        }
+            try {
+                if (webElementFacade.getText().equals("Seine-Maritime")) return true;
+            } catch (Exception e) {   System.out.println("Not Seine-Maritime");        }
+            try {
+                if (webElementFacade.getText().equals("Madrid")) return true;
+            } catch (Exception e) {   System.out.println("Not Madrid");        }
+        }
+        return false; }
+
+    public boolean allAccountsFromLatinAmericaRegionAreDisplayedInTheTable() {
+        List<WebElementFacade> accounts = findAll(By.xpath(ILocators.LIST_OF_ACCOUNTS_STATE));
+        for (WebElementFacade webElementFacade : accounts) {
+            webElementFacade.getText();
+            try {
+                if (webElementFacade.getText().equals("Baden-Wurttemberg")) return true;
+            } catch (Exception e) {   System.out.println("Not Baden-Wurttemberg");        }
+            try {
+                if (webElementFacade.getText().equals("Distrito Federal")) return true;
+            } catch (Exception e) {   System.out.println("Not Distrito Federal");        }
+            try {
+                if (webElementFacade.getText().equals("RM - Santiago")) return true;
+            } catch (Exception e) {   System.out.println("Not RM - Santiago");        }
+            try {
+                if (webElementFacade.getText().equals("Nuevo Leon")) return true;
+            } catch (Exception e) {   System.out.println("Not Nuevo Leon");        }
+            try {
+                if (webElementFacade.getText().equals("Miranda")) return true;
+            } catch (Exception e) {   System.out.println("Not Miranda");        }
+            try {
+                if (webElementFacade.getText().equals("Veracruz")) return true;
+            } catch (Exception e) {   System.out.println("Not Veracruz");        }
+            try {
+                if (webElementFacade.getText().equals("Nuevo Leon")) return true;
+            } catch (Exception e) {   System.out.println("Not Nuevo Leon");        }
+            try {
+                if (webElementFacade.getText().equals("Jalisco")) return true;
+            } catch (Exception e) {   System.out.println("Not Jalisco");        }
+            try {
+                if (webElementFacade.getText().equals("Tamaulipas")) return true;
+            } catch (Exception e) {   System.out.println("Not Tamaulipas");        }
+        }
+        return false;
+    }
+
+    public boolean allAccountsFromNorthAmericaRegionAreDisplayedInTheTable() {
+        List<WebElementFacade> accounts = findAll(By.xpath(ILocators.LIST_OF_ACCOUNTS_STATE));
+        for (WebElementFacade webElementFacade : accounts) {
+            webElementFacade.getText();
+            try {
+                if (webElementFacade.getText().equals("New Mexico")) return true;
+            } catch (Exception e) {   System.out.println("Not New Mexico");        }
+            try {
+                if (webElementFacade.getText().equals("Washington")) return true;
+            } catch (Exception e) {   System.out.println("Not Washington");        }
+            try {
+                if (webElementFacade.getText().equals("Oregon")) return true;
+            } catch (Exception e) {   System.out.println("Not Oregon");        }
+            try {
+                if (webElementFacade.getText().equals("Alaska")) return true;
+            } catch (Exception e) {   System.out.println("Not Alaska");        }
+            try {
+                if (webElementFacade.getText().equals("Colorado")) return true;
+            } catch (Exception e) {   System.out.println("Not Colorado");        }
+            try {
+                if (webElementFacade.getText().equals("Michigan")) return true;
+            } catch (Exception e) {   System.out.println("Not Michigan");        }
+            try {
+                if (webElementFacade.getText().equals("California")) return true;
+            } catch (Exception e) {   System.out.println("Not California");        }
+            try {
+                if (webElementFacade.getText().equals("Indiana")) return true;
+            } catch (Exception e) {   System.out.println("Not Indiana");        }
+            try {
+                if (webElementFacade.getText().equals("Ohio")) return true;
+            } catch (Exception e) {   System.out.println("Not Ohio");        }
+        }
+        return false;
+    }
+
+
+    public boolean _10accountsAreDisplayedAtOnePage() {
+      if ($(ILocators._11String).isDisplayed()){ return false;
+ }
+    else return true;}
+
+    public void clickOnTheNextButton() {
+        Integer i1 = Integer.parseInt($(ILocators.number_Of_Page1).getText().substring(13,15));
+        $(ILocators.NEXT_PAGINATION_BUTTON).click();
+        waitABit(5000);
+        Integer i2 = Integer.valueOf($(ILocators.number_Of_Page1).getText().substring(14, 16));
+        Integer i3 = i1 +10;
+        String str1 = Integer.toString(i3);
+        Serenity.getCurrentSession().put("out1",str1);
+        String str2 = Integer.toString(i2);
+        Serenity.getCurrentSession().put("out2",str2);
+            }
+
+    public void clickOnTheLastButton() {
+        $(ILocators.LAST_PAGINATION_BUTTON).click();
+        waitABit(5000);
+        Integer i1 = Integer.valueOf(($(ILocators.number_Of_Page1).getText().substring(21,24)));
+        Integer i2 = Integer.valueOf($(ILocators.number_Of_Page1).getText().substring(31,34));
+        String str1 = Integer.toString(i1);
+        Serenity.getCurrentSession().put("out3",str1);
+        String str2 = Integer.toString(i2);
+        Serenity.getCurrentSession().put("out4",str2);
+    }
+
+    public void clickOnThePreviousButton() {
+        Integer i1 = Integer.valueOf(($(ILocators.number_Of_Page1).getText().substring(21,24)));
+        $(ILocators.PREVIOUS_PAGINATION_BUTTON).click();
+        waitABit(5000);
+        Integer i2 = Integer.valueOf($(ILocators.number_Of_Page1).getText().substring(21,24));
+        String str2 = Integer.toString(i2);
+        Serenity.getCurrentSession().put("out5", str2);
+        try {
+            if (i1 == 613) {
+                Integer i3 = i1 - 3;
+                String str1   = Integer.toString(i3);
+                Serenity.getCurrentSession().put("out6", str1);
+            }}
+        catch (Exception e) {   System.out.println("Not 572");        }
+        try {
+            if (i1 != 613) {
+                Integer i3 = i1 - 10;
+                String str1   = Integer.toString(i3);
+                Serenity.getCurrentSession().put("out6", str1);
+            }}
+        catch (Exception e) {   System.out.println("572");        }
+    }
+//        Integer i1 = Integer.valueOf(($(ILocators.Paginate_Of).getText().substring(4,8)));
+//        $(ILocators.PREVIOUS_PAGINATION_BUTTON).click();
+//        waitABit(5000);
+//        Integer i2 = Integer.valueOf($(ILocators.Paginate_input).getText());
+//        String str2 = Integer.toString(i2);
+//        Serenity.getCurrentSession().put("out5", str2);
+//        Integer i3 = i1 - 1;
+//        String str1   = Integer.toString(i3);
+//        Serenity.getCurrentSession().put("out6", str1);
+//            }
+
+
+
+    public void clickOnTheFirstButton() {
+        $(ILocators.FIRST_PAGINATION_BUTTON).click();
+        waitABit(5000);
+        Integer i1 = Integer.parseInt($(ILocators.number_Of_Page1).getText().substring(13,15));
+        String str1 = Integer.toString(i1);
+        Serenity.getCurrentSession().put("out7",str1);
+
+    }
+
+    public void clickFavoritesTab() {
+        $(ILocators.Favorites_Tab).click();
+    }
+
+    public boolean favoritesTabIsOpened() {
+        $(ILocators.Favotites_active_tab).isPresent();
+        return true;
+    }
+
+    public void clickOnTheStarButton() {
+        $(ILocators.STAR_BUTTON).click();
+    }
+
+    public boolean accountIsntDisplayedInTheTable(String accountNumber) {
+        List<WebElementFacade> accounts = findAll(By.xpath(ILocators.LIST_OF_ACCOUNTS_ACCOUNT_MANAGEMENT));
+        for (WebElementFacade webElementFacade : accounts) {
+            webElementFacade.getText();
+                     webElementFacade.getText().isEmpty();
+                    }
+            return  true;}
+
+
+    public void clickOnTheStar1Button() { $(ILocators.STAR1_BUTTON).click();   }
+
+    public  void clickApprovedAccountsTab() {
+//        waitFor(ExpectedConditions.elementToBeClickable(By.xpath(ILocators.APPROVED_ACCOUNTS_TAB)));
+        waitABit(3000);
+        $(ILocators.APPROVED_ACCOUNTS_TAB).click();
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
