@@ -511,4 +511,8 @@ public class EndUserSteps extends ScenarioSteps {
     public void checkThatAppropriateInvoiceDisplayedAtThePage(String arg0) {
         Assert.assertTrue(invoice.isAppropriateInvoiceShown(arg0));
     }
+
+    public void enterSpaNumberToSpainputField(String arg0) {
+        priceAndAvailability.enterSpaToSpaBox(arg0);
+    }
 }

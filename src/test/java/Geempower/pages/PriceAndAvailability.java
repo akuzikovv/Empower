@@ -9,10 +9,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 import net.thucydides.core.pages.jquery.JQueryEnabledPage;
 import org.jruby.util.SafePropertyAccessor;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -213,5 +210,12 @@ public class PriceAndAvailability extends PageObject {
                 break;
             }
         }
+    }
+
+    public void enterSpaToSpaBox(String arg0) {
+        $(Path.SPA_TEXTBOX).clear();
+        $(Path.SPA_TEXTBOX).sendKeys(arg0);
+        $(Path.SPA_TEXTBOX).sendKeys(Keys.ENTER);
+
     }
 }

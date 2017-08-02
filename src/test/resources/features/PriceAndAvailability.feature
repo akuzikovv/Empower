@@ -67,9 +67,9 @@ Feature: Geempower P&A
     When  add product "TCAL18" to the Price and Availability page
     Then Check that both "THQL1120" and "TCAL18" products are displayed
     When Open Special Pricing Lookup
-    When Click on "45000210" spa
+    When Click on "45001743" spa
     When Click "Apply to All" button at Special Pricing Lookup
-    Then "45000210" spa applied for all products
+    Then "45001743" spa applied for all products
 
 
   Scenario: Check that user able to search SPA by  SPA No. at SPA popup
@@ -83,10 +83,10 @@ Feature: Geempower P&A
     And  Dashboard page is opened
     When At the Dashboard enter Product "THQL1120" and check Price and Availability
     When Open Special Pricing Lookup
-    When Search by "45000210" SPA No
-    When Click on "45000210" spa
+    When Search by "45001743" SPA No
+    When Click on "45001743" spa
     When Click "Apply & Copy" button at Special Pricing Lookup
-    Then "45000210" spa is displayed
+    Then "45001743" spa is displayed
 
 
   Scenario: Check that user able to search SPA by Customer Name at SPA popup
@@ -100,10 +100,10 @@ Feature: Geempower P&A
     And  Dashboard page is opened
     When At the Dashboard enter Product "THQL1120" and check Price and Availability
     When Open Special Pricing Lookup
-    When Search by "J&K" Customer Name
-    When Click on "45000220" spa
+    When Search by "ADKINS" Customer Name
+    When Click on "45003812" spa
     When Click "Apply & Copy" button at Special Pricing Lookup
-    Then "45000220" spa is displayed
+    Then "45003812" spa is displayed
 
 
   Scenario: Check that user able to search SPA by  Customer numebr
@@ -117,10 +117,10 @@ Feature: Geempower P&A
     And  Dashboard page is opened
     When At the Dashboard enter Product "THQL1120" and check Price and Availability
     When Open Special Pricing Lookup
-    When Search by "2007600" Customer No
-    When Click on "45000214" spa
+    When Search by "2000289" Customer No
+    When Click on "45003812" spa
     When Click "Apply & Copy" button at Special Pricing Lookup
-    Then "45000214" spa is displayed
+    Then "45003812" spa is displayed
     When Open Special Pricing Lookup
 
 
@@ -135,9 +135,10 @@ Feature: Geempower P&A
     And  Dashboard page is opened
     When At the Dashboard enter Product "THQL1120" and check Price and Availability
     And "THQL1120" product is displayed at the Price and Availability page
-    When Open Special Pricing Lookup
-    When Click on "45000210" spa
-    When Click "Apply & Copy" button at Special Pricing Lookup
+#    When Open Special Pricing Lookup
+#    When Click on "45000210" spa
+#    When Click "Apply & Copy" button at Special Pricing Lookup
+    When enter "45000210" spa to the Special Pricing field
     When "45000210" spa is displayed
     When Update Price and Availability at P&A page
     Then "Pricing agreement is invalid. Standard price is displayed." error message is displayed at the P&A results page

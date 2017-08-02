@@ -627,4 +627,10 @@ public class GeempowerBinder {
     public void invoiceDisplayedAtTheTable(String arg0) throws Throwable {
         steps.checkThatAppropriateInvoiceDisplayedAtThePage(arg0);
     }
+
+    @When("^enter \"([^\"]*)\" spa to the Special Pricing field$")
+    public void enterSpaToTheSpecialPricingField(String arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        steps.enterSpaNumberToSpainputField(arg0);
+    }
 }
