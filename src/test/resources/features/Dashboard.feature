@@ -1,9 +1,7 @@
 Feature: Geempower Dashboard
-
-Feature: Geempower Dashboard
   Background:
     Given open Dashboard page
-#test
+
   Scenario: Ge.016.0001 - Ge.016.0025
     Then  Dashboard page contains all necessary fields, widgets and buttons
     And   Click Next button on every balloon

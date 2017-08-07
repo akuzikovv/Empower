@@ -680,6 +680,8 @@ public class AccountManagementPage extends PageObject {
 
     public void chooseASIARegionInTheCombobox() {
         $(ILocators.REGION_COMBOBOX).click();
+        try {waitFor(ExpectedConditions.elementToBeClickable($(ILocators.ASIA_REGION)));
+        }catch (Exception e) {   System.out.println("Not clickable");        }
         $(ILocators.ASIA_REGION).click();
     }
 
@@ -726,17 +728,23 @@ public class AccountManagementPage extends PageObject {
 
     public void chooseEMEARegionInTheRegionCombobox() {
         $(ILocators.REGION_COMBOBOX).click();
+        try {waitFor(ExpectedConditions.elementToBeClickable($(ILocators.EMEA_REGION)));
+        }catch (Exception e) {   System.out.println("Not clickable");        }
         $(ILocators.EMEA_REGION).click();
 
     }
 
     public void chooseLatinAmericaRegionInTheRegionCombobox() {
         $(ILocators.REGION_COMBOBOX).click();
+        try { waitFor(ExpectedConditions.elementToBeClickable($(ILocators.LATIN_AMERICA_REGION)));
+        }catch (Exception e) {   System.out.println("Not clickable");        }
         $(ILocators.LATIN_AMERICA_REGION).click();
     }
 
     public void chooseNorthAmericaRegionInTheRegionCombobox() {
         $(ILocators.REGION_COMBOBOX).click();
+        try {waitFor(ExpectedConditions.elementToBeClickable($(ILocators.NORTH_AMERICA_REGION)));
+        }catch (Exception e) {   System.out.println("Not clickable");        }
         $(ILocators.NORTH_AMERICA_REGION).click();
     }
 
