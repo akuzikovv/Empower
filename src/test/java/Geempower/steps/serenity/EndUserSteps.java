@@ -1,11 +1,16 @@
 package Geempower.steps.serenity;
 
 import Geempower.Path;
-import Geempower.pages.AccountManagementPage;
-import Geempower.pages.DashboardPage;
+import Geempower.pages.*;
 import cucumber.api.java.cs.A;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.pages.WebElementState;
+import net.thucydides.core.annotations.Step;
+import net.thucydides.core.steps.ScenarioSteps;
+import org.junit.Assert;
+import Geempower.ILocators;
+
+import net.serenitybdd.core.Serenity;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
@@ -20,6 +25,12 @@ public class EndUserSteps extends ScenarioSteps {
 
     AccountManagementPage accountManagementPage;
     DashboardPage dashboardPage;
+    SignInPage signInpage;
+    AllOrdersPage allOrdersPage;
+    SavedListsPage savedListsPage;
+    PriceAndAvailability priceAndAvailability;
+    OrderStatus orderStatus;
+    Invoice invoice;
 
 
     @Step
@@ -31,6 +42,10 @@ public class EndUserSteps extends ScenarioSteps {
     @Step
     public void loginUser() {
         accountManagementPage.loginUser();
+    }
+    @Step
+    public void loginUser2() {
+        accountManagementPage.loginUser2();
     }
 
     @Step

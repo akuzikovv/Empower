@@ -23,6 +23,10 @@ public class GeempowerBinder {
     public void loginUser() {
         steps.loginUser();
     }
+    @When("login user2")
+    public void loginUser2() {
+        steps.loginUser2();
+    }
 
     @Then("account management page is opened")
     public void isAccountManagementPageOpened() {
@@ -35,7 +39,7 @@ public class GeempowerBinder {
 //    }
 
     @When("^Click \"([^\"]*)\" account$")
-    public void clickAccount(String account) {
+    public void clickAccountNumber(String account) {
         steps.clickAccountNumber(account);
     }
 
@@ -522,10 +526,10 @@ public class GeempowerBinder {
         steps.clickEMEAAccount(arg0);
     }
 
-    @Then("^All Orders page is opened$")
-    public void allOrdersPageIsOpened() throws Throwable {
-        steps.chechThatAllOrdersPageIsOpened();
-    }
+//    @Then("^All Orders page is opened$")
+//    public void allOrdersPageIsOpened() throws Throwable {
+//        steps.chechThatAllOrdersPageIsOpened();
+//    }
 
     @When("^Search by \"([^\"]*)\"$")
     public void searchBy(String arg0) throws Throwable {
@@ -567,10 +571,10 @@ public class GeempowerBinder {
         steps.clickNextButtonAtThePOPage();
     }
 
-    @Then("^PO Order details page is opened$")
-    public void poOrderDetailsPageIsOpened() throws Throwable {
-        steps.checkThatPOOrderDetailsPageOpened();
-    }
+//    @Then("^PO Order details page is opened$")
+//    public void poOrderDetailsPageIsOpened() throws Throwable {
+//        steps.checkThatPOOrderDetailsPageOpened();
+//    }
 
     @Then("^All Invoices page is opened$")
     public void allInvoicesPageIsOpened() throws Throwable {
@@ -869,10 +873,10 @@ public class GeempowerBinder {
         steps.enterOrderNumberToTheEnterOrderOrPONumberTextbox();
     }
 
-    @When("^Click Search button$")
-    public void clickSearchButton() throws Throwable {
-        steps.clickSearchButton();
-    }
+//    @When("^Click Search button$")
+//    public void clickSearchButton() throws Throwable {
+//        steps.clickSearchButton();
+//    }
 
     @When("^Enter PO order number to the  Enter Order or PO Number textbox$")
     public void enterPOOrderNumberToTheEnterOrderOrPONumberTextbox() throws Throwable {

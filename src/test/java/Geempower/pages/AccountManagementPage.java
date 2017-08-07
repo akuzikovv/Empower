@@ -23,6 +23,8 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.xml.sax.Locator;
+
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
@@ -631,6 +633,14 @@ public class AccountManagementPage extends PageObject {
     }
 
     //////////////////////////////////////////////////   ANTON'S CODE //////////////////////
+    public void loginUser2() {
+
+        $(Path.USER_ID_FIELD).clear();
+        $(Path.USER_ID_FIELD).sendKeys(ILocators.LOGIN_1);
+        $(Path.PASSWORD_FIELD).clear();
+        $(Path.PASSWORD_FIELD).sendKeys(ILocators.PASSWORD_1);
+        $(Path.SIGN_IN_BUTTON).click();
+        getDriver().get("http://qa.geempower.com/geempower/");}
 
     public void selectAccount() {
         waitABit(3000);
