@@ -1,4 +1,6 @@
 Feature: Geempower Dashboard
+
+Feature: Geempower Dashboard
   Background:
     Given open Dashboard page
 #test

@@ -1,11 +1,24 @@
 package Geempower.steps.serenity;
 
-import Geempower.ILocators;
+import Geempower.Path;
 import Geempower.pages.*;
+import cucumber.api.java.cs.A;
+import net.serenitybdd.core.pages.WebElementFacade;
+import net.serenitybdd.core.pages.WebElementState;
+import net.thucydides.core.annotations.Step;
+import net.thucydides.core.steps.ScenarioSteps;
+import org.junit.Assert;
+import Geempower.ILocators;
+
 import net.serenitybdd.core.Serenity;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
+import org.openqa.selenium.Dimension;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.hasItem;
 
 
 public class EndUserSteps extends ScenarioSteps {
@@ -15,36 +28,29 @@ public class EndUserSteps extends ScenarioSteps {
     SignInPage signInpage;
     AllOrdersPage allOrdersPage;
     SavedListsPage savedListsPage;
+    PriceAndAvailability priceAndAvailability;
+    OrderStatus orderStatus;
+    Invoice invoice;
 
 
     @Step
     public void openCustomLoginPage() {
         getDriver().manage().window().maximize();
         accountManagementPage.open();
+
     }
     @Step
     public void loginUser() {
         accountManagementPage.loginUser();
     }
+    @Step
+    public void loginUser2() {
+        accountManagementPage.loginUser2();
+    }
 
     @Step
     public void isAccountManagementPageOpened() {
         Assert.assertTrue(accountManagementPage.isAccountManagementLogoVisible());
-        Assert.assertTrue("Select a region combobox is absent",accountManagementPage.regionComboboxIsDisplayed());
-        Assert.assertTrue("Search by account number or name textbox is absent",accountManagementPage.searchTextboxIsDisplayed());
-        Assert.assertTrue("Request account button is absent",accountManagementPage.requestAccountButtonIsDisplayed());
-        Assert.assertTrue("Cancel button is absent",accountManagementPage.CancelButtonIsDisplayed());
-        Assert.assertTrue("Reset button is absent",accountManagementPage.ResetButtonIsDisplayed());
-        Assert.assertTrue("Search button is absent",accountManagementPage.searchButtonIsDisplayed());
-        Assert.assertTrue("Approved Accounts tab is absent",accountManagementPage.ApprovedAccountsTabIsDisplayed());
-        Assert.assertTrue("Favorites tab isn't opened by default",accountManagementPage.FavoritesTabIsDisplayedByDefault());
-        Assert.assertTrue("Pending for Approval tab is absent",accountManagementPage.PendingForApprovalTabIsDisplayed());
-        Assert.assertTrue("Showing # to # of # entries text is absent",accountManagementPage.ShowingTextIsDisplayed());
-        Assert.assertTrue("\"Optional: Input a Pre Authorization Code to view the Pre Authorized accounts\" text is absent",accountManagementPage.OptionalTextIsDisplayed());
-        Assert.assertTrue("PRe-Authorization textfield is absent",accountManagementPage.PReAuthorizationTextfieldIsDisplayed());
-        Assert.assertTrue(" \"Go\" button is absent",accountManagementPage.GoButtonIsDisplayed());
-        Assert.assertTrue("Pagination buttons are absent",accountManagementPage.PaginationButtonsIsDisplayed());
-
     }
 
     @Step
@@ -173,8 +179,8 @@ public class EndUserSteps extends ScenarioSteps {
         Assert.assertTrue(accountManagementPage.isPriceAndAvailabilityPageOpened());
     }
     @Step
-    public void checkThatProductIsAddedToThePriceAndAvailabilityPage() {
-        Assert.assertTrue(accountManagementPage.isProductAddedToThePAndA());
+    public void checkThatProductIsAddedToThePriceAndAvailabilityPage(String arg0) {
+        Assert.assertTrue(accountManagementPage.isProductAddedToThePAndA(arg0));
     }
     @Step
     public void clickAddToCartButton() {
@@ -225,7 +231,13 @@ public class EndUserSteps extends ScenarioSteps {
         Assert.assertTrue(accountManagementPage.isProductsAddedToTheCart(arg0));
         Assert.assertTrue(accountManagementPage.isProductsAddedToTheCart(arg0.replace(arg0,arg1)));
     }
+    @Step
+    public void checkIfAllProductsAddedToPriceAndAvailability(String arg0, String arg1) {
+        Assert.assertTrue(accountManagementPage.isProductsDisplayedAtThePriceAndAvailability(arg0));
+        Assert.assertTrue(accountManagementPage.isProductsDisplayedAtThePriceAndAvailability(arg0.replace(arg0,arg1)));
 
+    }
+    @Step
     public void ClickSavedListsInTheHeader(String arg0) {
         accountManagementPage.clickButtonAtTheNavbar(arg0);
     }
@@ -715,5 +727,289 @@ public class EndUserSteps extends ScenarioSteps {
 
     @Step
     public void clickApprovedAccountsTab() { accountManagementPage.clickApprovedAccountsTab();
+    }
+    @Step
+    public void chechThatAllListsPageIsOpened() {
+        Assert.assertTrue(accountManagementPage.isAllListsPageOpened());
+    }
+    @Step
+    public void createNewList(String arg0) {
+        accountManagementPage.createNewList(arg0);
+    }
+    @Step
+    public void checkThatNewListIsCreated(String arg0) {
+        Assert.assertTrue(accountManagementPage.isListAddedToTheTable(arg0));
+    }
+
+    @Step
+    public void clickContinueButtonAtpopup() {
+        accountManagementPage.clickContinueButtonMinimalChargesPopup();
+    }
+    @Step
+    public void clickCheckoutButton() {
+        accountManagementPage.clickCheckoutButton();
+    }
+    @Step
+    public void clickOnLIst(String arg0) {
+        accountManagementPage.clickOnSavedList(arg0);
+    }
+    @Step
+    public void addProductToList(String arg0) {
+        accountManagementPage.addProdactToTheList(arg0);
+    }
+    @Step
+    public void checkThaTProductIsAddedToList(String arg0) {
+        Assert.assertTrue(accountManagementPage.isProductAddedToTheList(arg0));
+    }
+    @Step
+    public void goToTheAllItemsPage() {
+        accountManagementPage.clickBackButton();
+    }
+    @Step
+    public void checkThatNumberIsItemsIsChanged(long arg0) {
+        Assert.assertEquals(accountManagementPage.getNumberOfProductsInTheList(), arg0);
+    }
+    @Step
+    public void deleteCreatedList(String arg0) {
+        accountManagementPage.deleteList(arg0);
+    }
+    @Step
+    public void checkThatListIsRemoved(String arg0) {
+        Assert.assertFalse(accountManagementPage.isListRemoved(arg0));
+    }
+    @Step
+    public void addProductToTHeNewList(String arg0) {
+        accountManagementPage.addProdToTheNewListFromPriceAndAvailabilityPage(arg0);
+    }
+    @Step
+    public void chceckThatNewListIsDisplayed(String arg0) {
+        Assert.assertTrue(accountManagementPage.isProductsDisplayedAtTheRecentListWidget(arg0));
+    }
+    @Step
+    public void clickOnListAtDashdoard(String arg0) {
+        accountManagementPage.clickOnAppropriateListAtDashboard(arg0);
+    }
+    @Step
+    public void checkThatListIsDeletedFromDashboardWidget() {
+        Assert.assertFalse(accountManagementPage.isListRemovedFromDashboard());
+    }
+    @Step
+    public void clickButtonInTheCartHeader(String arg0) {
+        accountManagementPage.clickButtonAtCartHeader(arg0);
+    }
+    @Step
+    public void saveNewCart(String arg0) {
+        accountManagementPage.saveNewCartToTheList(arg0);
+    }
+    @Step
+    public void clickGELogo() {
+        accountManagementPage.clickGELogoInTheHeader();
+    }
+    @Step
+    public void isNewCartCreated(String arg0) {
+        Assert.assertTrue(accountManagementPage.isCartSAved(arg0));
+    }
+    @Step
+    public void clickOnSavedCartInTheTable(String arg0) {
+        accountManagementPage.clickOnSavedCart(arg0);
+    }
+    @Step
+    public void deletesavedCart(String arg0) {
+        accountManagementPage.deleteNewSavedcart(arg0);
+    }
+    @Step
+    public void isCartDeletedFromTheList(String arg0) {
+        Assert.assertFalse(accountManagementPage.isCartRemoved(arg0));
+    }
+
+    @Step
+    public void isPONumberAndStockAddresSaved(String arg0, String arg1) {
+        Assert.assertTrue(accountManagementPage.isEnteredPONumberSaved(arg0));
+        Assert.assertTrue(accountManagementPage.isEnteredStockAddressSaved(arg1));
+    }
+    @Step
+    public void isStandartSpaDisplayed(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isStandartSpaPreselected(arg0));
+    }
+    @Step
+    public void openSpecialPricingLookup() {
+        priceAndAvailability.clickOnMagnifyingGlass();
+    }
+    @Step
+    public void clickOnSpainpopup(String arg0) {
+        priceAndAvailability.chooseSpaInTheSPPopup(arg0);
+    }
+    @Step
+    public void clickOnButtonAtSpecialPricingLookup(String arg0) {
+        priceAndAvailability.clickButtonAtSPLookap(arg0);
+    }
+    @Step
+    public void UpdatePriceAndAvailabilityAtPAPage() {
+        priceAndAvailability.clickUpdatePrAndAvButton();
+    }
+    @Step
+    public void isFinalNetPricesChanged(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isFinalNetPriceUpdated(arg0));
+    }
+    @Step
+    public void isExtndPricesChanged(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isExtndPriceUpdated(arg0));
+    }
+
+
+    @Step
+    public void checkThatQtyisDisplayed(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isAppropriateQtyDisplayed(arg0));
+    }
+
+    @Step
+    public void checkThatExtndPriceCorrect(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isExtndPriceUpdated(arg0));
+
+    }
+    @Step
+    public void clickAddItemButton(String arg0) {
+        priceAndAvailability.clickOnButtonAtTheHeaderAtPriceAndAnailability(arg0);
+    }
+    @Step
+    public void addProductToPAndA(String arg0) {
+        priceAndAvailability.addprodToThePage(arg0);
+    }
+    @Step
+    public void checkThatSpaAppliedForAllProdInTable(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isStandartSpaPreselected(arg0));
+    }
+    @Step
+    public void searchBySpaNoSpaPopup(String arg0) {
+        priceAndAvailability.searchAtSpapopup(arg0);
+    }
+    @Step
+    public void searchByCustomerNumber(String arg0) {
+        priceAndAvailability.searchAtSpapopup(arg0);
+    }
+    @Step
+    public void searchByCustomerName(String arg0) {
+        priceAndAvailability.searchAtSpapopup(arg0);
+    }
+    @Step
+    public void InvalidSpaErrorIsDisplayedAtPandAPage(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isInvalidSpaErrorDisplayedAtPanaAPage(arg0));
+    }
+    @Step
+    public void clickOnProductInThePandAList(String arg0) {
+        priceAndAvailability.clickOnProductInTheTable(arg0);
+    }
+    @Step
+    public void checkthatSpecificationsTabIsOpened(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isCorrectTabOpenedAtPDP(arg0));
+    }
+    @Step
+    public void clickOntabInPDP(String arg0) {
+        priceAndAvailability.clickTabInPDP(arg0);
+    }
+    @Step
+    public void checkThatPricingAgreementIsInvalidErrorIsDisplayedAtPDP(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isPricingAgreementIsInvalidErrorIsDisplayedAtPDPopup(arg0));
+    }
+    @Step
+    public void checkThatPricingAgreementIsntInvalidErrorIsDisplayedAtPandApage(String arg0) {
+        Assert.assertFalse(priceAndAvailability.isInvalidSpaErrorDisplayedAtPanaAPage(arg0));
+    }
+    @Step
+    public void checkThatPricingAgreementIsInvalidErrorIsntDisplayedAtPDP(String arg0) {
+        Assert.assertFalse(priceAndAvailability.isPricingAgreementIsInvalidErrorIsDisplayedAtPDPopup(arg0));
+    }
+    @Step
+    public void checkThanFinalNetpriceIsGreaterErrorMessageIsDisplayedAtPDP(String arg0) {
+        Assert.assertFalse(priceAndAvailability.isFinalNetPriceIsGreaterErrorIsDisplayedAtPDPopup(arg0));
+    }
+
+    @Step
+    public void CheckThatWarningPriceMessageisDisplayed(String arg0) {
+        Assert.assertTrue(priceAndAvailability.isFinalNetPriceIsGreaterErrorIsDisplayedAtPDPopup(arg0));
+    }
+@Step
+    public void clickEMEAAccount(String arg0) {
+    priceAndAvailability.clickEMEAAccunt(arg0);
+    }
+
+    public void chechThatAllOrdersPageIsOpened() {
+        Assert.assertTrue(orderStatus.isOrderStatusPageOpened());
+    }
+
+    public void searchByAtOrderStatus(String arg0) {
+        orderStatus.searchByAtOrderStatus(arg0);
+    }
+
+    public void appropriateOrderNumberIsDisplayedAtTheTable(String arg0) {
+        Assert.assertTrue(orderStatus.isAppropriateOrderDisplayed(arg0));
+    }
+
+    public void checkThatAppropriatePONumberIsDisplayedAtTheTable(String arg0) {
+        Assert.assertTrue(orderStatus.isAppropriatePODisplayed(arg0));
+    }
+    //test
+    public void chceckThatJobNameIsDisplayedAtTheTable(String arg0) {
+        Assert.assertTrue(orderStatus.isAppropriateJobNameDisplayed(arg0));
+    }
+
+    public void clickOnAppropriateOrder(String arg0) {
+        orderStatus.clickOnOrder(arg0);
+    }
+
+    public void clcikOnAppropriatePO(String arg0) {
+        orderStatus.clickOnPONumber(arg0);
+    }
+
+    public void checkCheckboxInTheHeader() {
+        orderStatus.checkCheckboxInHeader();
+    }
+
+    public void clickNextButtonAtThePOPage() {
+        orderStatus.clickNextButtonPOPage();
+    }
+
+    public void checkThatPOOrderDetailsPageOpened() {
+        Assert.assertTrue(orderStatus.isPOOrderDetailPageopened());
+    }
+
+    public void checkThatAllInvoicedPageOpened() {
+        Assert.assertTrue(invoice.isAllInvoicesPageOpened());
+    }
+
+    public void chooseRegion(String arg0) {
+        priceAndAvailability.chooceAppropriateRegion(arg0);
+    }
+
+    public void clickOnOrderLineDetails() {
+        orderStatus.clickOrderLineDetails();
+    }
+
+    public void checkThatOrderLineItemDetailsIsDisplayed() {
+        Assert.assertTrue(orderStatus.checkThatOrderLineItemDetailsIsOpened());
+    }
+
+    public void clickOnFirstPOOrderLine() {
+        orderStatus.clickOnFirstPOOrderLineNumber();
+    }
+
+    public void clickOnTabAtAccountManagementPage(String arg0) {
+        accountManagementPage.clickOnAppropriateTabWithAccounts(arg0);
+    }
+
+    public void enterValueToTheSearchInpetFieldAtInvoicePage(String arg0) {
+        invoice.enterInvoiceNumber(arg0);
+    }
+
+    public void ckickSerachButtonInvoicesPage() {
+        invoice.clickSearchButton();
+    }
+
+    public void checkThatAppropriateInvoiceDisplayedAtThePage(String arg0) {
+        Assert.assertTrue(invoice.isAppropriateInvoiceShown(arg0));
+    }
+
+    public void enterSpaNumberToSpainputField(String arg0) {
+        priceAndAvailability.enterSpaToSpaBox(arg0);
     }
 }

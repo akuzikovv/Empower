@@ -2,7 +2,7 @@ Feature: Geempower Account Management
 #test
   Scenario: Ge.015.0033 - Ge.015.0049
     Given open custom login page
-    When login user
+    When login user2
     Then account management page is opened
     When Choose ASIA region in the region combobox
     When Click Search Account button
@@ -74,8 +74,16 @@ Feature: Geempower Account Management
     When Click Favorites Tab
     Then Favorites tab is opened
     Then "1000270" account is displayed in the table
-#    When Click on the star1 button
+    #    When Click on the star1 button
 #    Then "1000270" account isn't displayed in the table
+
+  Scenario: Check that user able to choose appropriate account
+    Given open custom login page
+    When login user
+    When Click "1318501" account
+    When Click "Skip" button
+    Then Dashboard page is opened
+
 
 
 
