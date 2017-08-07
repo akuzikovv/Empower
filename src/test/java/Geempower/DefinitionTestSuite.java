@@ -11,6 +11,6 @@ import org.junit.runner.RunWith;
         "src/test/resources/features/SavedLists.feature",
         "src/test/resources/features/PriceAndAvailability.feature",
         "src/test/resources/features/OrderEntry.feature",
-        "src/test/resources/features/OrderStatus.feature"
+        "src/test/resources/features/OrderStatus.feature"//test
 })
 public class DefinitionTestSuite {}

@@ -182,7 +182,7 @@ public class PriceAndAvailability extends PageObject {
             return false;
         }
     }
-
+    //test
     public boolean isFinalNetPriceIsGreaterErrorIsDisplayedAtPDPopup(String arg0) {
         try {
             if (arg0.equalsIgnoreCase($(Path.FINAL_NET_PRICE_IS_GREATER_THAN_STANDART_PRICE).getText().trim())) {

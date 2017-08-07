@@ -15,7 +15,7 @@ public class OrderStatus extends PageObject {
     public boolean isOrderStatusPageOpened() {
               return   $(Path.ALL_ORDERS_TEXT).isDisplayed();
     }
-
+    //test
     public void searchByAtOrderStatus(String arg0) {
         $(Path.ORDER_STATUS_SEARCH_INPUT_FIELD).clear();
         $(Path.ORDER_STATUS_SEARCH_INPUT_FIELD).sendKeys(arg0);

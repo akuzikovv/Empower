@@ -12,7 +12,7 @@ public class Invoice extends PageObject{
     public boolean isAllInvoicesPageOpened() {
         return $(Path.ALL_INVOICES_TEXT).isDisplayed();
     }
-
+    //test
     public void enterInvoiceNumber(String arg0) {
         $(Path.SEARCH_INPUT_INVOICEC).clear();
         $(Path.SEARCH_INPUT_INVOICEC).sendKeys(arg0);

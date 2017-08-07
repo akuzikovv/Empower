@@ -14,7 +14,7 @@ Feature: Geempower Account Management
     When Click "1318501" account
     When Click "Skip" button
     Then Dashboard page is opened
-
+  #test
 #  Scenario: Check sorting for table
 #    Given open custom login page
 #    When login user

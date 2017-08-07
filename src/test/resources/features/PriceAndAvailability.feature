@@ -20,7 +20,7 @@ Feature: Geempower P&A
     Then Final Net Price are updated to "3.59"
     Then Extnd Price are updated to "35.90"
 
-
+  #test
   Scenario: Check that user able to upload file with product and spa displayed at the P&A page
     Given open custom login page
     When login user

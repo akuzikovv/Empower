@@ -572,7 +572,7 @@ public class GeempowerBinder {
     public void checkAllOrdersInTheTable() throws Throwable {
         steps.checkCheckboxInTheHeader();
     }
-
+    //test
     @When("^click next button$")
     public void clickNextButton() throws Throwable {
         steps.clickNextButtonAtThePOPage();

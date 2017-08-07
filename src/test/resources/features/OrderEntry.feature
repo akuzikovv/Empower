@@ -27,7 +27,7 @@ Feature: Geempower Order Entry
     When Click Close buttton
     Then Order details page is opened
 
-
+ #test
   Scenario: Check that user from LA region able to place the order
     Given open custom login page
     When login user
