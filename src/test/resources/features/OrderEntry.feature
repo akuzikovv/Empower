@@ -1,6 +1,6 @@
 Feature: Geempower Order Entry
 
-
+#test
   Scenario: Check that user from NA region able to place the order
     Given open custom login page
     When login user
