@@ -1,7 +1,7 @@
 package Geempower;
 
 public interface Path {
-//test
+
     //    Login Page
 
     String USER_ID_FIELD = ".//*[@id='userId']";
