@@ -397,7 +397,7 @@ public class GeempowerBinder {
     public void openDashboardPage() throws Throwable {
         steps.openSignInPage();
         steps.authorization();
-//        steps.selectAccount();
+        steps.selectAccount();
     }
 
     @Then("^Dashboard page contains all necessary fields, widgets and buttons$")
@@ -701,8 +701,5 @@ public class GeempowerBinder {
         steps.clickApprovedAccountsTab();
     }
 
-    @When("^open Dashboard page(\\d+)$")
-    public void openDashboardPage(int arg0) throws Throwable {
-        steps.selectAccount();
-    }
+
 }

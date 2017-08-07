@@ -3,7 +3,6 @@ Feature: Geempower Dashboard
     Given open Dashboard page
 
   Scenario: Ge.016.0001 - Ge.016.0025
-    When  open Dashboard page1
     Then  Dashboard page contains all necessary fields, widgets and buttons
     And   Click Next button on every balloon
     Then  For each widget appropriate balloon is displayed
@@ -76,6 +75,6 @@ Feature: Geempower Dashboard
     Then  "Publication Library | GE Industrial Solutions" page is opened in the separate tab
     When  Click View All button at the Featured Tools widget
     Then  Then Page "News | GE Industrial Solutions" is opened in the separate tab
-    When  Click on the QUOTES button
-    Then  Then Page "GE empower | Quote" is opened in the separate tab
+#    When  Click on the QUOTES button
+#    Then  Then Page "GE empower | Quote" is opened in the separate tab
 
