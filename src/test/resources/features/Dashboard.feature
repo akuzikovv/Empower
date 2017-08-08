@@ -1,8 +1,9 @@
 Feature: Geempower Dashboard
-  Background:
-    Given open Dashboard page
 
-  Scenario: Ge.016.0001 - Ge.016.0025
+    Scenario: Ge.016.0001 - Ge.016.0025
+    Given open custom login page
+    When  enter Login And Pass Of User 2
+    When  open Dashboard page
     Then  Dashboard page contains all necessary fields, widgets and buttons
     And   Click Next button on every balloon
     Then  For each widget appropriate balloon is displayed

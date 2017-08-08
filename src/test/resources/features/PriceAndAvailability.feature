@@ -3,7 +3,7 @@ Feature: Geempower P&A
   Scenario: Check that STANDART SPA is displayed at the P&A page and user able to choose appropriate spa
     Given open custom login page
     When login user
-#    When Click "Approved Accounts" tab
+    When Click "Approved Accounts" tab
     When Choose "North America" region
     When Search for NA "1318501" account
     When Click "1318501" account

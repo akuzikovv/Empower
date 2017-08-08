@@ -23,10 +23,9 @@ public class GeempowerBinder {
     public void loginUser() {
         steps.loginUser();
     }
-    @When("login user2")
-    public void loginUser2() {
-        steps.loginUser2();
-    }
+
+
+
 
     @Then("account management page is opened")
     public void isAccountManagementPageOpened() {
@@ -768,8 +767,8 @@ public class GeempowerBinder {
 
     @Given("^open Dashboard page$")
     public void openDashboardPage() throws Throwable {
-        steps.openSignInPage();
-        steps.authorization();
+//        steps.openSignInPage();
+//        steps.authorization();
         steps.selectAccount();
     }
 
@@ -1072,6 +1071,12 @@ public class GeempowerBinder {
     @When("^Click on the Approved Tab$")
     public void clickOnTheApprovedTab() throws Throwable {
         steps.clickApprovedAccountsTab();
+    }
+
+
+    @When("^enter Login And Pass Of User (\\d+)$")
+    public void enterLoginAndPassOfUser(int arg0) throws Throwable {
+        steps.enterLoginAndPassOfUser(arg0);
     }
 
 

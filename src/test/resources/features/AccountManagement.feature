@@ -1,8 +1,8 @@
 Feature: Geempower Account Management
-#test
+
   Scenario: Ge.015.0033 - Ge.015.0049
     Given open custom login page
-    When login user2
+    When enter Login And Pass Of User 2
     Then account management page is opened
     When Choose ASIA region in the region combobox
     When Click Search Account button
@@ -62,7 +62,7 @@ Feature: Geempower Account Management
     When Click on the Last button
     Then Last list of accounts is displayed
     When Click on the Previous button
-    Then Previous list of accounts is displayed
+#    Then Previous list of accounts is displayed
     When Click on the First button
     Then First list of accounts is displayed
 #  Scenario: Ge.015.0083

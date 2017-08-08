@@ -633,14 +633,14 @@ public class AccountManagementPage extends PageObject {
     }
 
     //////////////////////////////////////////////////   ANTON'S CODE //////////////////////
-    public void loginUser2() {
-
-        $(Path.USER_ID_FIELD).clear();
-        $(Path.USER_ID_FIELD).sendKeys(ILocators.LOGIN_1);
-        $(Path.PASSWORD_FIELD).clear();
-        $(Path.PASSWORD_FIELD).sendKeys(ILocators.PASSWORD_1);
-        $(Path.SIGN_IN_BUTTON).click();
-        getDriver().get("http://qa.geempower.com/geempower/");}
+//    public void qeqewqewenterLoginAndPassOfUser2() {
+//
+//        $(Path.USER_ID_FIELD).clear();
+//        $(Path.USER_ID_FIELD).sendKeys(ILocators.LOGIN_1);
+//        $(Path.PASSWORD_FIELD).clear();
+//        $(Path.PASSWORD_FIELD).sendKeys(ILocators.PASSWORD_1);
+//        $(Path.SIGN_IN_BUTTON).click();
+//        getDriver().get("http://qa.geempower.com/geempower/");}
 
     public void selectAccount() {
         waitABit(3000);
@@ -691,6 +691,8 @@ public class AccountManagementPage extends PageObject {
     }
 
     public void clickSearchAccountButton() {
+        try {waitFor(ExpectedConditions.elementToBeClickable($(ILocators.SEARCH_ACCOUNT_BUTTON)));
+        }catch (Exception e) {   System.out.println("Not clickable");        }
         $(ILocators.SEARCH_ACCOUNT_BUTTON).click();
         waitFor(ExpectedConditions.elementToBeClickable(By.xpath(ILocators.APPROVED_ACCOUNTS_TAB)));
 

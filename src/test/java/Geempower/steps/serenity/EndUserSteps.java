@@ -43,10 +43,7 @@ public class EndUserSteps extends ScenarioSteps {
     public void loginUser() {
         accountManagementPage.loginUser();
     }
-    @Step
-    public void loginUser2() {
-        accountManagementPage.loginUser2();
-    }
+
 
     @Step
     public void isAccountManagementPageOpened() {
@@ -252,12 +249,12 @@ public class EndUserSteps extends ScenarioSteps {
         signInpage.open();
     }
 
-    @Step
-    public void authorization() {
-        signInpage.enterUserId();
-        signInpage.enterUserPassword();
-        signInpage.clickOnTheSignInButton();
-    }
+//    @Step
+//    public void authorization() {
+//        signInpage.enterUserId();
+//        signInpage.enterUserPassword();
+//        signInpage.clickOnTheSignInButton();
+//    }
 
     @Step
     public void selectAccount() {
@@ -928,88 +925,95 @@ public class EndUserSteps extends ScenarioSteps {
     public void CheckThatWarningPriceMessageisDisplayed(String arg0) {
         Assert.assertTrue(priceAndAvailability.isFinalNetPriceIsGreaterErrorIsDisplayedAtPDPopup(arg0));
     }
-@Step
+    @Step
     public void clickEMEAAccount(String arg0) {
     priceAndAvailability.clickEMEAAccunt(arg0);
     }
-
+    @Step
     public void chechThatAllOrdersPageIsOpened() {
         Assert.assertTrue(orderStatus.isOrderStatusPageOpened());
     }
-
+    @Step
     public void searchByAtOrderStatus(String arg0) {
         orderStatus.searchByAtOrderStatus(arg0);
     }
-
+    @Step
     public void appropriateOrderNumberIsDisplayedAtTheTable(String arg0) {
         Assert.assertTrue(orderStatus.isAppropriateOrderDisplayed(arg0));
     }
-
+    @Step
     public void checkThatAppropriatePONumberIsDisplayedAtTheTable(String arg0) {
         Assert.assertTrue(orderStatus.isAppropriatePODisplayed(arg0));
     }
-    //test
+    @Step
     public void chceckThatJobNameIsDisplayedAtTheTable(String arg0) {
         Assert.assertTrue(orderStatus.isAppropriateJobNameDisplayed(arg0));
     }
-
+    @Step
     public void clickOnAppropriateOrder(String arg0) {
         orderStatus.clickOnOrder(arg0);
     }
-
+    @Step
     public void clcikOnAppropriatePO(String arg0) {
         orderStatus.clickOnPONumber(arg0);
     }
-
+    @Step
     public void checkCheckboxInTheHeader() {
         orderStatus.checkCheckboxInHeader();
     }
-
+    @Step
     public void clickNextButtonAtThePOPage() {
         orderStatus.clickNextButtonPOPage();
     }
-
+    @Step
     public void checkThatPOOrderDetailsPageOpened() {
         Assert.assertTrue(orderStatus.isPOOrderDetailPageopened());
     }
-
+    @Step
     public void checkThatAllInvoicedPageOpened() {
         Assert.assertTrue(invoice.isAllInvoicesPageOpened());
     }
-
+    @Step
     public void chooseRegion(String arg0) {
         priceAndAvailability.chooceAppropriateRegion(arg0);
     }
-
+    @Step
     public void clickOnOrderLineDetails() {
         orderStatus.clickOrderLineDetails();
     }
-
+    @Step
     public void checkThatOrderLineItemDetailsIsDisplayed() {
         Assert.assertTrue(orderStatus.checkThatOrderLineItemDetailsIsOpened());
     }
-
+    @Step
     public void clickOnFirstPOOrderLine() {
         orderStatus.clickOnFirstPOOrderLineNumber();
     }
-
+    @Step
     public void clickOnTabAtAccountManagementPage(String arg0) {
         accountManagementPage.clickOnAppropriateTabWithAccounts(arg0);
     }
-
+    @Step
     public void enterValueToTheSearchInpetFieldAtInvoicePage(String arg0) {
         invoice.enterInvoiceNumber(arg0);
     }
-
+    @Step
     public void ckickSerachButtonInvoicesPage() {
         invoice.clickSearchButton();
     }
-
+    @Step
     public void checkThatAppropriateInvoiceDisplayedAtThePage(String arg0) {
         Assert.assertTrue(invoice.isAppropriateInvoiceShown(arg0));
     }
-
+    @Step
     public void enterSpaNumberToSpainputField(String arg0) {
         priceAndAvailability.enterSpaToSpaBox(arg0);
     }
+
+    @Step
+    public void enterLoginAndPassOfUser(int arg0) {
+        signInpage.enterLoginAndPassOfUser(arg0);
+
+    }
+
 }
