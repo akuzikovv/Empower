@@ -35,11 +35,11 @@ Feature: Geempower Dashboard
     And   Click HOME button
     Then  Check that Track you Order widget contains all necessary elements
     When  Enter order number to the  Enter Order or PO Number textbox
-    When  Click Search button
+    When  Click Search Order button
     Then  Entered order is displayed in the table
     And   Click HOME button
     When  Enter PO order number to the  Enter Order or PO Number textbox
-    When  Click Search button
+    When  Click Search Order button
     Then  Entered  Po order is displayed in the table
     And   Click HOME button
     Then  Check that Recent Orders widget contains all necessary elements

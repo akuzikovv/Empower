@@ -176,7 +176,7 @@ public class DashboardPage extends PageObject {
         Serenity.getCurrentSession().put("Order Number", number);
         $(ILocators.ORDER_SEARCH_WIDGET_TEXTBOX).sendKeys(number);    }
 
-    public void clickSearchButton() {
+    public void clickSearchOrderButton() {
         $(ILocators.ORDER_SEARCH_WIDGET_SEARCH_BUTTON).click();
     }
 

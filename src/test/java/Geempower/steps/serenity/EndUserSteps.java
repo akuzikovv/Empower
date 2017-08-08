@@ -441,8 +441,8 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     @Step
-    public void clickSearchButton() {
-        dashboardPage.clickSearchButton();
+    public void clickSearchOrderButton() {
+        dashboardPage.clickSearchOrderButton();
     }
 
     @Step

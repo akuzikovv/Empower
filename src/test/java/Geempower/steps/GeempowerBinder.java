@@ -872,10 +872,10 @@ public class GeempowerBinder {
         steps.enterOrderNumberToTheEnterOrderOrPONumberTextbox();
     }
 
-//    @When("^Click Search button$")
-//    public void clickSearchButton() throws Throwable {
-//        steps.clickSearchButton();
-//    }
+    @When("^Click Search Order button$")
+    public void clickSearchOrderButton() throws Throwable {
+        steps.clickSearchOrderButton();
+    }
 
     @When("^Enter PO order number to the  Enter Order or PO Number textbox$")
     public void enterPOOrderNumberToTheEnterOrderOrPONumberTextbox() throws Throwable {
