@@ -1,9 +1,14 @@
 Feature: Geempower Dashboard
+    Background:
+        Given open custom login page
+        When  enter Login And Pass Of User 2
+        When  open Dashboard page
+
 
     Scenario: Ge.016.0001 - Ge.016.0025
-    Given open custom login page
-    When  enter Login And Pass Of User 2
-    When  open Dashboard page
+#    Given open custom login page
+#    When  enter Login And Pass Of User 2
+#    When  open Dashboard page
     Then  Dashboard page contains all necessary fields, widgets and buttons
     And   Click Next button on every balloon
     Then  For each widget appropriate balloon is displayed
@@ -11,12 +16,18 @@ Feature: Geempower Dashboard
     Then  For each widget appropriate balloon is displayed
     And   Click Skip button
     Then  Training layer is closed
+
+    Scenario: Ge.016.0005
+    And   Click Skip button
     When  Click on account number in the header
     Then  Necessary fields are shown
     When  Click Change Account button in the dropdown list
     Then  Account Management page is opened
     When  Click on  account number in the list
     Then  Dashboard page is opened1
+
+    Scenario: Ge.016.0008
+    And   Click Skip button
     Then  Order Status widget contains all necessary elements
     When  Click Total Prices circle
     Then  All Orders page is opened
@@ -32,7 +43,10 @@ Feature: Geempower Dashboard
     And   Click HOME button
     When  Click Cancelled circle
     Then  Cancelled text is displayed in the Status combobox
-    And   Click HOME button
+#    And   Click HOME button
+
+    Scenario: Ge.016.0013
+    And   Click Skip button
     Then  Check that Track you Order widget contains all necessary elements
     When  Enter order number to the  Enter Order or PO Number textbox
     When  Click Search Order button
@@ -41,7 +55,10 @@ Feature: Geempower Dashboard
     When  Enter PO order number to the  Enter Order or PO Number textbox
     When  Click Search Order button
     Then  Entered  Po order is displayed in the table
-    And   Click HOME button
+#    And   Click HOME button
+
+    Scenario: Ge.016.0016
+    And   Click Skip button
     Then  Check that Recent Orders widget contains all necessary elements
     When  Click View All button at the Recent Orders widget
     Then  All Orders page is opened
@@ -54,7 +71,10 @@ Feature: Geempower Dashboard
     And   Click HOME button
     When  Click on Any Order at the Recent Orders widget
     Then  Check that status the same in the widget and in the Order Details page
-    And   Click HOME button
+#    And   Click HOME button
+
+    Scenario: Ge.016.0021
+    And   Click Skip button
     Then  Check that Recent Lists widget contains all necessary elements
     When  Click on list name
     Then  List of products from chosen list is displayed at the Saved Lists page
@@ -68,8 +88,9 @@ Feature: Geempower Dashboard
     Then  Check that Number of items the same in the list and in the widget
     When  Delete list
     Then  List is deleted
-    And   Click HOME button
-#  Scenario: Ge.016.0042 - Ge.016.0045
+#    And   Click HOME button
+
+    Scenario: Ge.016.0042 - Ge.016.0045
     When  Click close cookies bar
     Then  Check that Featured Tools widget contains all necessary elements
     When  Click on Publication Library tool in the widget

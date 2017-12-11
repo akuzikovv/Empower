@@ -47,11 +47,11 @@ public class AccountManagementPage extends PageObject {
 
     public void loginUser() {
 
-        $(Path.USER_ID_FIELD).clear();
-        $(Path.USER_ID_FIELD).sendKeys(Path.LOGIN_1);
-        $(Path.PASSWORD_FIELD).clear();
-        $(Path.PASSWORD_FIELD).sendKeys(Path.PASSWORD_1);
-        $(Path.SIGN_IN_BUTTON).click();
+        $(ILocators.USER_ID).clear();
+        $(ILocators.USER_ID).sendKeys(ILocators.LOGIN_1);
+        $(ILocators.PASSWORD).clear();
+        $(ILocators.PASSWORD).sendKeys(ILocators.PASSWORD_1);
+        $(ILocators.SIGN_IN_BUTTON).click();
         getDriver().get("http://qa.geempower.com/geempower/");
 //        getDriver().get("http://qa.geempower.com/demo/");
 //        getDriver().get("http://qa.geempower.com/qa/");
@@ -681,6 +681,7 @@ public class AccountManagementPage extends PageObject {
     public void chooseASIARegionInTheCombobox() {
         $(ILocators.REGION_COMBOBOX).click();
         try {waitFor(ExpectedConditions.elementToBeClickable($(ILocators.ASIA_REGION)));
+            waitABit(1000);
         }catch (Exception e) {   System.out.println("Not clickable");        }
         $(ILocators.ASIA_REGION).click();
     }
@@ -703,6 +704,7 @@ public class AccountManagementPage extends PageObject {
               List<WebElementFacade> accounts = findAll(By.xpath(ILocators.LIST_OF_ACCOUNTS_ACCOUNT_MANAGEMENT));
         for (WebElementFacade webElementFacade : accounts) {
             webElementFacade.getText();
+            waitABit(10000);
            webElementFacade.getText().equals(accountNumber);
             }
         return true;
@@ -739,6 +741,7 @@ public class AccountManagementPage extends PageObject {
     public void chooseLatinAmericaRegionInTheRegionCombobox() {
         $(ILocators.REGION_COMBOBOX).click();
         try { waitFor(ExpectedConditions.elementToBeClickable($(ILocators.LATIN_AMERICA_REGION)));
+            waitABit(1000);
         }catch (Exception e) {   System.out.println("Not clickable");        }
         $(ILocators.LATIN_AMERICA_REGION).click();
     }
@@ -746,6 +749,7 @@ public class AccountManagementPage extends PageObject {
     public void chooseNorthAmericaRegionInTheRegionCombobox() {
         $(ILocators.REGION_COMBOBOX).click();
         try {waitFor(ExpectedConditions.elementToBeClickable($(ILocators.NORTH_AMERICA_REGION)));
+            waitABit(1000);
         }catch (Exception e) {   System.out.println("Not clickable");        }
         $(ILocators.NORTH_AMERICA_REGION).click();
     }
@@ -975,7 +979,7 @@ public class AccountManagementPage extends PageObject {
     }
 
     public boolean accountIsntDisplayedInTheTable(String accountNumber) {
-        List<WebElementFacade> accounts = findAll(By.xpath(ILocators.LIST_OF_ACCOUNTS_ACCOUNT_MANAGEMENT));
+        List<WebElementFacade> accounts = findAll(By.xpath(ILocators.LIST_OF_ACCOUNTS_Favorites_tab));
         for (WebElementFacade webElementFacade : accounts) {
             webElementFacade.getText();
                      webElementFacade.getText().isEmpty();
@@ -989,6 +993,16 @@ public class AccountManagementPage extends PageObject {
 //        waitFor(ExpectedConditions.elementToBeClickable(By.xpath(ILocators.APPROVED_ACCOUNTS_TAB)));
         waitABit(3000);
         $(ILocators.APPROVED_ACCOUNTS_TAB).click();
+    }
+
+    public boolean accountIsDisplayedInTheFavoritesTable(String accountNumber) {
+        List<WebElementFacade> accounts = findAll(By.xpath(ILocators.LIST_OF_ACCOUNTS_Favorites_tab));
+        for (WebElementFacade webElementFacade : accounts) {
+            webElementFacade.getText();
+            waitABit(10000);
+            webElementFacade.getText().equals(accountNumber);
+        }
+        return true;
     }
 }
 

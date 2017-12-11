@@ -1,9 +1,10 @@
 Feature: Geempower Account Management
+  Background:
+    Given open custom login page
+    When  enter Login And Pass Of User 2
+    Then account management page is opened
 
   Scenario: Ge.015.0033 - Ge.015.0049
-    Given open custom login page
-    When enter Login And Pass Of User 2
-    Then account management page is opened
     When Choose ASIA region in the region combobox
     When Click Search Account button
     When Click on the Approved Tab
@@ -15,15 +16,12 @@ Feature: Geempower Account Management
     Then "1000270" account is displayed in the table
     And  Click RESET button
     When Choose ASIA region in the region combobox
-    When Enter "1000270" account number to the Account textbox
-    When Click Search Account button
-    Then "1000270" account is displayed in the table
-    And  Click RESET button
-    When Choose ASIA region in the region combobox
     When Enter "3M SPECIALTY MATERIALS" account name to the Account textbox
     When Click Search Account button
     Then "3M SPECIALTY MATERIALS" account name is displayed in the table
-    And  Click RESET button
+#    And  Click RESET button
+
+  Scenario: Ge.015.0036 - Ge.015.0049
     When Choose EMEA region in the region combobox
     When Click Search Account button
     When Click on the Approved Tab
@@ -33,7 +31,9 @@ Feature: Geempower Account Management
     When Enter "9001051" account number to the Account textbox
     When Click Search Account button
     Then "9001051" account is displayed in the table
-    And  Click RESET button
+#    And  Click RESET button
+
+  Scenario: Ge.015.0038 - Ge.015.0049
     When Choose Latin America region in the region combobox
     When Click Search Account button
     When Click on the Approved Tab
@@ -43,7 +43,9 @@ Feature: Geempower Account Management
     When Enter "9000084" account number to the Account textbox
     When Click Search Account button
     Then "9000084" account is displayed in the table
-    And  Click RESET button
+#    And  Click RESET button
+
+  Scenario: Ge.015.0040 - Ge.015.0049
     When Choose North America region in the region combobox
     When Click Search Account button
     When Click on the Approved Tab
@@ -55,6 +57,8 @@ Feature: Geempower Account Management
     Then "1318501" account is displayed in the table
     When  Click RESET button
     Then  Region and Account fields are blank
+
+  Scenario: Ge.015.0043 - Ge.015.0049
     When Click Search Account button
     When Click on the Approved Tab
     When Click on the Next button
@@ -73,13 +77,14 @@ Feature: Geempower Account Management
     When Click on the star button
     When Click Favorites Tab
     Then Favorites tab is opened
-    Then "1000270" account is displayed in the table
-    #    When Click on the star1 button
+    Then "1000270" account is displayed in the  favorites table
+#    When Click on the star1 button
 #    Then "1000270" account isn't displayed in the table
 
   Scenario: Check that user able to choose appropriate account
-    Given open custom login page
-    When login user
+    When Choose North America region in the region combobox
+    When Enter "1318501" account number to the Account textbox
+    When Click Search Account button
     When Click "1318501" account
     When Click "Skip" button
     Then Dashboard page is opened

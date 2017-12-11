@@ -33,7 +33,7 @@ public class SignInPage extends PageObject {
             }
         } catch (Exception e) {   System.out.println("User 1 can't login");        }
         $(ILocators.SIGN_IN_BUTTON).click();
-        getDriver().get("http://qa.geempower.com/geempower/");
+//        getDriver().get("http://qa.geempower.com/geempower/");
     }
 }
 

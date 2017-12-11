@@ -1080,4 +1080,8 @@ public class GeempowerBinder {
     }
 
 
+    @Then("^\"([^\"]*)\" account is displayed in the  favorites table$")
+    public void accountIsDisplayedInTheFavoritesTable(String accountNumber) throws Throwable {
+        steps.accountIsDisplayedInTheFavoritesTable(accountNumber);
+    }
 }

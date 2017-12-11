@@ -4,9 +4,9 @@ package Geempower;
 public interface ILocators {
 
     /////////////////////////SIGN IN /////////////////////////////////////
-    String USER_ID = "//input[@id='userId']";
+    String USER_ID = "//input[@id='username']";
     String PASSWORD = "//input[@id='password']";
-    String SIGN_IN_BUTTON = "//button[@type='submit']";
+    String SIGN_IN_BUTTON = "//input[@id='submitFrm']";
     String SSO1 = "502618792";
     String PASS1 = "Seaways4352924S";
     String CONECTION_ERROR_TEXT = "//xhtml:h1[@class='title-text']";
@@ -32,10 +32,10 @@ public interface ILocators {
     String GO_BUTTON = "//button[@class='btn primary-btn pre-authorized-btn-ma-js']";
     String PAGINATION_BUTTONS_APPROVED_TAB = "//div[@id='activeRequestsTable_paginate']";
     String PAGINATION_BUTTONS_FAVORITE_TAB = "//div[@id='favoritesTable_paginate']";
-    String ASIA_REGION = "(//li[@class='select2-results__option'])[1]";
-    String EMEA_REGION = "(//li[@class='select2-results__option'])[2]";
-    String LATIN_AMERICA_REGION = "(//li[@class='select2-results__option'])[3]";
-    String NORTH_AMERICA_REGION = "//li[@class='select2-results__option select2-results__option--highlighted']";
+    String ASIA_REGION = "//li[.='ASIA']";
+    String EMEA_REGION = "//li[.='EMEA']";
+    String LATIN_AMERICA_REGION = "//li[.='Latin America']";
+    String NORTH_AMERICA_REGION = "//li[.='North America']";
     String LIST_OF_ACCOUNTS_STATE = ".//*[@id='activeRequestsTable']/tbody/tr[@class='odd'or@class='even']/td[5]";
     String NEXT_PAGINATION_BUTTON = "//span[@id='activeRequestsTable_next']";
     String LAST_PAGINATION_BUTTON = "//span[@id='activeRequestsTable_last']";
@@ -43,6 +43,7 @@ public interface ILocators {
     String FIRST_PAGINATION_BUTTON = "//span[@id='activeRequestsTable_first']";
     String _11String = ".//*[@id='activeRequestsTable']/tbody/tr[11]/td[2]";
     String LIST_OF_ACCOUNTS_ACCOUNT_MANAGEMENT = "//div[@id='activeRequestsTable_wrapper']//tr[@class='odd' or @class='even']/*[2]/a";
+    String LIST_OF_ACCOUNTS_Favorites_tab = "//table[@class='table info-table edit-info-table account-table accounts-info-table dataTable no-footer']";
     String Paginate_input = "(//input[@class='paginate_input'])[1]";
     String Paginate_Of = "(//span[@class='paginate_of'])[1]";
     String number_Of_Page1 = "(//div[@aria-live='polite'])[1]";
@@ -109,8 +110,8 @@ public interface ILocators {
     String WidgetHasNecessaryText3 = "Search for specific order by PO No. or GE Order No.";
     String WidgetHasNecessaryText4 = "This area will display a list of the most recent orders for your account. Select the 'view all' link to view complete list of orders.";
     String WidgetHasNecessaryText5 = "Create a list of products you frequently view or purchase. Your most recently accessed lists will display here.";
-    String WidgetHasNecessaryText6 = "Check real time price and availability of the product.";
-    String WidgetHasNecessaryText7 = "Keep up to date with the latest product updates, news and tool enhancements.";
+    String WidgetHasNecessaryText7 = "Check real time price and availability of the product.";
+    String WidgetHasNecessaryText6 = "Keep up to date with the latest product updates, news and tool enhancements.";
     String VIEW_ALL_SAVED_LIST_LINK = "(//div//a[@href='/geempower/savedLists'])[2]";
     String LIST_NAME_FIELD = "(//span[@class='label-text hidden-xs'])[13]";
     String CREATED_ON_FIELD = "(//li[@class='col-xs-4 hidden-xs'])[7]//span[@class='label-text']";

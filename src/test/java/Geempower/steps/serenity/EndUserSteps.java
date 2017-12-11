@@ -1015,5 +1015,8 @@ public class EndUserSteps extends ScenarioSteps {
         signInpage.enterLoginAndPassOfUser(arg0);
 
     }
-
+    @Step
+    public void accountIsDisplayedInTheFavoritesTable(String accountNumber) {
+        Assert.assertTrue("account is displayed",accountManagementPage.accountIsDisplayedInTheFavoritesTable(accountNumber));
+    }
 }
