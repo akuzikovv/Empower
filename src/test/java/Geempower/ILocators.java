@@ -6,7 +6,7 @@ public interface ILocators {
     /////////////////////////SIGN IN /////////////////////////////////////
     String USER_ID = "//input[@id='username']";
     String PASSWORD = "//input[@id='password']";
-    String SIGN_IN_BUTTON = "//input[@id='submitFrm']";
+    String SIGN_IN_BUTTON = "//input[@value='Log In & Remember Me']";
     String SSO1 = "502618792";
     String PASS1 = "Seaways4352924S";
     String CONECTION_ERROR_TEXT = "//xhtml:h1[@class='title-text']";
